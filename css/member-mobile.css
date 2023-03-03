@@ -2826,7 +2826,7 @@ c-join .join-step-area .join-step-list>li:last-child:after {
 }
 .l-area .l-box {
     width: 100%;
-    height: 100vh;
+    height: 100%;
     display: -ms-flexbox;
     display: flex;
     flex-flow: column;
