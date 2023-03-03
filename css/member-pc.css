@@ -1549,6 +1549,7 @@ footer.footer .f-info-area .info-txt {
     width: 100%;
     height: auto;
     min-height: 100vh;
+    min-height: calc(var(--vh, 1vh) * 100);
     display: -ms-flexbox;
     display: flex;
     -ms-flex-wrap: wrap;
@@ -1850,6 +1851,7 @@ footer.footer .f-info-area .info-txt {
     width: 100%;
     height: auto;
     min-height: 100vh;
+    min-height: calc(var(--vh, 1vh) * 100);
     display: -ms-flexbox;
     display: flex;
     -ms-flex-wrap: wrap;
@@ -2063,6 +2065,7 @@ footer.footer .f-info-area .info-txt {
 *************************************************/
 .c-page {
     min-height: calc(100vh - 146px);
+    min-height: calc(calc(var(--vh, 1vh) * 100) - 146px);
     display: -ms-flexbox;
     display: flex;
     -ms-flex-wrap: wrap;
@@ -2548,6 +2551,7 @@ footer.footer .f-info-area .info-txt {
     width: 100%;
     height: auto;
     max-height: calc(100vh - 124px);
+    max-height: calc(calc(var(--vh, 1vh) * 100) - 124px);
     position: relative;
     padding: 18px;
     color: #393d48;
@@ -2562,9 +2566,11 @@ footer.footer .f-info-area .info-txt {
 }
 .l-area .l-box .l-tit-area + .l-con-area {
     max-height: calc(100vh - 194px);
+    max-height: calc(calc(var(--vh, 1vh) * 100) - 194px);
 }
 .l-area#alarm-layer .l-box .l-con-area {
     max-height: calc(100vh - 40px);
+    max-height: calc(calc(var(--vh, 1vh) * 100) - 40px);
 }
 .l-area .l-box .l-con-area .l-con-tit-area {
     width: 100%;
@@ -2601,6 +2607,7 @@ footer.footer .f-info-area .info-txt {
 }
 .l-area .l-box .l-con-area .l-con-tit-area + .l-con {
     max-height: calc(100vh - 110px);
+    max-height: calc(calc(var(--vh, 1vh) * 100) - 110px);
     padding: 18px 0 42px;
     overflow-y: auto;
     -ms-overflow-style: none; /* IE and Edge */

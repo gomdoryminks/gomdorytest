@@ -1627,6 +1627,7 @@ footer.footer .f-info-area .info-txt {
     width: 100%;
     height: auto;
     min-height: 100vh;
+    min-height: calc(var(--vh, 1vh) * 100);
     display: -ms-flexbox;
     display: flex;
     -ms-flex-wrap: wrap;
@@ -1780,6 +1781,7 @@ footer.footer .f-info-area .info-txt {
 *************************************************/
 .c-main {
     min-height: calc(100vh - 432px);
+    min-height: calc(calc(var(--vh, 1vh) * 100) - 432px);
     position: relative;
     padding-top: 35px;
     padding-bottom: 45px;
@@ -1980,6 +1982,7 @@ footer.footer .f-info-area .info-txt {
 *************************************************/
 .c-page {
     min-height: calc(100vh - 432px);
+    min-height: calc(calc(var(--vh, 1vh) * 100) - 432px);
     display: -ms-flexbox;
     display: flex;
     -ms-flex-pack: justify;
@@ -2078,6 +2081,7 @@ footer.footer .f-info-area .info-txt {
 .c-map {
     width: 100%;
     height: calc(100vh - 139px);
+    height: calc(calc(var(--vh, 1vh) * 100) - 139px);
     min-height: 800px;
     position: relative;
 }
@@ -2557,6 +2561,7 @@ footer.footer .f-info-area .info-txt {
 }
 .c-map .map-layer-area .map-layer.map-menu-layer {
     height: calc(100vh - 254px);
+    height: calc(calc(var(--vh, 1vh) * 100) - 254px);
     min-height: 685px;
     top: 115px;
     left: 70px;
@@ -2618,6 +2623,7 @@ footer.footer .f-info-area .info-txt {
 }
 .c-map .map-layer-area .map-layer.map-menu-layer .map-layer-box .map-layer-con-area {
     height: calc(100vh - 299px);
+    height: calc(calc(var(--vh, 1vh) * 100) - 299px);
     min-height: 640px;
     padding: 8px 10px 16px;
     overflow-y: auto;
@@ -2964,6 +2970,7 @@ footer.footer .f-info-area .info-txt {
     width: 100%;
     height: auto;
     max-height: calc(100vh - 124px);
+    max-height: calc(calc(var(--vh, 1vh) * 100) - 124px);
     position: relative;
     padding: 18px;
     color: #393d48;
@@ -2978,9 +2985,11 @@ footer.footer .f-info-area .info-txt {
 }
 .l-area .l-box .l-tit-area + .l-con-area {
     max-height: calc(100vh - 194px);
+    max-height: calc(calc(var(--vh, 1vh) * 100) - 194px);
 }
 .l-area#alarm-layer .l-box .l-con-area {
     max-height: calc(100vh - 40px);
+    max-height: calc(calc(var(--vh, 1vh) * 100) - 40px);
 }
 .l-area .l-box .l-con-area .l-con-tit-area {
     width: 100%;
@@ -3017,6 +3026,7 @@ footer.footer .f-info-area .info-txt {
 }
 .l-area .l-box .l-con-area .l-con-tit-area + .l-con {
     max-height: calc(100vh - 110px);
+    max-height: calc(calc(var(--vh, 1vh) * 100) - 110px);
     padding: 18px 0 42px;
     overflow-y: auto;
     -ms-overflow-style: none; /* IE and Edge */
