@@ -102,7 +102,7 @@
                             <li class="step1">
                                 <!-- active : 해당 페이지의 대메뉴에 추가 -->
                                 <ul class="a-sub-menu-list">
-                                    <li class="active">
+                                    <li>
                                         <a href="index.html">서비스 소개</a>
                                     </li>
                                     <li>
@@ -111,12 +111,31 @@
                                     <li>
                                         <a href="mypage-car-list.html">마이페이지</a>
                                     </li>
-                                    <li>
+                                    <li class="active">
                                         <a href="board-notice-list.html">게시판</a>
                                     </li>
                                 </ul>
 
-                                <div class="a-menu-tit">서비스 소개</div>
+                                <div class="a-menu-tit"></div>
+                            </li>
+                            <li class="step2">
+                                <!-- active : 해당 페이지의 중메뉴에 추가 -->
+                                <ul class="a-sub-menu-list">
+                                    <li class="active">
+                                        <a href="board-notice-list.html">공지사항</a>
+                                    </li>
+                                    <li>
+                                        <a href="board-qna-list.html">Q&amp;A</a>
+                                    </li>
+                                    <li>
+                                        <a href="board-reference-list.html">자료실</a>
+                                    </li>
+                                    <li>
+                                        <a href="board-faq-list.html">FAQ</a>
+                                    </li>
+                                </ul>
+
+                                <div class="a-menu-tit"></div>
                             </li>
                         </ul>
                     </div>
@@ -125,48 +144,58 @@
                 <!-- c-page : 기본페이지 -->
                 <section class="c-page center-ct2">
                     <!-- 페이지 제목 -->
-                    <article class="page-tit-area">서비스 소개</article>
+                    <article class="page-tit-area">공지사항</article>
                     
                     <!-- 페이지 내용 -->
                     <article class="page-area">
-                        <ul class="main-introduce-list">
-                            <li>
-                                <div class="tit">제주 주차 안심 소개</div>
-                                <div class="sub-tit">주차안심이란?</div>
-                                <div class="con">
-                                    <div class="con-item">차량 내 개인 휴대전화번호 대신 QR코드와 ARS 대표번호로 운전자와 호출자를 직접 연결하는 서비스입니다.</div>
-                                    <div class="con-item">본 서비스를 통해 QR코드로는 문자전송 방식으로 연락할수 있으며, ARS 대표번호는 발신자전화번호 대신 제주주차안심 대표번호가 표시되어 안전하게 서비스를 이용하실 수 있습니다.</div>
+                        <div class="page-detail-area">
+                            <div class="board-detail-area">
+                                <!-- [공지] : 공지사항 종류가 긴급일 경우에만 노출 -->
+                                <div class="board-detail-tit">[공지] 긴급 공지사항입니다.</div>
+                                <div class="board-detail-info">
+                                    <div class="writer">관리자</div>
+                                    <div class="date">2023-01-18</div>
+                                    <div class="hit">12</div>
                                 </div>
-                            </li>
-                            <li>
-                                <div class="tit">주차안심번호 등록방법 (<span>운전자</span>)</div>
-                                <div class="con">
-                                    <div class="con-item">1. 본 서비스에 로그인 후 차량정보 및 QR코드정보 등록</div>
-                                    <div class="con-item">2. QR코드정보에서 등록된 QR코드를 프린트한 후 차량에 부착</div>
+                                <div class="board-detail-con">긴급 공지사항 내용입니다. 긴급 공지사항 내용입니다. 긴급 공지사항 내용입니다. 긴급 공지사항 내용입니다. 긴급 공지 사항 내용입니다. 긴급 공지사항 내용입니다. 긴급 공지사항 내용입니다. 긴급 공지사항 내용입니다. 긴급 공지사항 내용 입니다. 긴급 공지사항 내용입니다. 긴급 공지사항 내용입니다. 긴급 공지사항 내용입니다. 긴급 공지사항 내용입니다. 긴급 공지사항 내용입니다. 긴급 공지사항 내용입니다. 긴급 공지사항 내용입니다. 긴급 공지사항 내용입니다. 긴급 공지 사항 내용입니다. 긴급 공지사항 내용입니다. 긴급 공지사항 내용입니다.</div>
+                                <div class="detail-table-area">
+                                    <table class="detail-table">
+                                        <colgroup>
+                                            <col width="130">
+                                            <col width="*">
+                                        </colgroup>
+                                        <tbody>
+                                            <!-- tr : 첨부파일이 있을 경우에만 노출 -->
+                                            <tr>
+                                                <th>첨부파일1</th>
+                                                <td>
+                                                    <input type="text" id="" name="" value="첨부파일1.png" readonly onclick="">
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <th>첨부파일2</th>
+                                                <td>
+                                                    <input type="text" id="" name="" value="첨부파일2.png" readonly onclick="">
+                                                </td>
+                                            </tr>
+                                        </tbody>
+                                    </table>
                                 </div>
-                            </li>
-                            <li>
-                                <div class="tit">주차안심번호 이용방법 (<span>이용자</span>)</div>
-                                <div class="sub-tit">QR코드 이용방법</div>
-                                <div class="con">문구입력 후 문자발송 -> 문자 또는 알림톡 발송 (위치정보 포함)</div>
-                                <div class="sub-tit">ARS 이용방법</div>
-                                <div class="con">ARS 대표번호 (1533-0355) 연결 -> 안심번호 (6자리 +‘#’) 입력 -> 차주 통화</div>
-                            </li>
-                            <li>
-                                <div class="tit">렌터카 이용방법 (<span>이용자</span>)</div>
-                                <div class="con">
-                                    <div class="con-item">1. 휴대전화로 렌터카에 부착된 QR코드 인식</div>
-                                    <div class="con-item">2. 렌터카 이용자의 휴대전화번호와 렌트기간을 설정한 후 차량 이용</div>
+                                <!-- board-detail-prev : 공지사항 종류가 일반일 경우에만 노출 -->
+                                <div class="board-detail-prev">
+                                    <span>이전글이 없습니다.</span>
                                 </div>
-                            </li>
-                            <li>
-                                <div class="tit">소개 영상</div>
-                                <div class="con con-video">
-                                    <!--<img src="../img/member-pc-video-img.png" alt="동영상이미지">-->                                    
-                                    <iframe width="100%" height="100%" src="https://www.youtube.com/embed/vnCZMACBTz0?autoplay=1&mute=1&controls=1&disablekb=1&fs=0&iv_load_policy=3&loop=1&modestbranding=1&playsinline=1&rel=0&playlist=vnCZMACBTz0" title="『제주주차안심번호』 홍보영상" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+                                <!-- board-detail-next : 공지사항 종류가 일반일 경우에만 노출 -->
+                                <div class="board-detail-next">
+                                    <a href="board-notice-detail.html">일반 공지사항입니다.</a>
                                 </div>
-                            </li>
-                        </ul>
+                            </div>
+                            <div class="detail-btn-area">
+                                <button type="button" class="default-btn01 round-btn" onclick="location.href='board-notice-list.html';">
+                                    <span>목 록</span>
+                                </button>
+                            </div>
+                        </div>
                     </article>
                 </section>
             </div>

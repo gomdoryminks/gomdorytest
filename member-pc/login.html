@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="ko">
+	<head>
+		<meta charset="utf-8">
+		<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+		<title>제주주차안심</title>
+		<meta name="description" content="제주주차안심">
+		<meta name="author" content="minks">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, user-scalable=no">
+		<link rel="shortcut icon" href="../img/logo-favicon.ico">
+		<link rel="apple-touch-icon" href="../img/logo-favicon.ico">
+		
+		<link href="../css/reset.css" type="text/css" rel="stylesheet">
+		<link href="../css/font.css" type="text/css" rel="stylesheet">
+		<link href="../css/swiper.min.css" type="text/css" rel="stylesheet">
+        <link href="../css/slick.css" type="text/css" rel="stylesheet">
+        <link href="../css/slick-theme.css" type="text/css" rel="stylesheet">
+        <link href="../css/jquery-ui.min.css" type="text/css" rel="stylesheet">
+        <link href="../css/jquery-datepicker.css" type="text/css" rel="stylesheet">
+        <link href="../css/jquery-ui-timepicker-addon.css" type="text/css" rel="stylesheet">
+        <link href="../css/yearpicker.css" type="text/css" rel="stylesheet">
+		<link href="../css/member-pc.css" type="text/css" rel="stylesheet">
+		
+		<!--[if lt IE 9]>
+		<script src="../js/jquery-1.11.1.min.js"></script>
+		<script src="../js/html5shiv.js"></script>
+		<![endif]-->
+		
+		<!--[if gte IE 9]>
+		<script src="../js/jquery-3.4.1.min.js"></script>
+		<![endif]-->
+		
+		<!--[if !IE]>--> 
+		<script src="../js/jquery-3.4.1.min.js"></script>
+		<!--<![endif]-->
+		
+		<script src="../js/jquery-migrate-1.4.1.min.js"></script>
+		<script src="../js/swiper.min.js"></script>
+        <script src="../js/slick.js"></script>
+        <script src="../js/jquery-ui.min.js"></script>
+        <script src="../js/jquery-ui-timepicker-addon.js"></script>
+        <script src="../js/jquery.ui.monthpicker.js"></script>
+        <script src="../js/yearpicker.js"></script>
+        <script src="../js/datepicker-ko.js"></script>
+        <script src="../js/chart.js"></script>
+        <script src="../js/chartjs-adapter-date-fns.bundle.min.js"></script>
+        <script src="../js/member-function.js"></script>
+	</head>
+
+	<body>
+		<div class="wrap">            
+			<!-- content -->
+            <div class="c-wrap">
+                <!-- c-login : 로그인페이지 -->
+                <section class="c-login">
+                    <!-- 로그인 폼 -->                    
+                    <article class="login-form-area">
+                        <div class="login-form-tit">
+                            <div class="big">제주 주차<br>안심번호<br>서비스</div>
+                            <div class="medium">JEJU SAFE PARKING</div>
+                        </div>
+                        
+                        <div class="login-form-box">
+                            <!-- 탭 목록 -->
+                            <div class="c-tab-area">
+                                <ul class="c-tab-list">
+                                    <li data-tab-type="login" data-tab-name="common">일반회원</li>
+                                    <li data-tab-type="login" data-tab-name="rentcar">렌트카회원</li>
+                                </ul>
+                            </div>
+                            
+                            <!-- 일반회원 로그인 -->
+                            <div class="c-tab-item" data-tab-type="login" data-tab-name="common">
+                                <form id="" name="" method="" action="">
+                                    <button type="button" class="login-form-btn" onclick="location.href='index.html';">
+                                        <span>인증 로그인</span>
+                                    </button>
+                                </form>
+                            </div>
+                            
+                            <!-- 렌트카회원 로그인 -->
+                            <div class="c-tab-item" data-tab-type="login" data-tab-name="rentcar">
+                                <form id="" name="" method="" action="">
+                                    <div class="login-form-input-area">
+                                        <input type="email" id="" name="" class="login-form-input" placeholder="이메일">
+                                        <input type="password" id="" name="" class="login-form-input" placeholder="비밀번호">
+                                    </div>
+                                    <div class="login-form-btn-area">
+                                        <input type="button" value="로그인" class="login-form-btn" onclick="location.href='index.html';">
+                                    </div>
+                                </form>
+                            </div>
+                            
+                            <button type="button" class="login-form-btn" onclick="location.href='join-1.html';">
+                                <span>회원가입</span>
+                            </button>
+                        </div>
+                    </article>
+                    
+                    <!-- footer -->
+                    <footer class="footer">
+                        <h1 class="not-view">footer</h1>
+                        
+                        <div class="f-info-area">
+                            <img src="../img/member-footer-logo.png" alt="푸터로고" class="info-logo">
+                            <div class="info-txt">COPYRIGHT 2023 제주특별자치도<br>ALL RIGHTS RESERVED.</div>
+                        </div>
+                    </footer>
+                </section>
+            </div>
+            
+            <!-- layer -->
+            <div class="l-wrap">
+                <!-- alert창 -->
+                <div class="l-area" id="alert-layer">
+                    <div class="l-box">
+                        <div class="l-con-area">
+                            <div class="l-con"></div>
+                        </div>
+                        <div class="l-btn-area">
+                            <button type="button" class="confirm-btn">
+                                <span>확 인</span>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+                <div class="l-mask"></div>
+                
+                <!-- confirm창 -->
+                <div class="l-area" id="confirm-layer">
+                    <div class="l-box">
+                        <div class="l-con-area">
+                            <div class="l-con"></div>
+                        </div>
+                        <div class="l-btn-area">
+                            <button type="button" class="close-btn" onclick="closeLayer(this);">
+                                <span>취 소</span>
+                            </button>
+                            <button type="button" class="confirm-btn">
+                                <span>확 인</span>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+                <div class="l-mask"></div>
+                
+                <!-- alarm창 -->
+                <div class="l-area" id="alarm-layer">
+                    <div class="l-box">
+                        <div class="l-con-area">
+                            <div class="l-con-tit-area">
+                                <button type="button" class="l-con-tit-btn" onclick="closeLayer(this);">
+                                    <span><img src="../img/close-icon.png" alt="레이어닫기"></span>
+                                </button>
+                            </div>
+                            <div class="l-con"></div>
+                        </div>
+                    </div>
+                </div>
+                <div class="l-mask"></div>
+            </div>
+		</div>
+	</body>
+</html>

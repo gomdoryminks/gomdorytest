@@ -1,0 +1,305 @@
+<!DOCTYPE html>
+<html lang="ko">
+	<head>
+		<meta charset="utf-8">
+		<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+		<title>제주주차안심</title>
+		<meta name="description" content="제주주차안심">
+		<meta name="author" content="minks">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, user-scalable=no">
+		<link rel="shortcut icon" href="../img/logo-favicon.ico">
+		<link rel="apple-touch-icon" href="../img/logo-favicon.ico">
+		
+		<link href="../css/reset.css" type="text/css" rel="stylesheet">
+		<link href="../css/font.css" type="text/css" rel="stylesheet">
+		<link href="../css/swiper.min.css" type="text/css" rel="stylesheet">
+        <link href="../css/slick.css" type="text/css" rel="stylesheet">
+        <link href="../css/slick-theme.css" type="text/css" rel="stylesheet">
+        <link href="../css/jquery-ui.min.css" type="text/css" rel="stylesheet">
+        <link href="../css/jquery-datepicker.css" type="text/css" rel="stylesheet">
+        <link href="../css/jquery-ui-timepicker-addon.css" type="text/css" rel="stylesheet">
+        <link href="../css/yearpicker.css" type="text/css" rel="stylesheet">
+		<link href="../css/member-pc.css" type="text/css" rel="stylesheet">
+		
+		<!--[if lt IE 9]>
+		<script src="../js/jquery-1.11.1.min.js"></script>
+		<script src="../js/html5shiv.js"></script>
+		<![endif]-->
+		
+		<!--[if gte IE 9]>
+		<script src="../js/jquery-3.4.1.min.js"></script>
+		<![endif]-->
+		
+		<!--[if !IE]>--> 
+		<script src="../js/jquery-3.4.1.min.js"></script>
+		<!--<![endif]-->
+		
+		<script src="../js/jquery-migrate-1.4.1.min.js"></script>
+		<script src="../js/swiper.min.js"></script>
+        <script src="../js/slick.js"></script>
+        <script src="../js/jquery-ui.min.js"></script>
+        <script src="../js/jquery-ui-timepicker-addon.js"></script>
+        <script src="../js/jquery.ui.monthpicker.js"></script>
+        <script src="../js/yearpicker.js"></script>
+        <script src="../js/datepicker-ko.js"></script>
+        <script src="../js/chart.js"></script>
+        <script src="../js/chartjs-adapter-date-fns.bundle.min.js"></script>
+        <script src="../js/member-function.js"></script>
+	</head>
+
+	<body>
+		<div class="wrap">    
+            <!-- header -->
+		    <header class="header">
+                <h1 class="not-view">header</h1>
+                
+                <div class="center-ct">
+                    <div class="h-left-area">
+                        <div class="left-txt">
+                            <a href="index.html">제주 주차 안심번호 서비스</a>
+                        </div>
+                    </div>
+                    
+                    <div class="h-right-area">
+                        <!-- nav -->
+                        <nav class="nav">
+                            <h2 class="not-view">nav</h2>
+                            
+                            <ul class="n-menu-list">
+                                <li>
+                                    <a href="basic-qrcode-list.html">기본정보</a>
+                                </li>
+                                <li>
+                                    <a href="mypage-car-list.html">마이페이지</a>
+                                </li>
+                                <li>
+                                    <a href="board-notice-list.html">게시판</a>
+                                </li>
+                            </ul>
+                        </nav>
+                        
+                        <div class="right-txt">
+                            <div class="right-user-txt"><span class="c-bold">사용자</span> 님</div>
+                            <button type="button" class="right-logout-btn" onclick="location.href='login.html';">
+                                <span>로그아웃</span>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </header>
+            
+			<!-- content -->
+            <div class="c-wrap">
+                <!-- aside -->
+                <aside class="aside">
+                    <h1 class="not-view">aside</h1>
+
+                    <div class="center-ct">
+                        <ul class="a-menu-list">
+                            <li class="step0">
+                                <a href="index.html"><img src="../img/home-icon.png" alt="홈메뉴"></a>
+                            </li>
+                            <li class="step1">
+                                <!-- active : 해당 페이지의 대메뉴에 추가 -->
+                                <ul class="a-sub-menu-list">
+                                    <li>
+                                        <a href="index.html">서비스 소개</a>
+                                    </li>
+                                    <li>
+                                        <a href="basic-qrcode-list.html">기본정보</a>
+                                    </li>
+                                    <li>
+                                        <a href="mypage-car-list.html">마이페이지</a>
+                                    </li>
+                                    <li class="active">
+                                        <a href="board-notice-list.html">게시판</a>
+                                    </li>
+                                </ul>
+
+                                <div class="a-menu-tit"></div>
+                            </li>
+                            <li class="step2">
+                                <!-- active : 해당 페이지의 중메뉴에 추가 -->
+                                <ul class="a-sub-menu-list">
+                                    <li>
+                                        <a href="board-notice-list.html">공지사항</a>
+                                    </li>
+                                    <li class="active">
+                                        <a href="board-qna-list.html">Q&amp;A</a>
+                                    </li>
+                                    <li>
+                                        <a href="board-reference-list.html">자료실</a>
+                                    </li>
+                                    <li>
+                                        <a href="board-faq-list.html">FAQ</a>
+                                    </li>
+                                </ul>
+
+                                <div class="a-menu-tit"></div>
+                            </li>
+                        </ul>
+                    </div>
+                </aside>
+                
+                <!-- c-page : 기본페이지 -->
+                <section class="c-page center-ct2">
+                    <!-- 페이지 제목 -->
+                    <article class="page-tit-area">Q&amp;A 수정</article>
+                    
+                    <!-- 페이지 내용 -->
+                    <article class="page-area">
+                        <div class="page-detail-area">
+                            <!-- valid-form-area : 입력폼 유효성을 체크할 경우 -->
+                            <form id="" name="" method="" action="" class="valid-form-area">                        
+                                <div class="detail-table-area">
+                                    <table class="detail-table">
+                                        <colgroup>
+                                            <col width="130">
+                                            <col width="*">
+                                        </colgroup>
+                                        <tbody>
+                                            <tr>
+                                                <!-- ok : 입력값이 유효하거나 disabled일 경우 -->
+                                                <th class="valid-form-tit">
+                                                    <label for="">제목</label>
+                                                </th>
+                                                <!-- required : 필수값일 경우, data-event-flag : 버튼을 눌러서 유효성을 체크할 경우, data-old-val : 기존의 값으로 data-event-flag가 Y일 경우 사용됨, data-compare-id : 해당 id를 가진 항목과 값이 같은지 여부를 비교할 경우 -->
+                                                <td class="valid-form-con">
+                                                    <input type="text" id="" name="" value="QNA입니다." required>
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <!-- ok : 입력값이 유효하거나 disabled일 경우 -->
+                                                <th class="valid-form-tit">
+                                                    <label for="">내용</label>
+                                                </th>
+                                                <!-- required : 필수값일 경우, data-event-flag : 버튼을 눌러서 유효성을 체크할 경우, data-old-val : 기존의 값으로 data-event-flag가 Y일 경우 사용됨, data-compare-id : 해당 id를 가진 항목과 값이 같은지 여부를 비교할 경우 -->
+                                                <td class="valid-form-con">
+                                                    <textarea id="" name="" required>QNA 내용입니다. QNA 내용입니다. QNA 내용입니다. QNA 내용입니다. QNA 내용입니다. QNA 내용입니다. QNA 내용입니다. QNA 내용입니다. QNA 내용입니다. QNA 내용입니다.</textarea>
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <!-- ok : 입력값이 유효하거나 disabled일 경우 -->
+                                                <th class="valid-form-tit">
+                                                    <label for="">첨부파일1</label>
+                                                </th>
+                                                <!-- required : 필수값일 경우, data-event-flag : 버튼을 눌러서 유효성을 체크할 경우, data-old-val : 기존의 값으로 data-event-flag가 Y일 경우 사용됨, data-compare-id : 해당 id를 가진 항목과 값이 같은지 여부를 비교할 경우 -->
+                                                <td class="valid-form-con">
+                                                    <div class="c-file-input">
+                                                        <input type="text" id="" name="" class="c-file-txt" disabled>
+                                                        <label>
+                                                            <input type="file" id="" name="">파일선택
+                                                        </label>
+                                                    </div>
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <!-- ok : 입력값이 유효하거나 disabled일 경우 -->
+                                                <th class="valid-form-tit">
+                                                    <label for="">첨부파일2</label>
+                                                </th>
+                                                <!-- required : 필수값일 경우, data-event-flag : 버튼을 눌러서 유효성을 체크할 경우, data-old-val : 기존의 값으로 data-event-flag가 Y일 경우 사용됨, data-compare-id : 해당 id를 가진 항목과 값이 같은지 여부를 비교할 경우 -->
+                                                <td class="valid-form-con">
+                                                    <div class="c-file-input">
+                                                        <input type="text" id="" name="" class="c-file-txt" disabled>
+                                                        <label>
+                                                            <input type="file" id="" name="">파일선택
+                                                        </label>
+                                                    </div>
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <!-- ok : 입력값이 유효하거나 disabled일 경우 -->
+                                                <th class="valid-form-tit">
+                                                    <label for="">첨부파일3</label>
+                                                </th>
+                                                <!-- required : 필수값일 경우, data-event-flag : 버튼을 눌러서 유효성을 체크할 경우, data-old-val : 기존의 값으로 data-event-flag가 Y일 경우 사용됨, data-compare-id : 해당 id를 가진 항목과 값이 같은지 여부를 비교할 경우 -->
+                                                <td class="valid-form-con">
+                                                    <div class="c-file-input">
+                                                        <input type="text" id="" name="" class="c-file-txt" disabled>
+                                                        <label>
+                                                            <input type="file" id="" name="">파일선택
+                                                        </label>
+                                                    </div>
+                                                </td>
+                                            </tr>
+                                        </tbody>
+                                    </table>
+                                </div>
+                                <div class="detail-btn-area">
+                                    <button type="button" class="default-btn04 round-btn" onclick="location.href='board-qna-list.html';">
+                                        <span>목 록</span>
+                                    </button>
+                                    <button type="button" class="default-btn01 round-btn" onclick="return chkFormValidResult(this,'board-qna-detail.html');">
+                                        <span>수 정</span>
+                                    </button>
+                                </div>
+                            </form>
+                        </div>
+                    </article>
+                </section>
+            </div>
+            
+            <!-- footer -->
+            <footer class="footer">
+                <h1 class="not-view">footer</h1>
+
+                <div class="f-info-area">
+                    <img src="../img/member-footer-logo.png" alt="푸터로고" class="info-logo">
+                    <div class="info-txt">COPYRIGHT 2023 제주특별자치도<br>ALL RIGHTS RESERVED.</div>
+                </div>
+            </footer>
+            
+            <!-- layer -->
+            <div class="l-wrap">
+                <!-- alert창 -->
+                <div class="l-area" id="alert-layer">
+                    <div class="l-box">
+                        <div class="l-con-area">
+                            <div class="l-con"></div>
+                        </div>
+                        <div class="l-btn-area">
+                            <button type="button" class="confirm-btn">
+                                <span>확 인</span>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+                <div class="l-mask"></div>
+                
+                <!-- confirm창 -->
+                <div class="l-area" id="confirm-layer">
+                    <div class="l-box">
+                        <div class="l-con-area">
+                            <div class="l-con"></div>
+                        </div>
+                        <div class="l-btn-area">
+                            <button type="button" class="close-btn" onclick="closeLayer(this);">
+                                <span>취 소</span>
+                            </button>
+                            <button type="button" class="confirm-btn">
+                                <span>확 인</span>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+                <div class="l-mask"></div>
+                
+                <!-- alarm창 -->
+                <div class="l-area" id="alarm-layer">
+                    <div class="l-box">
+                        <div class="l-con-area">
+                            <div class="l-con-tit-area">
+                                <button type="button" class="l-con-tit-btn" onclick="closeLayer(this);">
+                                    <span><img src="../img/close-icon.png" alt="레이어닫기"></span>
+                                </button>
+                            </div>
+                            <div class="l-con"></div>
+                        </div>
+                    </div>
+                </div>
+                <div class="l-mask"></div>
+            </div>
+		</div>
+	</body>
+</html>

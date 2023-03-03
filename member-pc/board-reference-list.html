@@ -102,7 +102,7 @@
                             <li class="step1">
                                 <!-- active : 해당 페이지의 대메뉴에 추가 -->
                                 <ul class="a-sub-menu-list">
-                                    <li class="active">
+                                    <li>
                                         <a href="index.html">서비스 소개</a>
                                     </li>
                                     <li>
@@ -111,12 +111,31 @@
                                     <li>
                                         <a href="mypage-car-list.html">마이페이지</a>
                                     </li>
-                                    <li>
+                                    <li class="active">
                                         <a href="board-notice-list.html">게시판</a>
                                     </li>
                                 </ul>
 
-                                <div class="a-menu-tit">서비스 소개</div>
+                                <div class="a-menu-tit"></div>
+                            </li>
+                            <li class="step2">
+                                <!-- active : 해당 페이지의 중메뉴에 추가 -->
+                                <ul class="a-sub-menu-list">
+                                    <li>
+                                        <a href="board-notice-list.html">공지사항</a>
+                                    </li>
+                                    <li>
+                                        <a href="board-qna-list.html">Q&amp;A</a>
+                                    </li>
+                                    <li class="active">
+                                        <a href="board-reference-list.html">자료실</a>
+                                    </li>
+                                    <li>
+                                        <a href="board-faq-list.html">FAQ</a>
+                                    </li>
+                                </ul>
+
+                                <div class="a-menu-tit"></div>
                             </li>
                         </ul>
                     </div>
@@ -125,48 +144,112 @@
                 <!-- c-page : 기본페이지 -->
                 <section class="c-page center-ct2">
                     <!-- 페이지 제목 -->
-                    <article class="page-tit-area">서비스 소개</article>
+                    <article class="page-tit-area">자료실</article>
                     
                     <!-- 페이지 내용 -->
                     <article class="page-area">
-                        <ul class="main-introduce-list">
-                            <li>
-                                <div class="tit">제주 주차 안심 소개</div>
-                                <div class="sub-tit">주차안심이란?</div>
-                                <div class="con">
-                                    <div class="con-item">차량 내 개인 휴대전화번호 대신 QR코드와 ARS 대표번호로 운전자와 호출자를 직접 연결하는 서비스입니다.</div>
-                                    <div class="con-item">본 서비스를 통해 QR코드로는 문자전송 방식으로 연락할수 있으며, ARS 대표번호는 발신자전화번호 대신 제주주차안심 대표번호가 표시되어 안전하게 서비스를 이용하실 수 있습니다.</div>
+                        <div class="page-list-area">
+                            <form id="" name="" method="" action="">
+                                <div class="c-search-box">
+                                    <input type="text" id="" name="" class="c-search-input" placeholder="검색어를 입력하세요">
+                                    <input type="button" value="검색" class="c-search-btn">
                                 </div>
-                            </li>
-                            <li>
-                                <div class="tit">주차안심번호 등록방법 (<span>운전자</span>)</div>
-                                <div class="con">
-                                    <div class="con-item">1. 본 서비스에 로그인 후 차량정보 및 QR코드정보 등록</div>
-                                    <div class="con-item">2. QR코드정보에서 등록된 QR코드를 프린트한 후 차량에 부착</div>
+                            </form>
+                            
+                            <div class="list-top-area">
+                                <div class="list-top-right">
+                                    <div class="cnt">총 5개</div>
                                 </div>
-                            </li>
-                            <li>
-                                <div class="tit">주차안심번호 이용방법 (<span>이용자</span>)</div>
-                                <div class="sub-tit">QR코드 이용방법</div>
-                                <div class="con">문구입력 후 문자발송 -> 문자 또는 알림톡 발송 (위치정보 포함)</div>
-                                <div class="sub-tit">ARS 이용방법</div>
-                                <div class="con">ARS 대표번호 (1533-0355) 연결 -> 안심번호 (6자리 +‘#’) 입력 -> 차주 통화</div>
-                            </li>
-                            <li>
-                                <div class="tit">렌터카 이용방법 (<span>이용자</span>)</div>
-                                <div class="con">
-                                    <div class="con-item">1. 휴대전화로 렌터카에 부착된 QR코드 인식</div>
-                                    <div class="con-item">2. 렌터카 이용자의 휴대전화번호와 렌트기간을 설정한 후 차량 이용</div>
-                                </div>
-                            </li>
-                            <li>
-                                <div class="tit">소개 영상</div>
-                                <div class="con con-video">
-                                    <!--<img src="../img/member-pc-video-img.png" alt="동영상이미지">-->                                    
-                                    <iframe width="100%" height="100%" src="https://www.youtube.com/embed/vnCZMACBTz0?autoplay=1&mute=1&controls=1&disablekb=1&fs=0&iv_load_policy=3&loop=1&modestbranding=1&playsinline=1&rel=0&playlist=vnCZMACBTz0" title="『제주주차안심번호』 홍보영상" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
-                                </div>
-                            </li>
-                        </ul>
+                            </div>
+                            <div class="list-table-area">
+                                <table class="list-table">
+                                    <colgroup>
+                                        <col width="60">
+                                        <col width="*">
+                                        <col width="8%">
+                                        <col width="12%">
+                                        <col width="12%">
+                                    </colgroup>
+                                    <thead>
+                                        <tr>
+                                            <th>번호</th>
+                                            <th>제목</th>
+                                            <th>조회수</th>
+                                            <th>작성자</th>
+                                            <th>작성일자</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr data-link="board-reference-detail.html">
+                                            <td class="highlight">5</td>
+                                            <td class="c-left highlight">자료실입니다.</td>
+                                            <td>12</td>
+                                            <td>관리자</td>
+                                            <td>2023-01-18</td>
+                                        </tr>
+                                        <tr data-link="board-reference-detail.html">
+                                            <td class="highlight">4</td>
+                                            <td class="c-left highlight">자료실입니다.</td>
+                                            <td>32</td>
+                                            <td>관리자</td>
+                                            <td>2023-01-18</td>
+                                        </tr>
+                                        <tr data-link="board-reference-detail.html">
+                                            <td class="highlight">3</td>
+                                            <td class="c-left highlight">자료실입니다.</td>
+                                            <td>2</td>
+                                            <td>관리자</td>
+                                            <td>2023-01-18</td>
+                                        </tr>
+                                        <tr data-link="board-reference-detail.html">
+                                            <td class="highlight">2</td>
+                                            <td class="c-left highlight">자료실입니다.</td>
+                                            <td>0</td>
+                                            <td>관리자</td>
+                                            <td>2023-01-18</td>
+                                        </tr>
+                                        <tr data-link="board-reference-detail.html">
+                                            <td class="highlight">1</td>
+                                            <td class="c-left highlight">자료실입니다.</td>
+                                            <td>48</td>
+                                            <td>관리자</td>
+                                            <td>2023-01-18</td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                            <div class="list-paging-area">
+                                <ul class="list-paging">
+                                    <li class="arrow first-arrow disabled">
+                                        <a href="#"></a>
+                                    </li>
+                                    <li class="arrow prev-arrow disabled">
+                                        <a href="#"></a>
+                                    </li>
+                                    <li class="on">
+                                        <a href="#">1</a>
+                                    </li>
+                                    <li>
+                                        <a href="#">2</a>
+                                    </li>
+                                    <li>
+                                        <a href="#">3</a>
+                                    </li>
+                                    <li>
+                                        <a href="#">4</a>
+                                    </li>
+                                    <li>
+                                        <a href="#">5</a>
+                                    </li>
+                                    <li class="arrow next-arrow">
+                                        <a href="#"></a>
+                                    </li>
+                                    <li class="arrow last-arrow disabled">
+                                        <a href="#"></a>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
                     </article>
                 </section>
             </div>
