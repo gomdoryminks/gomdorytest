@@ -3,7 +3,11 @@ const chkIdExp = RegExp(/^[A-Za-z0-9_\-]{6,12}$/);
 const chkpwExp = RegExp(/^[A-Za-z0-9_\-]{8,20}$/);
 const chkEmailExp = RegExp(/^[0-9a-zA-Z]([-_\.]?[0-9a-zA-Z])*@[0-9a-zA-Z]([-_\.]?[0-9a-zA-Z])*\.[a-zA-Z]{2,3}$/i);
 const chkPhoneExp = RegExp(/^01([0|1|6|7|8|9]?)-?([0-9]{3,4})-?([0-9]{4})$/);
-const chkCorporateExp = RegExp(/^[0-9]{3}-[0-9]{2}-[0-9]{5}$/);
+
+//20230303 수정부분 start
+const chkCorporateExp = RegExp(/^[0-9]{3}-?[0-9]{2}-?[0-9]{5}$/);
+//20230303 수정부분 end
+
 const chkNumberExp = RegExp(/^[0-9-]*$/);
 
 $(function() {
