@@ -1,0 +1,381 @@
+<!DOCTYPE html>
+<html lang="ko">
+	<head>
+        <meta charset="utf-8">
+		<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+		<title>제주주차안심</title>
+		<meta name="description" content="제주주차안심">
+		<meta name="author" content="minks">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, user-scalable=no, viewport-fit=cover">
+		<meta name="format-detection" content="telephone=no, address=no, email=no">
+        <!-- Chrome, Firefox, Opera -->
+        <meta name="theme-color" content="#ffa60f">
+        <!-- Windows Phone -->
+        <meta name="msapplication-navbutton-color" content="#ffa60f">
+        <!-- iOS Safari -->
+        <meta name="apple-mobile-web-app-status-bar-style" content="#ffa60f">
+        <meta name="apple-mobile-web-app-capable" content="yes">
+		<link rel="shortcut icon" href="../img/logo-favicon.ico">
+		<link rel="apple-touch-icon" href="../img/logo-favicon.ico">
+		
+		<link href="../css/reset.css" type="text/css" rel="stylesheet">
+		<link href="../css/font.css" type="text/css" rel="stylesheet">
+		<link href="../css/swiper.min.css" type="text/css" rel="stylesheet">
+        <link href="../css/slick.css" type="text/css" rel="stylesheet">
+        <link href="../css/slick-theme.css" type="text/css" rel="stylesheet">
+        <link href="../css/jquery-ui.min.css" type="text/css" rel="stylesheet">
+        <link href="../css/jquery-datepicker.css" type="text/css" rel="stylesheet">
+        <link href="../css/jquery-ui-timepicker-addon.css" type="text/css" rel="stylesheet">
+        <link href="../css/yearpicker.css" type="text/css" rel="stylesheet">
+		<link href="../css/member-mobile.css" type="text/css" rel="stylesheet">
+		
+		<!--[if lt IE 9]>
+		<script src="../js/jquery-1.11.1.min.js"></script>
+		<script src="../js/html5shiv.js"></script>
+		<![endif]-->
+		
+		<!--[if gte IE 9]>
+		<script src="../js/jquery-3.4.1.min.js"></script>
+		<![endif]-->
+		
+		<!--[if !IE]>--> 
+		<script src="../js/jquery-3.4.1.min.js"></script>
+		<!--<![endif]-->
+		
+		<script src="../js/jquery-migrate-1.4.1.min.js"></script>
+		<script src="../js/swiper.min.js"></script>
+        <script src="../js/slick.js"></script>
+        <script src="../js/jquery-ui.min.js"></script>
+        <script src="../js/jquery-ui-timepicker-addon.js"></script>
+        <script src="../js/jquery.ui.monthpicker.js"></script>
+        <script src="../js/yearpicker.js"></script>
+        <script src="../js/datepicker-ko.js"></script>
+        <script src="../js/chart.js"></script>
+        <script src="../js/chartjs-adapter-date-fns.bundle.min.js"></script>
+        <script src="../js/member-function.js"></script>
+	</head>
+
+	<body>
+        <!-- mobileWrap : 모바일일 경우 추가 -->
+		<div class="wrap mobileWrap">
+            <!-- header -->
+		    <header class="header">
+                <h1 class="not-view">header</h1>
+                
+                <div class="h-left-area">
+                    <button type="button" class="h-back-btn" onclick="history.back();">
+                        <span>뒤로</span>
+                    </button>
+                </div>
+                
+                <div class="h-center-area">
+                    <div class="h-tit">회원정보</div>
+                </div>
+                
+                <!-- 회원일 경우에만 노출 -->
+                <div class="h-right-area">
+                    <button type="button" class="h-menu-btn" onclick="openMobileMenu(this);">
+                        <span>메뉴</span>
+                    </button>
+                </div>
+            </header>
+            
+            <!-- mobile -->
+            <div class="m-wrap">
+                <div class="m-box">
+                    <div class="m-top-area">
+                        <div class="m-top-user-txt"><span class="c-bold">사용자</span> 님</div>
+                        <button type="button" class="m-top-logout-btn" onclick="location.href='login.html';">
+                            <span>로그아웃</span>
+                        </button>
+                    </div>
+                    <ul class="m-menu-list">
+                        <li>
+                            <div class="m-menu-tit">기본정보</div>
+                            <ul class="m-sub-menu-list">
+                                <li>
+                                    <a href="basic-qrcode-list.html">QR코드 정보</a>
+                                </li>
+                            </ul>
+                        </li>
+                        <li>
+                            <div class="m-menu-tit">마이페이지</div>
+                            <ul class="m-sub-menu-list">
+                                <li>
+                                    <a href="mypage-car-list.html">차량정보</a>
+                                </li>
+                                <li>
+                                    <a href="mypage-member-update.html">회원정보</a>
+                                </li>
+                            </ul>
+                        </li>
+                        <li>
+                            <div class="m-menu-tit">게시판</div>
+                            <ul class="m-sub-menu-list">
+                                <li>
+                                    <a href="board-notice-list.html">공지사항</a>
+                                </li>
+                                <li>
+                                    <a href="board-qna-list.html">Q&amp;A</a>
+                                </li>
+                                <li>
+                                    <a href="board-reference-list.html">자료실</a>
+                                </li>
+                                <li>
+                                    <a href="board-faq-list.html">FAQ</a>
+                                </li>
+                            </ul>
+                        </li>
+                    </ul>
+                    <button type="button" class="m-menu-close-btn" onclick="closeMobileMenu(this);">
+                        <span><img src="../img/close-icon2.png" alt="메뉴창닫기"></span>
+                    </button>
+                </div>
+                <div class="m-mask"></div>
+            </div>
+            
+			<!-- content -->
+            <div class="c-wrap">
+                <!-- c-page : 기본페이지 -->
+                <section class="c-page">
+                    <!-- 페이지 내용 -->
+                    <article class="page-area">
+                        <div class="page-detail-area">
+                            <!-- valid-form-area : 입력폼 유효성을 체크할 경우 -->
+                            <form id="" name="" method="" action="" class="valid-form-area">
+                                <div class="page-form-box">
+                                    <!-- 일반회원일 경우 -->
+                                    <ul class="valid-form-list">
+                                        <li>
+                                            <!-- ok : 입력값이 유효하거나 disabled일 경우 -->
+                                            <div class="valid-form-tit">
+                                                <label for="valid-form-item1">이메일</label>
+                                            </div>
+                                            <!-- required : 필수값일 경우, data-event-flag : 버튼을 눌러서 유효성을 체크할 경우, data-old-val : 기존의 값으로 data-event-flag가 Y일 경우 사용됨, data-compare-id : 해당 id를 가진 항목과 값이 같은지 여부를 비교할 경우 -->
+                                            <div class="valid-form-con">
+                                                <input type="email" id="valid-form-item1" name="" value="user1@naver.com" disabled>
+                                            </div>
+                                        </li>
+                                        <li>
+                                            <!-- ok : 입력값이 유효하거나 disabled일 경우 -->
+                                            <div class="valid-form-tit">
+                                                <label for="valid-form-item2">이름</label>
+                                            </div>
+                                            <!-- required : 필수값일 경우, data-event-flag : 버튼을 눌러서 유효성을 체크할 경우, data-old-val : 기존의 값으로 data-event-flag가 Y일 경우 사용됨, data-compare-id : 해당 id를 가진 항목과 값이 같은지 여부를 비교할 경우 -->
+                                            <div class="valid-form-con">
+                                                <input type="text" id="valid-form-item2" name="" value="황길동" required>
+                                            </div>
+                                        </li>
+                                        <li>
+                                            <!-- ok : 입력값이 유효하거나 disabled일 경우 -->
+                                            <div class="valid-form-tit">
+                                                <label for="valid-form-item3">연락처</label>
+                                            </div>
+                                            <!-- required : 필수값일 경우, data-event-flag : 버튼을 눌러서 유효성을 체크할 경우, data-old-val : 기존의 값으로 data-event-flag가 Y일 경우 사용됨, data-compare-id : 해당 id를 가진 항목과 값이 같은지 여부를 비교할 경우 -->
+                                            <div class="valid-form-con">
+                                                <div class="c-inline-input">
+                                                    <input type="tel" id="valid-form-item3" name="" value="010-1111-1111" required data-event-flag="Y" data-old-val="010-1111-1111">
+                                                    <button type="button" class="default-btn05" onclick="chkPhoneValid(this);">
+                                                        <span>인증요청</span>
+                                                    </button>
+                                                </div>
+                                            </div>
+                                        </li>
+                                        <li class="only-btn">
+                                            <button type="button" class="default-btn07 big-btn" onclick="location.href='mypage-member-leave.html';">
+                                                <span>탈퇴하기</span>
+                                            </button>
+                                        </li>
+                                    </ul>
+                                    
+                                    <!-- 렌트카회원일 경우 -->
+                                    <input type="hidden" id="old-password" name="" value="aaaa1111">
+                                    
+                                    <ul class="valid-form-list">
+                                        <li>
+                                            <!-- ok : 입력값이 유효하거나 disabled일 경우 -->
+                                            <div class="valid-form-tit">
+                                                <label for="valid-form-item4">이메일</label>
+                                            </div>
+                                            <!-- required : 필수값일 경우, data-event-flag : 버튼을 눌러서 유효성을 체크할 경우, data-old-val : 기존의 값으로 data-event-flag가 Y일 경우 사용됨, data-compare-id : 해당 id를 가진 항목과 값이 같은지 여부를 비교할 경우 -->
+                                            <div class="valid-form-con">
+                                                <input type="email" id="valid-form-item4" name="" value="company1@naver.com" disabled>
+                                            </div>
+                                        </li>
+                                        <li>
+                                            <!-- ok : 입력값이 유효하거나 disabled일 경우 -->
+                                            <div class="valid-form-tit">
+                                                <label for="valid-form-item5">비밀번호</label>
+                                            </div>
+                                            <!-- required : 필수값일 경우, data-event-flag : 버튼을 눌러서 유효성을 체크할 경우, data-old-val : 기존의 값으로 data-event-flag가 Y일 경우 사용됨, data-compare-id : 해당 id를 가진 항목과 값이 같은지 여부를 비교할 경우 -->
+                                            <div class="valid-form-con">
+                                                <input type="password" id="valid-form-item5" name="" required data-compare-id="old-password">
+                                                <div class="c-checkbox">
+                                                    <input type="checkbox" id="password-change" name="" onclick="setPasswordChange(this);">
+                                                    <label for="password-change">비밀번호 변경</label>
+                                                </div>
+                                            </div>
+                                        </li>
+                                        <!-- password-change-area : 새 비밀번호 입력폼 -->
+                                        <li class="password-change-area">
+                                            <!-- ok : 입력값이 유효하거나 disabled일 경우 -->
+                                            <div class="valid-form-tit">
+                                                <label for="new-password">새 비밀번호</label>
+                                            </div>
+                                            <!-- required : 필수값일 경우, data-event-flag : 버튼을 눌러서 유효성을 체크할 경우, data-old-val : 기존의 값으로 data-event-flag가 Y일 경우 사용됨, data-compare-id : 해당 id를 가진 항목과 값이 같은지 여부를 비교할 경우 -->
+                                            <div class="valid-form-con">
+                                                <input type="password" id="new-password" name="" required>
+                                            </div>
+                                        </li>
+                                        <!-- password-change-area : 새 비밀번호 입력폼 -->
+                                        <li class="password-change-area">
+                                            <!-- ok : 입력값이 유효하거나 disabled일 경우 -->
+                                            <div class="valid-form-tit">
+                                                <label for="valid-form-item6">새 비밀번호 확인</label>
+                                            </div>
+                                            <!-- required : 필수값일 경우, data-event-flag : 버튼을 눌러서 유효성을 체크할 경우, data-old-val : 기존의 값으로 data-event-flag가 Y일 경우 사용됨, data-compare-id : 해당 id를 가진 항목과 값이 같은지 여부를 비교할 경우 -->
+                                            <div class="valid-form-con">
+                                                <input type="password" id="valid-form-item6" name="" required required data-compare-id="new-password">
+                                            </div>
+                                        </li>
+                                        <li>
+                                            <!-- ok : 입력값이 유효하거나 disabled일 경우 -->
+                                            <div class="valid-form-tit">
+                                                <label for="valid-form-item7">업체명</label>
+                                            </div>
+                                            <!-- required : 필수값일 경우, data-event-flag : 버튼을 눌러서 유효성을 체크할 경우, data-old-val : 기존의 값으로 data-event-flag가 Y일 경우 사용됨, data-compare-id : 해당 id를 가진 항목과 값이 같은지 여부를 비교할 경우 -->
+                                            <div class="valid-form-con">
+                                                <input type="text" id="valid-form-item7" name="" value="렌트카업체1" required>
+                                            </div>
+                                        </li>
+                                        <li>
+                                            <!-- ok : 입력값이 유효하거나 disabled일 경우 -->
+                                            <div class="valid-form-tit">
+                                                <label for="valid-form-item8">대표자명</label>
+                                            </div>
+                                            <!-- required : 필수값일 경우, data-event-flag : 버튼을 눌러서 유효성을 체크할 경우, data-old-val : 기존의 값으로 data-event-flag가 Y일 경우 사용됨, data-compare-id : 해당 id를 가진 항목과 값이 같은지 여부를 비교할 경우 -->
+                                            <div class="valid-form-con">
+                                                <input type="text" id="valid-form-item8" name="" value="황길동" required>
+                                            </div>
+                                        </li>
+                                        <li>
+                                            <!-- ok : 입력값이 유효하거나 disabled일 경우 -->
+                                            <div class="valid-form-tit">
+                                                <label for="valid-form-item9">대표연락처</label>
+                                            </div>
+                                            <!-- required : 필수값일 경우, data-event-flag : 버튼을 눌러서 유효성을 체크할 경우, data-old-val : 기존의 값으로 data-event-flag가 Y일 경우 사용됨, data-compare-id : 해당 id를 가진 항목과 값이 같은지 여부를 비교할 경우 -->
+                                            <div class="valid-form-con">
+                                                <div class="c-inline-input">
+                                                    <input type="tel" id="valid-form-item9" name="" value="010-1111-1111" required data-event-flag="Y" data-old-val="010-1111-1111">
+                                                    <button type="button" class="default-btn05" onclick="chkPhoneValid(this);">
+                                                        <span>인증요청</span>
+                                                    </button>
+                                                </div>
+                                            </div>
+                                        </li>
+                                        <li>
+                                            <!-- ok : 입력값이 유효하거나 disabled일 경우 -->
+                                            <div class="valid-form-tit">
+                                                <label for="valid-form-item10">사업자등록번호</label>
+                                            </div>
+                                            <!-- required : 필수값일 경우, data-event-flag : 버튼을 눌러서 유효성을 체크할 경우, data-old-val : 기존의 값으로 data-event-flag가 Y일 경우 사용됨, data-compare-id : 해당 id를 가진 항목과 값이 같은지 여부를 비교할 경우 -->
+                                            <div class="valid-form-con">
+                                                <div class="c-inline-input">
+                                                    <input type="tel" id="valid-form-item10" name="" value="000-00-00000" required data-event-flag="Y" data-old-val="000-00-00000">
+                                                    <button type="button" class="default-btn05" onclick="chkCorporateValid(this);">
+                                                        <span>중복확인</span>
+                                                    </button>
+                                                </div>
+                                            </div>
+                                        </li>
+                                        <li>
+                                            <!-- ok : 입력값이 유효하거나 disabled일 경우 -->
+                                            <div class="valid-form-tit">
+                                                <label for="valid-form-item11">업태</label>
+                                            </div>
+                                            <!-- required : 필수값일 경우, data-event-flag : 버튼을 눌러서 유효성을 체크할 경우, data-old-val : 기존의 값으로 data-event-flag가 Y일 경우 사용됨, data-compare-id : 해당 id를 가진 항목과 값이 같은지 여부를 비교할 경우 -->
+                                            <div class="valid-form-con">
+                                                <input type="text" id="valid-form-item11" name="" value="업태" required>
+                                            </div>
+                                        </li>
+                                        <li>
+                                            <!-- ok : 입력값이 유효하거나 disabled일 경우 -->
+                                            <div class="valid-form-tit">
+                                                <label for="valid-form-item12">종목</label>
+                                            </div>
+                                            <!-- required : 필수값일 경우, data-event-flag : 버튼을 눌러서 유효성을 체크할 경우, data-old-val : 기존의 값으로 data-event-flag가 Y일 경우 사용됨, data-compare-id : 해당 id를 가진 항목과 값이 같은지 여부를 비교할 경우 -->
+                                            <div class="valid-form-con">
+                                                <input type="text" id="valid-form-item12" name="" value="종목" required>
+                                            </div>
+                                        </li>
+                                        <li class="only-btn">
+                                            <button type="button" class="default-btn07 big-btn" onclick="location.href='mypage-member-leave.html';">
+                                                <span>탈퇴하기</span>
+                                            </button>
+                                        </li>
+                                    </ul>
+                                </div>
+                                <div class="page-form-btn-area">
+                                    <button type="button" class="default-btn01 big-btn" onclick="return chkFormValidResult(this,'');">
+                                        <span>수 정</span>
+                                    </button>
+                                </div>
+                            </form>
+                        </div>
+                    </article>
+                </section>
+            </div>
+            
+            <!-- layer -->
+            <div class="l-wrap">
+                <!-- alert창 -->
+                <div class="l-area" id="alert-layer">
+                    <div class="l-box">
+                        <div class="l-con-area">
+                            <div class="l-con"></div>
+                        </div>
+                        <div class="l-btn-area">
+                            <button type="button" class="confirm-btn">
+                                <span>확 인</span>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+                <div class="l-mask"></div>
+                
+                <!-- confirm창 -->
+                <div class="l-area" id="confirm-layer">
+                    <div class="l-box">
+                        <div class="l-con-area">
+                            <div class="l-con"></div>
+                        </div>
+                        <div class="l-btn-area">
+                            <button type="button" class="close-btn" onclick="closeLayer(this);">
+                                <span>취 소</span>
+                            </button>
+                            <button type="button" class="confirm-btn">
+                                <span>확 인</span>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+                <div class="l-mask"></div>
+                
+                <!-- alarm창 -->
+                <div class="l-area" id="alarm-layer">
+                    <div class="l-box">
+                        <div class="l-con-area">
+                            <div class="l-con-tit-area">
+                                <button type="button" class="l-con-tit-btn" onclick="closeLayer(this);">
+                                    <span><img src="../img/close-icon.png" alt="레이어닫기"></span>
+                                </button>
+                            </div>
+                            <div class="l-con"></div>
+                        </div>
+                    </div>
+                </div>
+                <div class="l-mask"></div>
+            </div>
+		</div>
+	</body>
+</html>
