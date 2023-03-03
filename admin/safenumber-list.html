@@ -85,7 +85,7 @@
                     <ul class="n-menu-list">
                         <li data-menu="admin-system">시스템관리</li>
                         <li data-menu="admin-data">데이터관리</li>
-                        <li data-menu="admin-safenumber">안심번호관리</li>
+                        <li class="active" data-menu="admin-safenumber">안심번호관리</li>
                         <li data-menu="admin-business">업체관리</li>
                         <li data-menu="admin-stats">통계관리</li>
                         <li data-menu="admin-map">위치정보 및 지도</li>
@@ -193,132 +193,193 @@
             
 			<!-- content -->
             <div class="c-wrap">
-                <!-- c-main : 메인페이지 -->
-                <section class="c-main center-ct">
-                    <!-- 메인 공지사항 -->
-                    <article class="main-notice-area">
-                        <div class="main-notice-top">
-                            <div class="tit">공지사항</div>
-                            <button type="button" class="main-notice-btn" onclick="location.href='board-notice-list.html';">
-                                <span>더보기</span>
-                            </button>
+                <!-- c-page : 기본페이지 -->
+                <section class="c-page center-ct">
+                    <!-- aside -->
+                    <aside class="aside">
+                        <h1 class="not-view">aside</h1>
+                        
+                        <div class="a-menu-tit">안심번호관리</div>
+                    </aside>
+                    
+                    <!-- 페이지 내용 -->
+                    <article class="page-area">
+                        <div class="page-top-area">
+                            <div class="tit">안심번호 목록</div>
+                            <div class="cate">안심번호관리</div>
                         </div>
                         
-                        <ul class="main-notice-list">
-                            <li>
-                                <div class="tit">
-                                    <a href="board-notice-detail.html">[긴급] 공지사항입니다. 공지사항입니다. 공지사항입니다. 공지사항입니다. 공지사항입니다. 공지사항입니다. 공지사항입니다. 공지사항입니다. 공지사항입니다. 공지사항입니다.</a>
+                        <div class="page-list-area">
+                            <form id="" name="" method="" action="">
+                                <div class="list-search-area">
+                                    <div class="search-table-area">
+                                        <table class="search-table">
+                                            <colgroup>
+                                                <col width="120">
+                                                <col width="*">
+                                                <col width="120">
+                                                <col width="*">
+                                            </colgroup>
+                                            <tbody>
+                                                <tr>
+                                                    <th>구분</th>
+                                                    <td>
+                                                        <select id="" name="">
+                                                            <option value="">전체</option>
+                                                            <option value="일반">일반</option>
+                                                            <option value="렌트">렌트</option>
+                                                        </select>
+                                                    </td>
+                                                    <th>등록여부</th>
+                                                    <td>
+                                                        <select id="" name="">
+                                                            <option value="">전체</option>
+                                                            <option value="등록">등록</option>
+                                                            <option value="미등록">미등록</option>
+                                                        </select>
+                                                    </td>
+                                                </tr>
+                                                <tr>
+                                                    <th>생성일자</th>
+                                                    <td>
+                                                        <input type="text" id="" name="" class="start-date-input" readonly placeholder="시작일자" autocomplete="off">
+                                                        <span class="split">~</span>
+                                                        <input type="text" id="" name="" class="end-date-input" readonly placeholder="종료일자" autocomplete="off">
+                                                    </td>
+                                                    <th>검색</th>
+                                                    <td>
+                                                        <input type="text" id="" name="" placeholder="안심번호를 입력하세요">
+                                                    </td>
+                                                </tr>
+                                            </tbody>
+                                        </table>
+                                    </div>
+                                    <div class="search-btn-area">
+                                        <button type="button" class="search-btn" onclick="">
+                                            <span>검색</span>
+                                        </button>
+                                    </div>
                                 </div>
-                                <div class="date">2023-01-18</div>
-                            </li>
-                            <li>
-                                <div class="tit">
-                                    <a href="board-notice-detail.html">[긴급] 공지사항입니다. 공지사항입니다. 공지사항입니다. 공지사항입니다. 공지사항입니다. 공지사항입니다. 공지사항입니다. 공지사항입니다. 공지사항입니다. 공지사항입니다.</a>
+                            </form>
+                            
+                            <div class="list-main-area">
+                                <div class="list-top-area">
+                                    <div class="list-top-left">
+                                        <div class="cnt">총 5개</div>
+                                    </div>
+                                    <div class="list-top-right">
+                                        <button type="button" class="default-btn01 add-btn" onclick="openSafenumberInsertLayer(this);">
+                                            <span>안심번호 생성</span>
+                                        </button>
+                                        <button type="button" class="default-btn02 download-btn" onclick="">
+                                            <span>리포트 다운로드</span>
+                                        </button>
+                                    </div>
                                 </div>
-                                <div class="date">2023-01-18</div>
-                            </li>
-                            <li>
-                                <div class="tit">
-                                    <a href="board-notice-detail.html">[긴급] 공지사항입니다. 공지사항입니다. 공지사항입니다. 공지사항입니다. 공지사항입니다. 공지사항입니다. 공지사항입니다. 공지사항입니다. 공지사항입니다. 공지사항입니다.</a>
+                                <div class="list-table-area">
+                                    <table class="list-table">
+                                        <colgroup>
+                                            <col width="60">
+                                            <col width="10%">
+                                            <col width="*">
+                                            <col width="10%">
+                                            <col width="10%">
+                                            <col width="*">
+                                            <col width="*">
+                                        </colgroup>
+                                        <thead>
+                                            <tr>
+                                                <th>번호</th>
+                                                <th>안심번호</th>
+                                                <th>연락처</th>
+                                                <th>구분</th>
+                                                <th>등록여부</th>
+                                                <th>등록일자</th>
+                                                <th>생성일자</th>
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                            <tr>
+                                                <td class="num">5</td>
+                                                <td>110005</td>
+                                                <td>010-5555-5555</td>
+                                                <td>일반</td>
+                                                <td>미등록</td>
+                                                <td class="highlight"></td>
+                                                <td class="highlight">2023-01-17 00:00:00</td>
+                                            </tr>
+                                            <tr>
+                                                <td class="num">4</td>
+                                                <td>110004</td>
+                                                <td>010-4444-4444</td>
+                                                <td>일반</td>
+                                                <td>등록</td>
+                                                <td class="highlight">2023-01-17 00:00:00</td>
+                                                <td class="highlight">2023-01-17 00:00:00</td>
+                                            </tr>
+                                            <tr>
+                                                <td class="num">3</td>
+                                                <td>110003</td>
+                                                <td>010-3333-3333</td>
+                                                <td>렌트</td>
+                                                <td>등록</td>
+                                                <td class="highlight">2023-01-17 00:00:00</td>
+                                                <td class="highlight">2023-01-17 00:00:00</td>
+                                            </tr>
+                                            <tr>
+                                                <td class="num">2</td>
+                                                <td>110002</td>
+                                                <td>010-2222-2222</td>
+                                                <td>일반</td>
+                                                <td>미등록</td>
+                                                <td class="highlight"></td>
+                                                <td class="highlight">2023-01-17 00:00:00</td>
+                                            </tr>
+                                            <tr>
+                                                <td class="num">1</td>
+                                                <td>110001</td>
+                                                <td>010-1111-1111</td>
+                                                <td>일반</td>
+                                                <td>등록</td>
+                                                <td class="highlight">2023-01-17 00:00:00</td>
+                                                <td class="highlight">2023-01-17 00:00:00</td>
+                                            </tr>
+                                        </tbody>
+                                    </table>
                                 </div>
-                                <div class="date">2023-01-18</div>
-                            </li>
-                            <li>
-                                <div class="tit">
-                                    <a href="board-notice-detail.html">[긴급] 공지사항입니다. 공지사항입니다. 공지사항입니다. 공지사항입니다. 공지사항입니다. 공지사항입니다. 공지사항입니다. 공지사항입니다. 공지사항입니다. 공지사항입니다.</a>
+                                <div class="list-paging-area">
+                                    <ul class="list-paging">
+                                        <li class="arrow first-arrow disabled">
+                                            <a href="#"></a>
+                                        </li>
+                                        <li class="arrow prev-arrow disabled">
+                                            <a href="#"></a>
+                                        </li>
+                                        <li class="on">
+                                            <a href="#">1</a>
+                                        </li>
+                                        <li>
+                                            <a href="#">2</a>
+                                        </li>
+                                        <li>
+                                            <a href="#">3</a>
+                                        </li>
+                                        <li>
+                                            <a href="#">4</a>
+                                        </li>
+                                        <li>
+                                            <a href="#">5</a>
+                                        </li>
+                                        <li class="arrow next-arrow">
+                                            <a href="#"></a>
+                                        </li>
+                                        <li class="arrow last-arrow disabled">
+                                            <a href="#"></a>
+                                        </li>
+                                    </ul>
                                 </div>
-                                <div class="date">2023-01-18</div>
-                            </li>
-                            <li>
-                                <div class="tit">
-                                    <a href="board-notice-detail.html">[긴급] 공지사항입니다. 공지사항입니다. 공지사항입니다. 공지사항입니다. 공지사항입니다. 공지사항입니다. 공지사항입니다. 공지사항입니다. 공지사항입니다. 공지사항입니다.</a>
-                                </div>
-                                <div class="date">2023-01-18</div>
-                            </li>
-                        </ul>
-                    </article>
-                    
-                    <!-- 메인 메뉴 -->
-                    <article class="main-menu-area">
-                        <ul class="main-menu-list">
-                            <li data-menu="admin-system">
-                                <div class="main-menu-tit">시스템관리</div>
-                                
-                                <ul class="main-sub-menu-list">
-                                    <li>
-                                        <a href="system-admin-list.html">관리자 계정관리</a>
-                                    </li>
-                                    <li>
-                                        <a href="system-user-list.html">사용자 계정관리</a>
-                                    </li>
-                                    <li>
-                                        <a href="system-admin-log.html">관리자 로그관리</a>
-                                    </li>
-                                    <li>
-                                        <a href="system-user-log.html">사용자 로그관리</a>
-                                    </li>
-                                    <li>
-                                        <a href="system-auth-list.html">권한관리</a>
-                                    </li>
-                                    <li>
-                                        <a href="system-code-list.html">코드관리</a>
-                                    </li>
-                                    <li>
-                                        <a href="system-template-list.html">QR코드 템플릿관리</a>
-                                    </li>
-                                    <li>
-                                        <a href="system-agreement-list.html">약관관리</a>
-                                    </li>
-                                </ul>
-                            </li>
-                            <li data-menu="admin-data">
-                                <div class="main-menu-tit">데이터관리</div>
-                                
-                                <ul class="main-sub-menu-list">
-                                    <li>
-                                        <a href="data-place-list.html">공유장소관리</a>
-                                    </li>
-                                </ul>
-                            </li>
-                            <li data-menu="admin-safenumber">
-                                <div class="main-menu-tit">
-                                    <a href="safenumber-list.html">안심번호관리</a>
-                                </div>
-                            </li>
-                            <li data-menu="admin-business">
-                                <div class="main-menu-tit">
-                                    <a href="business-list.html">업체관리</a>
-                                </div>
-                            </li>
-                            <li data-menu="admin-stats">
-                                <div class="main-menu-tit">
-                                    <a href="stats-list.html">통계관리</a>
-                                </div>
-                            </li>
-                            <li data-menu="admin-map">
-                                <div class="main-menu-tit">
-                                    <a href="map.html">위치정보 및 지도</a>
-                                </div>
-                            </li>
-                            <li data-menu="admin-board">
-                                <div class="main-menu-tit">게시판관리</div>
-                                
-                                <ul class="main-sub-menu-list">
-                                    <li>
-                                        <a href="board-notice-list.html">공지사항</a>
-                                    </li>
-                                    <li>
-                                        <a href="board-qna-list.html">QNA</a>
-                                    </li>
-                                    <li>
-                                        <a href="board-reference-list.html">자료실</a>
-                                    </li>
-                                    <li>
-                                        <a href="board-faq-list.html">FAQ</a>
-                                    </li>
-                                </ul>
-                            </li>
-                        </ul>
+                            </div>
+                        </div>
                     </article>
                 </section>
             </div>
@@ -467,6 +528,51 @@
                         <div class="l-btn-area">
                             <button type="button" class="default-btn01" onclick="">
                                 <span>수 정</span>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+                <div class="l-mask"></div>
+                
+                <!-- 안심번호 생성창 -->
+                <div class="l-area" id="safenumber-insert-layer">
+                    <div class="l-box">
+                        <div class="l-tit-area">
+                            <div class="l-tit">안심번호 생성</div>
+                            <button type="button" class="l-tit-btn" onclick="closeLayer(this);">
+                                <span><img src="../img/close-icon.png" alt="레이어닫기"></span>
+                            </button>
+                        </div>
+                        <div class="l-con-area">
+                            <div class="detail-table-area">
+                                <table class="detail-table">
+                                    <colgroup>
+                                        <col width="120">
+                                        <col width="*">
+                                    </colgroup>
+                                    <tbody>
+                                        <tr>
+                                            <th>수량 묶음</th>
+                                            <td>
+                                                <div class="c-inline-input">
+                                                    <select id="" name="">
+                                                        <option value="일반">일반</option>
+                                                        <option value="렌트">렌트</option>
+                                                    </select>
+                                                    <input type="number" id="" name="" placeholder="수량 묶음을 입력하세요">
+                                                </div>
+                                            </td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                            <div class="detail-bottom-area">
+                                <div class="c-notice-txt">안심번호 수량 1묶음 = 안심번호 100개입니다.</div>
+                            </div>
+                        </div>
+                        <div class="l-btn-area">
+                            <button type="button" class="default-btn01" onclick="">
+                                <span>생 성</span>
                             </button>
                         </div>
                     </div>

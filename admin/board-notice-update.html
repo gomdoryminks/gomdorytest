@@ -89,7 +89,7 @@
                         <li data-menu="admin-business">업체관리</li>
                         <li data-menu="admin-stats">통계관리</li>
                         <li data-menu="admin-map">위치정보 및 지도</li>
-                        <li data-menu="admin-board">게시판관리</li>
+                        <li class="active" data-menu="admin-board">게시판관리</li>
                     </ul>
                     
                     <!-- 상단 중메뉴 -->
@@ -193,132 +193,141 @@
             
 			<!-- content -->
             <div class="c-wrap">
-                <!-- c-main : 메인페이지 -->
-                <section class="c-main center-ct">
-                    <!-- 메인 공지사항 -->
-                    <article class="main-notice-area">
-                        <div class="main-notice-top">
-                            <div class="tit">공지사항</div>
-                            <button type="button" class="main-notice-btn" onclick="location.href='board-notice-list.html';">
-                                <span>더보기</span>
-                            </button>
+                <!-- c-page : 기본페이지 -->
+                <section class="c-page center-ct">
+                    <!-- aside -->
+                    <aside class="aside">
+                        <h1 class="not-view">aside</h1>
+                        
+                        <div class="a-menu-tit">게시판관리</div>
+                        
+                        <!-- active : 해당 페이지의 메뉴에 추가 -->
+                        <ul class="a-menu-list">
+                            <li class="active">
+                                <a href="board-notice-list.html">공지사항</a>
+                            </li>
+                            <li>
+                                <a href="board-qna-list.html">QNA</a>
+                            </li>
+                            <li>
+                                <a href="board-reference-list.html">자료실</a>
+                            </li>
+                            <li>
+                                <a href="board-faq-list.html">FAQ</a>
+                            </li>
+                        </ul>
+                    </aside>
+                    
+                    <!-- 페이지 내용 -->
+                    <article class="page-area">
+                        <div class="page-top-area">
+                            <div class="tit">공지사항 수정</div>
+                            <div class="cate">게시판관리 > 공지사항</div>
                         </div>
                         
-                        <ul class="main-notice-list">
-                            <li>
-                                <div class="tit">
-                                    <a href="board-notice-detail.html">[긴급] 공지사항입니다. 공지사항입니다. 공지사항입니다. 공지사항입니다. 공지사항입니다. 공지사항입니다. 공지사항입니다. 공지사항입니다. 공지사항입니다. 공지사항입니다.</a>
+                        <div class="page-write-area">
+                            <form id="" name="" method="" action="">                        
+                                <div class="detail-table-area">
+                                    <table class="detail-table">
+                                        <colgroup>
+                                            <col width="130">
+                                            <col width="*">
+                                            <col width="130">
+                                            <col width="*">
+                                        </colgroup>
+                                        <tbody>
+                                            <tr>
+                                                <th>종류</th>
+                                                <td>
+                                                    <select id="" name="">
+                                                        <option value="일반" selected>일반</option>
+                                                        <option value="긴급">긴급</option>
+                                                    </select>
+                                                </td>
+                                                <th>노출상태</th>
+                                                <td>
+                                                    <select id="" name="">
+                                                        <option value="노출" selected>노출</option>
+                                                        <option value="노출안함">노출안함</option>
+                                                    </select>
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <th>공지기간</th>
+                                                <td colspan="3">
+                                                    <!-- notice-period-area : 공지기간 활성화여부 설정폼 -->
+                                                    <div class="c-inline-input notice-period-area">
+                                                        <input type="text" id="" name="" class="start-date-input" readonly placeholder="시작일자" autocomplete="off">
+                                                        <span class="split">~</span>
+                                                        <input type="text" id="" name="" class="end-date-input" readonly placeholder="종료일자" autocomplete="off">
+                                                        <div class="c-checkbox">
+                                                            <input type="checkbox" id="notice-period" name="" checked onclick="setNoticePeriod(this);">
+                                                            <label for="notice-period">제한없음</label>
+                                                        </div>
+                                                    </div>
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <th>제목</th>
+                                                <td colspan="3">
+                                                    <input type="text" id="" name="" value="일반 공지사항입니다.">
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <th>내용</th>
+                                                <td colspan="3">
+                                                    <textarea id="" name="" required="">Smart Editor 사용</textarea>
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <th>첨부파일1</th>
+                                                <td colspan="3">
+                                                    <div class="c-file-input">
+                                                        <input type="text" id="" name="" class="c-file-txt" value="첨부파일1.png" disabled>
+                                                        <label style="display: none;">
+                                                            <input type="file" id="" name="">파일선택
+                                                        </label>
+                                                        <button type="button" class="c-file-btn" onclick="delFile(this);">
+                                                            <span>파일삭제</span>
+                                                        </button>
+                                                    </div>
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <th>첨부파일2</th>
+                                                <td colspan="3">
+                                                    <div class="c-file-input">
+                                                        <input type="text" id="" name="" class="c-file-txt" disabled>
+                                                        <label>
+                                                            <input type="file" id="" name="">파일선택
+                                                        </label>
+                                                    </div>
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <th>첨부파일3</th>
+                                                <td colspan="3">
+                                                    <div class="c-file-input">
+                                                        <input type="text" id="" name="" class="c-file-txt" disabled>
+                                                        <label>
+                                                            <input type="file" id="" name="">파일선택
+                                                        </label>
+                                                    </div>
+                                                </td>
+                                            </tr>
+                                        </tbody>
+                                    </table>
                                 </div>
-                                <div class="date">2023-01-18</div>
-                            </li>
-                            <li>
-                                <div class="tit">
-                                    <a href="board-notice-detail.html">[긴급] 공지사항입니다. 공지사항입니다. 공지사항입니다. 공지사항입니다. 공지사항입니다. 공지사항입니다. 공지사항입니다. 공지사항입니다. 공지사항입니다. 공지사항입니다.</a>
+                                <div class="detail-btn-area">
+                                    <button type="button" class="default-btn04" onclick="location.href='board-notice-list.html';">
+                                        <span>목 록</span>
+                                    </button>
+                                    <button type="button" class="default-btn05 register-btn" onclick="location.href='board-notice-detail.html';">
+                                        <span>수 정</span>
+                                    </button>
                                 </div>
-                                <div class="date">2023-01-18</div>
-                            </li>
-                            <li>
-                                <div class="tit">
-                                    <a href="board-notice-detail.html">[긴급] 공지사항입니다. 공지사항입니다. 공지사항입니다. 공지사항입니다. 공지사항입니다. 공지사항입니다. 공지사항입니다. 공지사항입니다. 공지사항입니다. 공지사항입니다.</a>
-                                </div>
-                                <div class="date">2023-01-18</div>
-                            </li>
-                            <li>
-                                <div class="tit">
-                                    <a href="board-notice-detail.html">[긴급] 공지사항입니다. 공지사항입니다. 공지사항입니다. 공지사항입니다. 공지사항입니다. 공지사항입니다. 공지사항입니다. 공지사항입니다. 공지사항입니다. 공지사항입니다.</a>
-                                </div>
-                                <div class="date">2023-01-18</div>
-                            </li>
-                            <li>
-                                <div class="tit">
-                                    <a href="board-notice-detail.html">[긴급] 공지사항입니다. 공지사항입니다. 공지사항입니다. 공지사항입니다. 공지사항입니다. 공지사항입니다. 공지사항입니다. 공지사항입니다. 공지사항입니다. 공지사항입니다.</a>
-                                </div>
-                                <div class="date">2023-01-18</div>
-                            </li>
-                        </ul>
-                    </article>
-                    
-                    <!-- 메인 메뉴 -->
-                    <article class="main-menu-area">
-                        <ul class="main-menu-list">
-                            <li data-menu="admin-system">
-                                <div class="main-menu-tit">시스템관리</div>
-                                
-                                <ul class="main-sub-menu-list">
-                                    <li>
-                                        <a href="system-admin-list.html">관리자 계정관리</a>
-                                    </li>
-                                    <li>
-                                        <a href="system-user-list.html">사용자 계정관리</a>
-                                    </li>
-                                    <li>
-                                        <a href="system-admin-log.html">관리자 로그관리</a>
-                                    </li>
-                                    <li>
-                                        <a href="system-user-log.html">사용자 로그관리</a>
-                                    </li>
-                                    <li>
-                                        <a href="system-auth-list.html">권한관리</a>
-                                    </li>
-                                    <li>
-                                        <a href="system-code-list.html">코드관리</a>
-                                    </li>
-                                    <li>
-                                        <a href="system-template-list.html">QR코드 템플릿관리</a>
-                                    </li>
-                                    <li>
-                                        <a href="system-agreement-list.html">약관관리</a>
-                                    </li>
-                                </ul>
-                            </li>
-                            <li data-menu="admin-data">
-                                <div class="main-menu-tit">데이터관리</div>
-                                
-                                <ul class="main-sub-menu-list">
-                                    <li>
-                                        <a href="data-place-list.html">공유장소관리</a>
-                                    </li>
-                                </ul>
-                            </li>
-                            <li data-menu="admin-safenumber">
-                                <div class="main-menu-tit">
-                                    <a href="safenumber-list.html">안심번호관리</a>
-                                </div>
-                            </li>
-                            <li data-menu="admin-business">
-                                <div class="main-menu-tit">
-                                    <a href="business-list.html">업체관리</a>
-                                </div>
-                            </li>
-                            <li data-menu="admin-stats">
-                                <div class="main-menu-tit">
-                                    <a href="stats-list.html">통계관리</a>
-                                </div>
-                            </li>
-                            <li data-menu="admin-map">
-                                <div class="main-menu-tit">
-                                    <a href="map.html">위치정보 및 지도</a>
-                                </div>
-                            </li>
-                            <li data-menu="admin-board">
-                                <div class="main-menu-tit">게시판관리</div>
-                                
-                                <ul class="main-sub-menu-list">
-                                    <li>
-                                        <a href="board-notice-list.html">공지사항</a>
-                                    </li>
-                                    <li>
-                                        <a href="board-qna-list.html">QNA</a>
-                                    </li>
-                                    <li>
-                                        <a href="board-reference-list.html">자료실</a>
-                                    </li>
-                                    <li>
-                                        <a href="board-faq-list.html">FAQ</a>
-                                    </li>
-                                </ul>
-                            </li>
-                        </ul>
+                            </form>
+                        </div>
                     </article>
                 </section>
             </div>

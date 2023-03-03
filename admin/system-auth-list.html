@@ -1,0 +1,1670 @@
+<!DOCTYPE html>
+<html lang="ko">
+	<head>
+		<meta charset="utf-8">
+		<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+		<title>제주주차안심</title>
+		<meta name="description" content="제주주차안심">
+		<meta name="author" content="minks">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, user-scalable=no">
+		<link rel="shortcut icon" href="../img/logo-favicon.ico">
+		<link rel="apple-touch-icon" href="../img/logo-favicon.ico">
+		
+		<link href="../css/reset.css" type="text/css" rel="stylesheet">
+		<link href="../css/font.css" type="text/css" rel="stylesheet">
+		<link href="../css/swiper.min.css" type="text/css" rel="stylesheet">
+        <link href="../css/slick.css" type="text/css" rel="stylesheet">
+        <link href="../css/slick-theme.css" type="text/css" rel="stylesheet">
+        <link href="../css/jquery-ui.min.css" type="text/css" rel="stylesheet">
+        <link href="../css/jquery-datepicker.css" type="text/css" rel="stylesheet">
+        <link href="../css/jquery-ui-timepicker-addon.css" type="text/css" rel="stylesheet">
+        <link href="../css/yearpicker.css" type="text/css" rel="stylesheet">
+		<link href="../css/admin.css" type="text/css" rel="stylesheet">
+		
+		<!--[if lt IE 9]>
+		<script src="../js/jquery-1.11.1.min.js"></script>
+		<script src="../js/html5shiv.js"></script>
+		<![endif]-->
+		
+		<!--[if gte IE 9]>
+		<script src="../js/jquery-3.4.1.min.js"></script>
+		<![endif]-->
+		
+		<!--[if !IE]>--> 
+		<script src="../js/jquery-3.4.1.min.js"></script>
+		<!--<![endif]-->
+		
+		<script src="../js/jquery-migrate-1.4.1.min.js"></script>
+		<script src="../js/swiper.min.js"></script>
+        <script src="../js/slick.js"></script>
+        <script src="../js/jquery-ui.min.js"></script>
+        <script src="../js/jquery-ui-timepicker-addon.js"></script>
+        <script src="../js/jquery.ui.monthpicker.js"></script>
+        <script src="../js/yearpicker.js"></script>
+        <script src="../js/datepicker-ko.js"></script>
+        <script src="../js/chart.js"></script>
+        <script src="../js/chartjs-adapter-date-fns.bundle.min.js"></script>
+        <script src="../js/admin-function.js"></script>
+	</head>
+
+	<body>
+		<div class="wrap">
+            <!-- header -->
+		    <header class="header">
+                <h1 class="not-view">header</h1>
+                
+                <div class="center-ct">
+                    <div class="h-tit-area">
+                        <div class="tit-txt">
+                            <a href="index.html">제주 주차 안심번호 관리자</a>
+                        </div>
+                        <div class="tit-btn">
+                            <button type="button" class="tit-mypage-btn" onclick="openMyinfoLayer(this);">
+                                <span>마이페이지</span>
+                            </button>
+                            <button type="button" class="tit-logout-btn" onclick="location.href='login.html';">
+                                <span>로그아웃</span>
+                            </button>
+                        </div>
+                    </div>
+                    
+                    <div class="h-con-area">
+                        <div class="con-txt">
+                            <div class="big">제주 주차<br>안심번호<br>서비스</div>
+                            <div class="medium"><span>QR코드</span>와 <span>ARS전화</span>로 <span>개인정보 노출 걱정 NO!</span></div>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- nav -->
+                <!-- 상단 대메뉴 -->
+                <nav class="nav">
+                    <h2 class="not-view">nav</h2>
+                    
+                    <!-- active : 해당 페이지의 대메뉴에 추가 -->
+                    <ul class="n-menu-list">
+                        <li class="active" data-menu="admin-system">시스템관리</li>
+                        <li data-menu="admin-data">데이터관리</li>
+                        <li data-menu="admin-safenumber">안심번호관리</li>
+                        <li data-menu="admin-business">업체관리</li>
+                        <li data-menu="admin-stats">통계관리</li>
+                        <li data-menu="admin-map">위치정보 및 지도</li>
+                        <li data-menu="admin-board">게시판관리</li>
+                    </ul>
+                    
+                    <!-- 상단 중메뉴 -->
+                    <div class="nav-sub">
+                        <div class="center-ct">
+                            <!-- 시스템관리 하위메뉴 -->
+                            <div class="n-sub-menu-area" data-menu="admin-system">
+                                <div class="n-sub-menu-txt">
+                                    <div class="big">시스템 관리</div>
+                                    <div class="small">QR코드와 ARS전화로<br>개인정보 노출 걱정 NO!</div>
+                                </div>
+
+                                <ul class="n-sub-menu-list">
+                                    <li>
+                                        <a href="system-admin-list.html">관리자 계정관리</a>
+                                    </li>
+                                    <li>
+                                        <a href="system-user-list.html">사용자 계정관리</a>
+                                    </li>
+                                    <li>
+                                        <a href="system-admin-log.html">관리자 로그관리</a>
+                                    </li>
+                                    <li>
+                                        <a href="system-user-log.html">사용자 로그관리</a>
+                                    </li>
+                                    <li>
+                                        <a href="system-auth-list.html">권한관리</a>
+                                    </li>
+                                    <li>
+                                        <a href="system-code-list.html">코드관리</a>
+                                    </li>
+                                    <li>
+                                        <a href="system-template-list.html">QR코드 템플릿관리</a>
+                                    </li>
+                                    <li>
+                                        <a href="system-agreement-list.html">약관관리</a>
+                                    </li>
+                                </ul>
+                            </div>
+
+                            <!-- 데이터관리 하위메뉴 -->
+                            <div class="n-sub-menu-area" data-menu="admin-data">
+                                <div class="n-sub-menu-txt">
+                                    <div class="big">데이터 관리</div>
+                                    <div class="small">QR코드와 ARS전화로<br>개인정보 노출 걱정 NO!</div>
+                                </div>
+
+                                <ul class="n-sub-menu-list">
+                                    <li>
+                                        <a href="data-place-list.html">공유장소관리</a>
+                                    </li>
+                                </ul>
+                            </div>
+
+                            <!-- 안심번호관리 링크 -->
+                            <div class="n-sub-menu-area" data-menu="admin-safenumber" data-link="safenumber-list.html">
+
+                            </div>
+
+                            <!-- 업체관리 링크 -->
+                            <div class="n-sub-menu-area" data-menu="admin-business" data-link="business-list.html">
+
+                            </div>
+
+                            <!-- 통계관리 링크 -->
+                            <div class="n-sub-menu-area" data-menu="admin-stats" data-link="stats-list.html">
+
+                            </div>
+
+                            <!-- 위치정보 및 지도 링크 -->
+                            <div class="n-sub-menu-area" data-menu="admin-map" data-link="map.html">
+
+                            </div>
+
+                            <!-- 게시판관리 하위메뉴 -->
+                            <div class="n-sub-menu-area" data-menu="admin-board">
+                                <div class="n-sub-menu-txt">
+                                    <div class="big">게시판 관리</div>
+                                    <div class="small">QR코드와 ARS전화로<br>개인정보 노출 걱정 NO!</div>
+                                </div>
+
+                                <ul class="n-sub-menu-list">
+                                    <li>
+                                        <a href="board-notice-list.html">공지사항</a>
+                                    </li>
+                                    <li>
+                                        <a href="board-qna-list.html">QNA</a>
+                                    </li>
+                                    <li>
+                                        <a href="board-reference-list.html">자료실</a>
+                                    </li>
+                                    <li>
+                                        <a href="board-faq-list.html">FAQ</a>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </nav>
+            </header>
+            
+			<!-- content -->
+            <div class="c-wrap">
+                <!-- c-page : 기본페이지 -->
+                <section class="c-page center-ct">
+                    <!-- aside -->
+                    <aside class="aside">
+                        <h1 class="not-view">aside</h1>
+                        
+                        <div class="a-menu-tit">시스템관리</div>
+                        
+                        <!-- active : 해당 페이지의 메뉴에 추가 -->
+                        <ul class="a-menu-list">
+                            <li>
+                                <a href="system-admin-list.html">관리자 계정관리</a>
+                            </li>
+                            <li>
+                                <a href="system-user-list.html">사용자 계정관리</a>
+                            </li>
+                            <li>
+                                <a href="system-admin-log.html">관리자 로그관리</a>
+                            </li>
+                            <li>
+                                <a href="system-user-log.html">사용자 로그관리</a>
+                            </li>
+                            <li class="active">
+                                <a href="system-auth-list.html">권한관리</a>
+                            </li>
+                            <li>
+                                <a href="system-code-list.html">코드관리</a>
+                            </li>
+                            <li>
+                                <a href="system-template-list.html">QR코드 템플릿관리</a>
+                            </li>
+                            <li>
+                                <a href="system-agreement-list.html">약관관리</a>
+                            </li>
+                        </ul>
+                    </aside>
+                    
+                    <!-- 페이지 내용 -->
+                    <article class="page-area">
+                        <div class="page-top-area">
+                            <div class="tit">권한 목록</div>
+                            <div class="cate">시스템관리 > 권한관리</div>
+                        </div>
+                        
+                        <div class="page-list-area">
+                            <form id="" name="" method="" action="">
+                                <div class="list-search-area">
+                                    <div class="search-table-area">
+                                        <table class="search-table">
+                                            <colgroup>
+                                                <col width="120">
+                                                <col width="*">
+                                                <col width="120">
+                                                <col width="*">
+                                            </colgroup>
+                                            <tbody>
+                                                <tr>
+                                                    <th>검색</th>
+                                                    <td colspan="3">
+                                                        <input type="text" id="" name="" placeholder="권한명을 입력하세요">
+                                                    </td>
+                                                </tr>
+                                            </tbody>
+                                        </table>
+                                    </div>
+                                    <div class="search-btn-area">
+                                        <button type="button" class="search-btn" onclick="">
+                                            <span>검색</span>
+                                        </button>
+                                    </div>
+                                </div>
+                            </form>
+                            
+                            <div class="list-main-area">
+                                <div class="list-top-area">
+                                    <div class="list-top-left">
+                                        <div class="cnt">총 5개</div>
+                                    </div>
+                                    <div class="list-top-right">
+                                        <button type="button" class="default-btn01" onclick="openAuthInsertLayer(this);">
+                                            <span>권한 등록</span>
+                                        </button>
+                                    </div>
+                                </div>
+                                <div class="list-table-area">
+                                    <table class="list-table">
+                                        <colgroup>
+                                            <col width="60">
+                                            <col width="24%">
+                                            <col width="*">
+                                            <col width="70">
+                                            <col width="70">
+                                        </colgroup>
+                                        <thead>
+                                            <tr>
+                                                <th>번호</th>
+                                                <th>권한명</th>
+                                                <th>권한설명</th>
+                                                <th>수정</th>
+                                                <th>삭제</th>
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                            <tr>
+                                                <td class="num">5</td>
+                                                <td>기타관리자2</td>
+                                                <td>기타관리자2</td>
+                                                <td>
+                                                    <button type="button" class="default-btn01 small-btn" onclick="openAuthUpdateLayer(this);">
+                                                        <span>수 정</span>
+                                                    </button>
+                                                </td>
+                                                <td>
+                                                    <button type="button" class="default-btn03 small-btn" onclick="openLayer('confirm','정말 삭제하시겠습니까?','');">
+                                                        <span>삭 제</span>
+                                                    </button>
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <td class="num">4</td>
+                                                <td>서귀포시관리자</td>
+                                                <td>서귀포시관리자</td>
+                                                <td>
+                                                    <button type="button" class="default-btn01 small-btn" onclick="openAuthUpdateLayer(this);">
+                                                        <span>수 정</span>
+                                                    </button>
+                                                </td>
+                                                <td>
+                                                    <button type="button" class="default-btn03 small-btn" onclick="openLayer('confirm','정말 삭제하시겠습니까?','');">
+                                                        <span>삭 제</span>
+                                                    </button>
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <td class="num">3</td>
+                                                <td>제주시관리자</td>
+                                                <td>제주시관리자</td>
+                                                <td>
+                                                    <button type="button" class="default-btn01 small-btn" onclick="openAuthUpdateLayer(this);">
+                                                        <span>수 정</span>
+                                                    </button>
+                                                </td>
+                                                <td>
+                                                    <button type="button" class="default-btn03 small-btn" onclick="openLayer('confirm','정말 삭제하시겠습니까?','');">
+                                                        <span>삭 제</span>
+                                                    </button>
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <td class="num">2</td>
+                                                <td>기타관리자</td>
+                                                <td>기타관리자</td>
+                                                <td>
+                                                    <button type="button" class="default-btn01 small-btn" onclick="openAuthUpdateLayer(this);">
+                                                        <span>수 정</span>
+                                                    </button>
+                                                </td>
+                                                <td>
+                                                    <button type="button" class="default-btn03 small-btn" onclick="openLayer('confirm','정말 삭제하시겠습니까?','');">
+                                                        <span>삭 제</span>
+                                                    </button>
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <td class="num">1</td>
+                                                <td>일반관리자</td>
+                                                <td>일반관리자</td>
+                                                <td>
+                                                    <button type="button" class="default-btn01 small-btn" onclick="openAuthUpdateLayer(this);">
+                                                        <span>수 정</span>
+                                                    </button>
+                                                </td>
+                                                <td>
+                                                    <button type="button" class="default-btn03 small-btn" onclick="openLayer('confirm','정말 삭제하시겠습니까?','');">
+                                                        <span>삭 제</span>
+                                                    </button>
+                                                </td>
+                                            </tr>
+                                        </tbody>
+                                    </table>
+                                </div>
+                                <div class="list-paging-area">
+                                    <ul class="list-paging">
+                                        <li class="arrow first-arrow disabled">
+                                            <a href="#"></a>
+                                        </li>
+                                        <li class="arrow prev-arrow disabled">
+                                            <a href="#"></a>
+                                        </li>
+                                        <li class="on">
+                                            <a href="#">1</a>
+                                        </li>
+                                        <li>
+                                            <a href="#">2</a>
+                                        </li>
+                                        <li>
+                                            <a href="#">3</a>
+                                        </li>
+                                        <li>
+                                            <a href="#">4</a>
+                                        </li>
+                                        <li>
+                                            <a href="#">5</a>
+                                        </li>
+                                        <li class="arrow next-arrow">
+                                            <a href="#"></a>
+                                        </li>
+                                        <li class="arrow last-arrow disabled">
+                                            <a href="#"></a>
+                                        </li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                    </article>
+                </section>
+            </div>
+            
+            <!-- footer -->
+			<footer class="footer">
+				<h1 class="not-view">footer</h1>
+                
+                <div class="center-ct">
+                    <div class="f-info-area">
+                        <img src="../img/admin-footer-logo.png" alt="푸터로고" class="info-logo">
+                        <div class="info-txt">COPYRIGHT 2023 제주특별자치도<br>ALL RIGHTS RESERVED.</div>
+                    </div>
+                </div>
+			</footer>
+            
+            <!-- layer -->
+            <div class="l-wrap">
+                <!-- alert창 -->
+                <div class="l-area" id="alert-layer">
+                    <div class="l-box">
+                        <div class="l-con-area">
+                            <div class="l-con"></div>
+                        </div>
+                        <div class="l-btn-area">
+                            <button type="button" class="confirm-btn">
+                                <span>확 인</span>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+                <div class="l-mask"></div>
+                
+                <!-- confirm창 -->
+                <div class="l-area" id="confirm-layer">
+                    <div class="l-box">
+                        <div class="l-con-area">
+                            <div class="l-con"></div>
+                        </div>
+                        <div class="l-btn-area">
+                            <button type="button" class="close-btn" onclick="closeLayer(this);">
+                                <span>취 소</span>
+                            </button>
+                            <button type="button" class="confirm-btn">
+                                <span>확 인</span>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+                <div class="l-mask"></div>
+                
+                <!-- alarm창 -->
+                <div class="l-area" id="alarm-layer">
+                    <div class="l-box">
+                        <div class="l-con-area">
+                            <div class="l-con-tit-area">
+                                <button type="button" class="l-con-tit-btn" onclick="closeLayer(this);">
+                                    <span><img src="../img/close-icon.png" alt="레이어닫기"></span>
+                                </button>
+                            </div>
+                            <div class="l-con"></div>
+                        </div>
+                    </div>
+                </div>
+                <div class="l-mask"></div>
+                
+                <!-- 내정보 수정창 -->
+                <div class="l-area" id="myinfo-layer">
+                    <div class="l-box">
+                        <div class="l-tit-area">
+                            <div class="l-tit">내정보 수정</div>
+                            <button type="button" class="l-tit-btn" onclick="closeLayer(this);">
+                                <span><img src="../img/close-icon.png" alt="레이어닫기"></span>
+                            </button>
+                        </div>
+                        <div class="l-con-area">
+                            <div class="detail-table-area">
+                                <table class="detail-table">
+                                    <colgroup>
+                                        <col width="120">
+                                        <col width="*">
+                                    </colgroup>
+                                    <tbody>
+                                        <tr>
+                                            <th>아이디</th>
+                                            <td>
+                                                <input type="text" id="" name="" value="admin1" disabled>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <th>새 비밀번호</th>
+                                            <td>
+                                                <input type="password" id="" name="">
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <th>새 비밀번호 확인</th>
+                                            <td>
+                                                <input type="password" id="" name="">
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <th>이름</th>
+                                            <td>
+                                                <input type="text" id="" name="" value="황길동">
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <th>연락처</th>
+                                            <td>
+                                                <input type="tel" id="" name="" value="010-1111-1111">
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <th>이메일</th>
+                                            <td>
+                                                <input type="email" id="" name="" value="admin1@naver.com">
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <th>권한</th>
+                                            <td>
+                                                <select id="" name="">
+                                                    <option value="최고관리자" selected>최고관리자</option>
+                                                    <option value="일반관리자">일반관리자</option>
+                                                    <option value="기타관리자">기타관리자</option>
+                                                </select>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <th>등록일자</th>
+                                            <td>
+                                                <input type="text" id="" name="" value="2023-01-17 00:00:00" disabled>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <th>수정일자</th>
+                                            <td>
+                                                <input type="text" id="" name="" value="-" disabled>
+                                            </td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
+                        <div class="l-btn-area">
+                            <button type="button" class="default-btn01" onclick="">
+                                <span>수 정</span>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+                <div class="l-mask"></div>
+                
+                <!-- 권한 등록창 -->
+                <div class="l-area" id="auth-insert-layer">
+                    <div class="l-box">
+                        <div class="l-tit-area">
+                            <div class="l-tit">권한 등록</div>
+                            <button type="button" class="l-tit-btn" onclick="closeLayer(this);">
+                                <span><img src="../img/close-icon.png" alt="레이어닫기"></span>
+                            </button>
+                        </div>
+                        <div class="l-con-area">
+                            <div class="detail-table-area">
+                                <table class="detail-table">
+                                    <colgroup>
+                                        <col width="120">
+                                        <col width="*">
+                                    </colgroup>
+                                    <tbody>
+                                        <tr>
+                                            <th>권한명</th>
+                                            <td>
+                                                <input type="text" id="" name="">
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <th>권한설명</th>
+                                            <td>
+                                                <input type="text" id="" name="">
+                                            </td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                            
+                            <div class="list-auth-area">
+                                <div class="list-top-area">
+                                    <div class="list-top-left">
+                                        <div class="tit">메뉴권한 설정</div>
+                                    </div>
+                                </div>
+                                <div class="list-table-area">
+                                    <table class="list-table">
+                                        <colgroup>
+                                            <col width="*">
+                                            <col width="*">
+                                            <col width="40">
+                                            <col width="40">
+                                            <col width="40">
+                                            <col width="40">
+                                        </colgroup>
+                                        <thead>
+                                            <tr>
+                                                <th>대메뉴</th>
+                                                <th>중메뉴</th>
+                                                <th>보기</th>
+                                                <th>등록</th>
+                                                <th>수정</th>
+                                                <th>삭제</th>
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                            <tr>
+                                                <td rowspan="8" class="highlight">시스템관리</td>
+                                                <td>관리자 계정관리</td>
+                                                <td>
+                                                    <div class="c-checkbox c-only-checkbox">
+                                                        <input type="checkbox" id="system-admin-1" name="" checked>
+                                                        <label for="system-admin-1"></label>
+                                                    </div>
+                                                </td>
+                                                <td>
+                                                    <div class="c-checkbox c-only-checkbox">
+                                                        <input type="checkbox" id="system-admin-2" name="">
+                                                        <label for="system-admin-2"></label>
+                                                    </div>
+                                                </td>
+                                                <td>
+                                                    <div class="c-checkbox c-only-checkbox">
+                                                        <input type="checkbox" id="system-admin-3" name="">
+                                                        <label for="system-admin-3"></label>
+                                                    </div>
+                                                </td>
+                                                <td>
+                                                    <div class="c-checkbox c-only-checkbox">
+                                                        <input type="checkbox" id="system-admin-4" name="">
+                                                        <label for="system-admin-4"></label>
+                                                    </div>
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <td>사용자 계정관리</td>
+                                                <td>
+                                                    <div class="c-checkbox c-only-checkbox">
+                                                        <input type="checkbox" id="system-user-1" name="" checked>
+                                                        <label for="system-user-1"></label>
+                                                    </div>
+                                                </td>
+                                                <td>
+                                                    <div class="c-checkbox c-only-checkbox">
+                                                        <input type="checkbox" id="system-user-2" name="">
+                                                        <label for="system-user-2"></label>
+                                                    </div>
+                                                </td>
+                                                <td>
+                                                    <div class="c-checkbox c-only-checkbox">
+                                                        <input type="checkbox" id="system-user-3" name="">
+                                                        <label for="system-user-3"></label>
+                                                    </div>
+                                                </td>
+                                                <td>
+                                                    <div class="c-checkbox c-only-checkbox">
+                                                        <input type="checkbox" id="system-user-4" name="">
+                                                        <label for="system-user-4"></label>
+                                                    </div>
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <td>관리자 로그관리</td>
+                                                <td>
+                                                    <div class="c-checkbox c-only-checkbox">
+                                                        <input type="checkbox" id="system-admin-log-1" name="" checked>
+                                                        <label for="system-admin-log-1"></label>
+                                                    </div>
+                                                </td>
+                                                <td>
+                                                    <div class="c-checkbox c-only-checkbox">
+                                                        <input type="checkbox" id="system-admin-log-2" name="">
+                                                        <label for="system-admin-log-2"></label>
+                                                    </div>
+                                                </td>
+                                                <td>
+                                                    <div class="c-checkbox c-only-checkbox">
+                                                        <input type="checkbox" id="system-admin-log-3" name="">
+                                                        <label for="system-admin-log-3"></label>
+                                                    </div>
+                                                </td>
+                                                <td>
+                                                    <div class="c-checkbox c-only-checkbox">
+                                                        <input type="checkbox" id="system-admin-log-4" name="">
+                                                        <label for="system-admin-log-4"></label>
+                                                    </div>
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <td>사용자 로그관리</td>
+                                                <td>
+                                                    <div class="c-checkbox c-only-checkbox">
+                                                        <input type="checkbox" id="system-user-log-1" name="" checked>
+                                                        <label for="system-user-log-1"></label>
+                                                    </div>
+                                                </td>
+                                                <td>
+                                                    <div class="c-checkbox c-only-checkbox">
+                                                        <input type="checkbox" id="system-user-log-2" name="">
+                                                        <label for="system-user-log-2"></label>
+                                                    </div>
+                                                </td>
+                                                <td>
+                                                    <div class="c-checkbox c-only-checkbox">
+                                                        <input type="checkbox" id="system-user-log-3" name="">
+                                                        <label for="system-user-log-3"></label>
+                                                    </div>
+                                                </td>
+                                                <td>
+                                                    <div class="c-checkbox c-only-checkbox">
+                                                        <input type="checkbox" id="system-user-log-4" name="">
+                                                        <label for="system-user-log-4"></label>
+                                                    </div>
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <td>권한관리</td>
+                                                <td>
+                                                    <div class="c-checkbox c-only-checkbox">
+                                                        <input type="checkbox" id="system-auth-1" name="" checked>
+                                                        <label for="system-auth-1"></label>
+                                                    </div>
+                                                </td>
+                                                <td>
+                                                    <div class="c-checkbox c-only-checkbox">
+                                                        <input type="checkbox" id="system-auth-2" name="">
+                                                        <label for="system-auth-2"></label>
+                                                    </div>
+                                                </td>
+                                                <td>
+                                                    <div class="c-checkbox c-only-checkbox">
+                                                        <input type="checkbox" id="system-auth-3" name="">
+                                                        <label for="system-auth-3"></label>
+                                                    </div>
+                                                </td>
+                                                <td>
+                                                    <div class="c-checkbox c-only-checkbox">
+                                                        <input type="checkbox" id="system-auth-4" name="">
+                                                        <label for="system-auth-4"></label>
+                                                    </div>
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <td>코드관리</td>
+                                                <td>
+                                                    <div class="c-checkbox c-only-checkbox">
+                                                        <input type="checkbox" id="system-code-1" name="" checked>
+                                                        <label for="system-code-1"></label>
+                                                    </div>
+                                                </td>
+                                                <td>
+                                                    <div class="c-checkbox c-only-checkbox">
+                                                        <input type="checkbox" id="system-code-2" name="">
+                                                        <label for="system-code-2"></label>
+                                                    </div>
+                                                </td>
+                                                <td>
+                                                    <div class="c-checkbox c-only-checkbox">
+                                                        <input type="checkbox" id="system-code-3" name="">
+                                                        <label for="system-code-3"></label>
+                                                    </div>
+                                                </td>
+                                                <td>
+                                                    <div class="c-checkbox c-only-checkbox">
+                                                        <input type="checkbox" id="system-code-4" name="">
+                                                        <label for="system-code-4"></label>
+                                                    </div>
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <td>QR코드 템플릿관리</td>
+                                                <td>
+                                                    <div class="c-checkbox c-only-checkbox">
+                                                        <input type="checkbox" id="system-template-1" name="" checked>
+                                                        <label for="system-template-1"></label>
+                                                    </div>
+                                                </td>
+                                                <td>
+                                                    <div class="c-checkbox c-only-checkbox">
+                                                        <input type="checkbox" id="system-template-2" name="">
+                                                        <label for="system-template-2"></label>
+                                                    </div>
+                                                </td>
+                                                <td>
+                                                    <div class="c-checkbox c-only-checkbox">
+                                                        <input type="checkbox" id="system-template-3" name="">
+                                                        <label for="system-template-3"></label>
+                                                    </div>
+                                                </td>
+                                                <td>
+                                                    <div class="c-checkbox c-only-checkbox">
+                                                        <input type="checkbox" id="system-template-4" name="">
+                                                        <label for="system-template-4"></label>
+                                                    </div>
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <td>약관관리</td>
+                                                <td>
+                                                    <div class="c-checkbox c-only-checkbox">
+                                                        <input type="checkbox" id="system-agreement-1" name="" checked>
+                                                        <label for="system-agreement-1"></label>
+                                                    </div>
+                                                </td>
+                                                <td>
+                                                    <div class="c-checkbox c-only-checkbox">
+                                                        <input type="checkbox" id="system-agreement-2" name="">
+                                                        <label for="system-agreement-2"></label>
+                                                    </div>
+                                                </td>
+                                                <td>
+                                                    <div class="c-checkbox c-only-checkbox">
+                                                        <input type="checkbox" id="system-agreement-3" name="">
+                                                        <label for="system-agreement-3"></label>
+                                                    </div>
+                                                </td>
+                                                <td>
+                                                    <div class="c-checkbox c-only-checkbox">
+                                                        <input type="checkbox" id="system-agreement-4" name="">
+                                                        <label for="system-agreement-4"></label>
+                                                    </div>
+                                                </td>
+                                            </tr>
+                                        </tbody>
+                                        <tbody>
+                                            <tr>
+                                                <td class="highlight">데이터관리</td>
+                                                <td>공유장소관리</td>
+                                                <td>
+                                                    <div class="c-checkbox c-only-checkbox">
+                                                        <input type="checkbox" id="data-place-1" name="" checked>
+                                                        <label for="data-place-1"></label>
+                                                    </div>
+                                                </td>
+                                                <td>
+                                                    <div class="c-checkbox c-only-checkbox">
+                                                        <input type="checkbox" id="data-place-2" name="">
+                                                        <label for="data-place-2"></label>
+                                                    </div>
+                                                </td>
+                                                <td>
+                                                    <div class="c-checkbox c-only-checkbox">
+                                                        <input type="checkbox" id="data-place-3" name="">
+                                                        <label for="data-place-3"></label>
+                                                    </div>
+                                                </td>
+                                                <td>
+                                                    <div class="c-checkbox c-only-checkbox">
+                                                        <input type="checkbox" id="data-place-4" name="">
+                                                        <label for="data-place-4"></label>
+                                                    </div>
+                                                </td>
+                                            </tr>
+                                        </tbody>
+                                        <tbody>
+                                            <tr>
+                                                <td class="highlight">안심번호관리</td>
+                                                <td>-</td>
+                                                <td>
+                                                    <div class="c-checkbox c-only-checkbox">
+                                                        <input type="checkbox" id="safenumber-1" name="" checked>
+                                                        <label for="safenumber-1"></label>
+                                                    </div>
+                                                </td>
+                                                <td>
+                                                    <div class="c-checkbox c-only-checkbox">
+                                                        <input type="checkbox" id="safenumber-2" name="">
+                                                        <label for="safenumber-2"></label>
+                                                    </div>
+                                                </td>
+                                                <td>
+                                                    <div class="c-checkbox c-only-checkbox">
+                                                        <input type="checkbox" id="safenumber-3" name="">
+                                                        <label for="safenumber-3"></label>
+                                                    </div>
+                                                </td>
+                                                <td>
+                                                    <div class="c-checkbox c-only-checkbox">
+                                                        <input type="checkbox" id="safenumber-4" name="">
+                                                        <label for="safenumber-4"></label>
+                                                    </div>
+                                                </td>
+                                            </tr>
+                                        </tbody>
+                                        <tbody>
+                                            <tr>
+                                                <td class="highlight">업체관리</td>
+                                                <td>-</td>
+                                                <td>
+                                                    <div class="c-checkbox c-only-checkbox">
+                                                        <input type="checkbox" id="business-1" name="" checked>
+                                                        <label for="business-1"></label>
+                                                    </div>
+                                                </td>
+                                                <td>
+                                                    <div class="c-checkbox c-only-checkbox">
+                                                        <input type="checkbox" id="business-2" name="">
+                                                        <label for="business-2"></label>
+                                                    </div>
+                                                </td>
+                                                <td>
+                                                    <div class="c-checkbox c-only-checkbox">
+                                                        <input type="checkbox" id="business-3" name="">
+                                                        <label for="business-3"></label>
+                                                    </div>
+                                                </td>
+                                                <td>
+                                                    <div class="c-checkbox c-only-checkbox">
+                                                        <input type="checkbox" id="business-4" name="">
+                                                        <label for="business-4"></label>
+                                                    </div>
+                                                </td>
+                                            </tr>
+                                        </tbody>
+                                        <tbody>
+                                            <tr>
+                                                <td class="highlight">통계관리</td>
+                                                <td>-</td>
+                                                <td>
+                                                    <div class="c-checkbox c-only-checkbox">
+                                                        <input type="checkbox" id="stats-1" name="" checked>
+                                                        <label for="stats-1"></label>
+                                                    </div>
+                                                </td>
+                                                <td>
+                                                    <div class="c-checkbox c-only-checkbox">
+                                                        <input type="checkbox" id="stats-2" name="">
+                                                        <label for="stats-2"></label>
+                                                    </div>
+                                                </td>
+                                                <td>
+                                                    <div class="c-checkbox c-only-checkbox">
+                                                        <input type="checkbox" id="stats-3" name="">
+                                                        <label for="stats-3"></label>
+                                                    </div>
+                                                </td>
+                                                <td>
+                                                    <div class="c-checkbox c-only-checkbox">
+                                                        <input type="checkbox" id="stats-4" name="">
+                                                        <label for="stats-4"></label>
+                                                    </div>
+                                                </td>
+                                            </tr>
+                                        </tbody>
+                                        <tbody>
+                                            <tr>
+                                                <td class="highlight">위치정보 및 지도</td>
+                                                <td>-</td>
+                                                <td>
+                                                    <div class="c-checkbox c-only-checkbox">
+                                                        <input type="checkbox" id="map-1" name="" checked>
+                                                        <label for="map-1"></label>
+                                                    </div>
+                                                </td>
+                                                <td>
+                                                    <div class="c-checkbox c-only-checkbox">
+                                                        <input type="checkbox" id="map-2" name="">
+                                                        <label for="map-2"></label>
+                                                    </div>
+                                                </td>
+                                                <td>
+                                                    <div class="c-checkbox c-only-checkbox">
+                                                        <input type="checkbox" id="map-3" name="">
+                                                        <label for="map-3"></label>
+                                                    </div>
+                                                </td>
+                                                <td>
+                                                    <div class="c-checkbox c-only-checkbox">
+                                                        <input type="checkbox" id="map-4" name="">
+                                                        <label for="map-4"></label>
+                                                    </div>
+                                                </td>
+                                            </tr>
+                                        </tbody>
+                                        <tbody>
+                                            <tr>
+                                                <td rowspan="4" class="highlight">게시판관리</td>
+                                                <td>공지사항</td>
+                                                <td>
+                                                    <div class="c-checkbox c-only-checkbox">
+                                                        <input type="checkbox" id="board-notice-1" name="" checked>
+                                                        <label for="board-notice-1"></label>
+                                                    </div>
+                                                </td>
+                                                <td>
+                                                    <div class="c-checkbox c-only-checkbox">
+                                                        <input type="checkbox" id="board-notice-2" name="">
+                                                        <label for="board-notice-2"></label>
+                                                    </div>
+                                                </td>
+                                                <td>
+                                                    <div class="c-checkbox c-only-checkbox">
+                                                        <input type="checkbox" id="board-notice-3" name="">
+                                                        <label for="board-notice-3"></label>
+                                                    </div>
+                                                </td>
+                                                <td>
+                                                    <div class="c-checkbox c-only-checkbox">
+                                                        <input type="checkbox" id="board-notice-4" name="">
+                                                        <label for="board-notice-4"></label>
+                                                    </div>
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <td>QNA</td>
+                                                <td>
+                                                    <div class="c-checkbox c-only-checkbox">
+                                                        <input type="checkbox" id="board-qna-1" name="" checked>
+                                                        <label for="board-qna-1"></label>
+                                                    </div>
+                                                </td>
+                                                <td>
+                                                    <div class="c-checkbox c-only-checkbox">
+                                                        <input type="checkbox" id="board-qna-2" name="">
+                                                        <label for="board-qna-2"></label>
+                                                    </div>
+                                                </td>
+                                                <td>
+                                                    <div class="c-checkbox c-only-checkbox">
+                                                        <input type="checkbox" id="board-qna-3" name="">
+                                                        <label for="board-qna-3"></label>
+                                                    </div>
+                                                </td>
+                                                <td>
+                                                    <div class="c-checkbox c-only-checkbox">
+                                                        <input type="checkbox" id="board-qna-4" name="">
+                                                        <label for="board-qna-4"></label>
+                                                    </div>
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <td>자료실</td>
+                                                <td>
+                                                    <div class="c-checkbox c-only-checkbox">
+                                                        <input type="checkbox" id="board-reference-1" name="" checked>
+                                                        <label for="board-reference-1"></label>
+                                                    </div>
+                                                </td>
+                                                <td>
+                                                    <div class="c-checkbox c-only-checkbox">
+                                                        <input type="checkbox" id="board-reference-2" name="">
+                                                        <label for="board-reference-2"></label>
+                                                    </div>
+                                                </td>
+                                                <td>
+                                                    <div class="c-checkbox c-only-checkbox">
+                                                        <input type="checkbox" id="board-reference-3" name="">
+                                                        <label for="board-reference-3"></label>
+                                                    </div>
+                                                </td>
+                                                <td>
+                                                    <div class="c-checkbox c-only-checkbox">
+                                                        <input type="checkbox" id="board-reference-4" name="">
+                                                        <label for="board-reference-4"></label>
+                                                    </div>
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <td>FAQ</td>
+                                                <td>
+                                                    <div class="c-checkbox c-only-checkbox">
+                                                        <input type="checkbox" id="board-faq-1" name="" checked>
+                                                        <label for="board-faq-1"></label>
+                                                    </div>
+                                                </td>
+                                                <td>
+                                                    <div class="c-checkbox c-only-checkbox">
+                                                        <input type="checkbox" id="board-faq-2" name="">
+                                                        <label for="board-faq-2"></label>
+                                                    </div>
+                                                </td>
+                                                <td>
+                                                    <div class="c-checkbox c-only-checkbox">
+                                                        <input type="checkbox" id="board-faq-3" name="">
+                                                        <label for="board-faq-3"></label>
+                                                    </div>
+                                                </td>
+                                                <td>
+                                                    <div class="c-checkbox c-only-checkbox">
+                                                        <input type="checkbox" id="board-faq-4" name="">
+                                                        <label for="board-faq-4"></label>
+                                                    </div>
+                                                </td>
+                                            </tr>
+                                        </tbody>
+                                    </table>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="l-btn-area">
+                            <button type="button" class="default-btn01" onclick="">
+                                <span>등 록</span>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+                <div class="l-mask"></div>
+                
+                <!-- 권한 수정창 -->
+                <div class="l-area" id="auth-update-layer">
+                    <div class="l-box">
+                        <div class="l-tit-area">
+                            <div class="l-tit">권한 수정</div>
+                            <button type="button" class="l-tit-btn" onclick="closeLayer(this);">
+                                <span><img src="../img/close-icon.png" alt="레이어닫기"></span>
+                            </button>
+                        </div>
+                        <div class="l-con-area">
+                            <div class="detail-table-area">
+                                <table class="detail-table">
+                                    <colgroup>
+                                        <col width="120">
+                                        <col width="*">
+                                    </colgroup>
+                                    <tbody>
+                                        <tr>
+                                            <th>권한명</th>
+                                            <td>
+                                                <input type="text" id="" name="" value="일반관리자">
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <th>권한설명</th>
+                                            <td>
+                                                <input type="text" id="" name="" value="일반관리자">
+                                            </td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                            
+                            <div class="list-auth-area">
+                                <div class="list-top-area">
+                                    <div class="list-top-left">
+                                        <div class="tit">메뉴권한 설정</div>
+                                    </div>
+                                </div>
+                                <div class="list-table-area">
+                                    <table class="list-table">
+                                        <colgroup>
+                                            <col width="*">
+                                            <col width="*">
+                                            <col width="40">
+                                            <col width="40">
+                                            <col width="40">
+                                            <col width="40">
+                                        </colgroup>
+                                        <thead>
+                                            <tr>
+                                                <th>대메뉴</th>
+                                                <th>중메뉴</th>
+                                                <th>보기</th>
+                                                <th>등록</th>
+                                                <th>수정</th>
+                                                <th>삭제</th>
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                            <tr>
+                                                <td rowspan="8" class="highlight">시스템관리</td>
+                                                <td>관리자 계정관리</td>
+                                                <td>
+                                                    <div class="c-checkbox c-only-checkbox">
+                                                        <input type="checkbox" id="system-admin-5" name="" checked>
+                                                        <label for="system-admin-5"></label>
+                                                    </div>
+                                                </td>
+                                                <td>
+                                                    <div class="c-checkbox c-only-checkbox">
+                                                        <input type="checkbox" id="system-admin-6" name="">
+                                                        <label for="system-admin-6"></label>
+                                                    </div>
+                                                </td>
+                                                <td>
+                                                    <div class="c-checkbox c-only-checkbox">
+                                                        <input type="checkbox" id="system-admin-7" name="">
+                                                        <label for="system-admin-7"></label>
+                                                    </div>
+                                                </td>
+                                                <td>
+                                                    <div class="c-checkbox c-only-checkbox">
+                                                        <input type="checkbox" id="system-admin-8" name="">
+                                                        <label for="system-admin-8"></label>
+                                                    </div>
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <td>사용자 계정관리</td>
+                                                <td>
+                                                    <div class="c-checkbox c-only-checkbox">
+                                                        <input type="checkbox" id="system-user-5" name="" checked>
+                                                        <label for="system-user-5"></label>
+                                                    </div>
+                                                </td>
+                                                <td>
+                                                    <div class="c-checkbox c-only-checkbox">
+                                                        <input type="checkbox" id="system-user-6" name="" checked>
+                                                        <label for="system-user-6"></label>
+                                                    </div>
+                                                </td>
+                                                <td>
+                                                    <div class="c-checkbox c-only-checkbox">
+                                                        <input type="checkbox" id="system-user-7" name="" checked>
+                                                        <label for="system-user-7"></label>
+                                                    </div>
+                                                </td>
+                                                <td>
+                                                    <div class="c-checkbox c-only-checkbox">
+                                                        <input type="checkbox" id="system-user-8" name="" checked>
+                                                        <label for="system-user-8"></label>
+                                                    </div>
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <td>관리자 로그관리</td>
+                                                <td>
+                                                    <div class="c-checkbox c-only-checkbox">
+                                                        <input type="checkbox" id="system-admin-log-5" name="" checked>
+                                                        <label for="system-admin-log-5"></label>
+                                                    </div>
+                                                </td>
+                                                <td>
+                                                    <div class="c-checkbox c-only-checkbox">
+                                                        <input type="checkbox" id="system-admin-log-6" name="" checked>
+                                                        <label for="system-admin-log-6"></label>
+                                                    </div>
+                                                </td>
+                                                <td>
+                                                    <div class="c-checkbox c-only-checkbox">
+                                                        <input type="checkbox" id="system-admin-log-7" name="" checked>
+                                                        <label for="system-admin-log-7"></label>
+                                                    </div>
+                                                </td>
+                                                <td>
+                                                    <div class="c-checkbox c-only-checkbox">
+                                                        <input type="checkbox" id="system-admin-log-8" name="" checked>
+                                                        <label for="system-admin-log-8"></label>
+                                                    </div>
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <td>사용자 로그관리</td>
+                                                <td>
+                                                    <div class="c-checkbox c-only-checkbox">
+                                                        <input type="checkbox" id="system-user-log-5" name="" checked>
+                                                        <label for="system-user-log-5"></label>
+                                                    </div>
+                                                </td>
+                                                <td>
+                                                    <div class="c-checkbox c-only-checkbox">
+                                                        <input type="checkbox" id="system-user-log-6" name="" checked>
+                                                        <label for="system-user-log-6"></label>
+                                                    </div>
+                                                </td>
+                                                <td>
+                                                    <div class="c-checkbox c-only-checkbox">
+                                                        <input type="checkbox" id="system-user-log-7" name="" checked>
+                                                        <label for="system-user-log-7"></label>
+                                                    </div>
+                                                </td>
+                                                <td>
+                                                    <div class="c-checkbox c-only-checkbox">
+                                                        <input type="checkbox" id="system-user-log-8" name="" checked>
+                                                        <label for="system-user-log-8"></label>
+                                                    </div>
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <td>권한관리</td>
+                                                <td>
+                                                    <div class="c-checkbox c-only-checkbox">
+                                                        <input type="checkbox" id="system-auth-5" name="" checked>
+                                                        <label for="system-auth-5"></label>
+                                                    </div>
+                                                </td>
+                                                <td>
+                                                    <div class="c-checkbox c-only-checkbox">
+                                                        <input type="checkbox" id="system-auth-6" name="">
+                                                        <label for="system-auth-6"></label>
+                                                    </div>
+                                                </td>
+                                                <td>
+                                                    <div class="c-checkbox c-only-checkbox">
+                                                        <input type="checkbox" id="system-auth-7" name="">
+                                                        <label for="system-auth-7"></label>
+                                                    </div>
+                                                </td>
+                                                <td>
+                                                    <div class="c-checkbox c-only-checkbox">
+                                                        <input type="checkbox" id="system-auth-8" name="">
+                                                        <label for="system-auth-8"></label>
+                                                    </div>
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <td>코드관리</td>
+                                                <td>
+                                                    <div class="c-checkbox c-only-checkbox">
+                                                        <input type="checkbox" id="system-code-5" name="" checked>
+                                                        <label for="system-code-5"></label>
+                                                    </div>
+                                                </td>
+                                                <td>
+                                                    <div class="c-checkbox c-only-checkbox">
+                                                        <input type="checkbox" id="system-code-6" name="" checked>
+                                                        <label for="system-code-6"></label>
+                                                    </div>
+                                                </td>
+                                                <td>
+                                                    <div class="c-checkbox c-only-checkbox">
+                                                        <input type="checkbox" id="system-code-7" name="" checked>
+                                                        <label for="system-code-7"></label>
+                                                    </div>
+                                                </td>
+                                                <td>
+                                                    <div class="c-checkbox c-only-checkbox">
+                                                        <input type="checkbox" id="system-code-8" name="" checked>
+                                                        <label for="system-code-8"></label>
+                                                    </div>
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <td>QR코드 템플릿관리</td>
+                                                <td>
+                                                    <div class="c-checkbox c-only-checkbox">
+                                                        <input type="checkbox" id="system-template-5" name="" checked>
+                                                        <label for="system-template-5"></label>
+                                                    </div>
+                                                </td>
+                                                <td>
+                                                    <div class="c-checkbox c-only-checkbox">
+                                                        <input type="checkbox" id="system-template-6" name="" checked>
+                                                        <label for="system-template-6"></label>
+                                                    </div>
+                                                </td>
+                                                <td>
+                                                    <div class="c-checkbox c-only-checkbox">
+                                                        <input type="checkbox" id="system-template-7" name="" checked>
+                                                        <label for="system-template-7"></label>
+                                                    </div>
+                                                </td>
+                                                <td>
+                                                    <div class="c-checkbox c-only-checkbox">
+                                                        <input type="checkbox" id="system-template-8" name="" checked>
+                                                        <label for="system-template-8"></label>
+                                                    </div>
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <td>약관관리</td>
+                                                <td>
+                                                    <div class="c-checkbox c-only-checkbox">
+                                                        <input type="checkbox" id="system-agreement-5" name="" checked>
+                                                        <label for="system-agreement-5"></label>
+                                                    </div>
+                                                </td>
+                                                <td>
+                                                    <div class="c-checkbox c-only-checkbox">
+                                                        <input type="checkbox" id="system-agreement-6" name="" checked>
+                                                        <label for="system-agreement-6"></label>
+                                                    </div>
+                                                </td>
+                                                <td>
+                                                    <div class="c-checkbox c-only-checkbox">
+                                                        <input type="checkbox" id="system-agreement-7" name="" checked>
+                                                        <label for="system-agreement-7"></label>
+                                                    </div>
+                                                </td>
+                                                <td>
+                                                    <div class="c-checkbox c-only-checkbox">
+                                                        <input type="checkbox" id="system-agreement-8" name="" checked>
+                                                        <label for="system-agreement-8"></label>
+                                                    </div>
+                                                </td>
+                                            </tr>
+                                        </tbody>
+                                        <tbody>
+                                            <tr>
+                                                <td class="highlight">데이터관리</td>
+                                                <td>공유장소관리</td>
+                                                <td>
+                                                    <div class="c-checkbox c-only-checkbox">
+                                                        <input type="checkbox" id="data-place-5" name="" checked>
+                                                        <label for="data-place-5"></label>
+                                                    </div>
+                                                </td>
+                                                <td>
+                                                    <div class="c-checkbox c-only-checkbox">
+                                                        <input type="checkbox" id="data-place-6" name="" checked>
+                                                        <label for="data-place-6"></label>
+                                                    </div>
+                                                </td>
+                                                <td>
+                                                    <div class="c-checkbox c-only-checkbox">
+                                                        <input type="checkbox" id="data-place-7" name="" checked>
+                                                        <label for="data-place-7"></label>
+                                                    </div>
+                                                </td>
+                                                <td>
+                                                    <div class="c-checkbox c-only-checkbox">
+                                                        <input type="checkbox" id="data-place-8" name="" checked>
+                                                        <label for="data-place-8"></label>
+                                                    </div>
+                                                </td>
+                                            </tr>
+                                        </tbody>
+                                        <tbody>
+                                            <tr>
+                                                <td class="highlight">안심번호관리</td>
+                                                <td>-</td>
+                                                <td>
+                                                    <div class="c-checkbox c-only-checkbox">
+                                                        <input type="checkbox" id="safenumber-5" name="" checked>
+                                                        <label for="safenumber-5"></label>
+                                                    </div>
+                                                </td>
+                                                <td>
+                                                    <div class="c-checkbox c-only-checkbox">
+                                                        <input type="checkbox" id="safenumber-6" name="" checked>
+                                                        <label for="safenumber-6"></label>
+                                                    </div>
+                                                </td>
+                                                <td>
+                                                    <div class="c-checkbox c-only-checkbox">
+                                                        <input type="checkbox" id="safenumber-7" name="" checked>
+                                                        <label for="safenumber-7"></label>
+                                                    </div>
+                                                </td>
+                                                <td>
+                                                    <div class="c-checkbox c-only-checkbox">
+                                                        <input type="checkbox" id="safenumber-8" name="" checked>
+                                                        <label for="safenumber-8"></label>
+                                                    </div>
+                                                </td>
+                                            </tr>
+                                        </tbody>
+                                        <tbody>
+                                            <tr>
+                                                <td class="highlight">업체관리</td>
+                                                <td>-</td>
+                                                <td>
+                                                    <div class="c-checkbox c-only-checkbox">
+                                                        <input type="checkbox" id="business-5" name="" checked>
+                                                        <label for="business-5"></label>
+                                                    </div>
+                                                </td>
+                                                <td>
+                                                    <div class="c-checkbox c-only-checkbox">
+                                                        <input type="checkbox" id="business-6" name="" checked>
+                                                        <label for="business-6"></label>
+                                                    </div>
+                                                </td>
+                                                <td>
+                                                    <div class="c-checkbox c-only-checkbox">
+                                                        <input type="checkbox" id="business-7" name="" checked>
+                                                        <label for="business-7"></label>
+                                                    </div>
+                                                </td>
+                                                <td>
+                                                    <div class="c-checkbox c-only-checkbox">
+                                                        <input type="checkbox" id="business-8" name="" checked>
+                                                        <label for="business-8"></label>
+                                                    </div>
+                                                </td>
+                                            </tr>
+                                        </tbody>
+                                        <tbody>
+                                            <tr>
+                                                <td class="highlight">통계관리</td>
+                                                <td>-</td>
+                                                <td>
+                                                    <div class="c-checkbox c-only-checkbox">
+                                                        <input type="checkbox" id="stats-5" name="" checked>
+                                                        <label for="stats-5"></label>
+                                                    </div>
+                                                </td>
+                                                <td>
+                                                    <div class="c-checkbox c-only-checkbox">
+                                                        <input type="checkbox" id="stats-6" name="" checked>
+                                                        <label for="stats-6"></label>
+                                                    </div>
+                                                </td>
+                                                <td>
+                                                    <div class="c-checkbox c-only-checkbox">
+                                                        <input type="checkbox" id="stats-7" name="" checked>
+                                                        <label for="stats-7"></label>
+                                                    </div>
+                                                </td>
+                                                <td>
+                                                    <div class="c-checkbox c-only-checkbox">
+                                                        <input type="checkbox" id="stats-8" name="" checked>
+                                                        <label for="stats-8"></label>
+                                                    </div>
+                                                </td>
+                                            </tr>
+                                        </tbody>
+                                        <tbody>
+                                            <tr>
+                                                <td class="highlight">위치정보 및 지도</td>
+                                                <td>-</td>
+                                                <td>
+                                                    <div class="c-checkbox c-only-checkbox">
+                                                        <input type="checkbox" id="map-5" name="" checked>
+                                                        <label for="map-5"></label>
+                                                    </div>
+                                                </td>
+                                                <td>
+                                                    <div class="c-checkbox c-only-checkbox">
+                                                        <input type="checkbox" id="map-6" name="" checked>
+                                                        <label for="map-6"></label>
+                                                    </div>
+                                                </td>
+                                                <td>
+                                                    <div class="c-checkbox c-only-checkbox">
+                                                        <input type="checkbox" id="map-7" name="" checked>
+                                                        <label for="map-7"></label>
+                                                    </div>
+                                                </td>
+                                                <td>
+                                                    <div class="c-checkbox c-only-checkbox">
+                                                        <input type="checkbox" id="map-8" name="" checked>
+                                                        <label for="map-8"></label>
+                                                    </div>
+                                                </td>
+                                            </tr>
+                                        </tbody>
+                                        <tbody>
+                                            <tr>
+                                                <td rowspan="4" class="highlight">게시판관리</td>
+                                                <td>공지사항</td>
+                                                <td>
+                                                    <div class="c-checkbox c-only-checkbox">
+                                                        <input type="checkbox" id="board-notice-5" name="" checked>
+                                                        <label for="board-notice-5"></label>
+                                                    </div>
+                                                </td>
+                                                <td>
+                                                    <div class="c-checkbox c-only-checkbox">
+                                                        <input type="checkbox" id="board-notice-6" name="" checked>
+                                                        <label for="board-notice-6"></label>
+                                                    </div>
+                                                </td>
+                                                <td>
+                                                    <div class="c-checkbox c-only-checkbox">
+                                                        <input type="checkbox" id="board-notice-7" name="" checked>
+                                                        <label for="board-notice-7"></label>
+                                                    </div>
+                                                </td>
+                                                <td>
+                                                    <div class="c-checkbox c-only-checkbox">
+                                                        <input type="checkbox" id="board-notice-8" name="" checked>
+                                                        <label for="board-notice-8"></label>
+                                                    </div>
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <td>QNA</td>
+                                                <td>
+                                                    <div class="c-checkbox c-only-checkbox">
+                                                        <input type="checkbox" id="board-qna-5" name="" checked>
+                                                        <label for="board-qna-5"></label>
+                                                    </div>
+                                                </td>
+                                                <td>
+                                                    <div class="c-checkbox c-only-checkbox">
+                                                        <input type="checkbox" id="board-qna-6" name="" checked>
+                                                        <label for="board-qna-6"></label>
+                                                    </div>
+                                                </td>
+                                                <td>
+                                                    <div class="c-checkbox c-only-checkbox">
+                                                        <input type="checkbox" id="board-qna-7" name="" checked>
+                                                        <label for="board-qna-7"></label>
+                                                    </div>
+                                                </td>
+                                                <td>
+                                                    <div class="c-checkbox c-only-checkbox">
+                                                        <input type="checkbox" id="board-qna-8" name="" checked>
+                                                        <label for="board-qna-8"></label>
+                                                    </div>
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <td>자료실</td>
+                                                <td>
+                                                    <div class="c-checkbox c-only-checkbox">
+                                                        <input type="checkbox" id="board-reference-5" name="" checked>
+                                                        <label for="board-reference-5"></label>
+                                                    </div>
+                                                </td>
+                                                <td>
+                                                    <div class="c-checkbox c-only-checkbox">
+                                                        <input type="checkbox" id="board-reference-6" name="" checked>
+                                                        <label for="board-reference-6"></label>
+                                                    </div>
+                                                </td>
+                                                <td>
+                                                    <div class="c-checkbox c-only-checkbox">
+                                                        <input type="checkbox" id="board-reference-7" name="" checked>
+                                                        <label for="board-reference-7"></label>
+                                                    </div>
+                                                </td>
+                                                <td>
+                                                    <div class="c-checkbox c-only-checkbox">
+                                                        <input type="checkbox" id="board-reference-8" name="" checked>
+                                                        <label for="board-reference-8"></label>
+                                                    </div>
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <td>FAQ</td>
+                                                <td>
+                                                    <div class="c-checkbox c-only-checkbox">
+                                                        <input type="checkbox" id="board-faq-5" name="" checked>
+                                                        <label for="board-faq-5"></label>
+                                                    </div>
+                                                </td>
+                                                <td>
+                                                    <div class="c-checkbox c-only-checkbox">
+                                                        <input type="checkbox" id="board-faq-6" name="" checked>
+                                                        <label for="board-faq-6"></label>
+                                                    </div>
+                                                </td>
+                                                <td>
+                                                    <div class="c-checkbox c-only-checkbox">
+                                                        <input type="checkbox" id="board-faq-7" name="" checked>
+                                                        <label for="board-faq-7"></label>
+                                                    </div>
+                                                </td>
+                                                <td>
+                                                    <div class="c-checkbox c-only-checkbox">
+                                                        <input type="checkbox" id="board-faq-8" name="" checked>
+                                                        <label for="board-faq-8"></label>
+                                                    </div>
+                                                </td>
+                                            </tr>
+                                        </tbody>
+                                    </table>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="l-btn-area">
+                            <button type="button" class="default-btn01" onclick="">
+                                <span>수 정</span>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+                <div class="l-mask"></div>
+            </div>
+		</div>
+	</body>
+</html>

@@ -1,0 +1,802 @@
+<!DOCTYPE html>
+<html lang="ko">
+	<head>
+		<meta charset="utf-8">
+		<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+		<title>제주주차안심</title>
+		<meta name="description" content="제주주차안심">
+		<meta name="author" content="minks">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, user-scalable=no">
+		<link rel="shortcut icon" href="../img/logo-favicon.ico">
+		<link rel="apple-touch-icon" href="../img/logo-favicon.ico">
+		
+		<link href="../css/reset.css" type="text/css" rel="stylesheet">
+		<link href="../css/font.css" type="text/css" rel="stylesheet">
+		<link href="../css/swiper.min.css" type="text/css" rel="stylesheet">
+        <link href="../css/slick.css" type="text/css" rel="stylesheet">
+        <link href="../css/slick-theme.css" type="text/css" rel="stylesheet">
+        <link href="../css/jquery-ui.min.css" type="text/css" rel="stylesheet">
+        <link href="../css/jquery-datepicker.css" type="text/css" rel="stylesheet">
+        <link href="../css/jquery-ui-timepicker-addon.css" type="text/css" rel="stylesheet">
+        <link href="../css/yearpicker.css" type="text/css" rel="stylesheet">
+		<link href="../css/admin.css" type="text/css" rel="stylesheet">
+		
+		<!--[if lt IE 9]>
+		<script src="../js/jquery-1.11.1.min.js"></script>
+		<script src="../js/html5shiv.js"></script>
+		<![endif]-->
+		
+		<!--[if gte IE 9]>
+		<script src="../js/jquery-3.4.1.min.js"></script>
+		<![endif]-->
+		
+		<!--[if !IE]>--> 
+		<script src="../js/jquery-3.4.1.min.js"></script>
+		<!--<![endif]-->
+		
+		<script src="../js/jquery-migrate-1.4.1.min.js"></script>
+		<script src="../js/swiper.min.js"></script>
+        <script src="../js/slick.js"></script>
+        <script src="../js/jquery-ui.min.js"></script>
+        <script src="../js/jquery-ui-timepicker-addon.js"></script>
+        <script src="../js/jquery.ui.monthpicker.js"></script>
+        <script src="../js/yearpicker.js"></script>
+        <script src="../js/datepicker-ko.js"></script>
+        <script src="../js/chart.js"></script>
+        <script src="../js/chartjs-adapter-date-fns.bundle.min.js"></script>
+        <script src="../js/admin-function.js"></script>
+	</head>
+
+	<body>
+		<div class="wrap">
+            <!-- header -->
+		    <header class="header">
+                <h1 class="not-view">header</h1>
+                
+                <div class="center-ct">
+                    <div class="h-tit-area">
+                        <div class="tit-txt">
+                            <a href="index.html">제주 주차 안심번호 관리자</a>
+                        </div>
+                        <div class="tit-btn">
+                            <button type="button" class="tit-mypage-btn" onclick="openMyinfoLayer(this);">
+                                <span>마이페이지</span>
+                            </button>
+                            <button type="button" class="tit-logout-btn" onclick="location.href='login.html';">
+                                <span>로그아웃</span>
+                            </button>
+                        </div>
+                    </div>
+                    
+                    <div class="h-con-area">
+                        <div class="con-txt">
+                            <div class="big">제주 주차<br>안심번호<br>서비스</div>
+                            <div class="medium"><span>QR코드</span>와 <span>ARS전화</span>로 <span>개인정보 노출 걱정 NO!</span></div>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- nav -->
+                <!-- 상단 대메뉴 -->
+                <nav class="nav">
+                    <h2 class="not-view">nav</h2>
+                    
+                    <!-- active : 해당 페이지의 대메뉴에 추가 -->
+                    <ul class="n-menu-list">
+                        <li data-menu="admin-system">시스템관리</li>
+                        <li data-menu="admin-data">데이터관리</li>
+                        <li data-menu="admin-safenumber">안심번호관리</li>
+                        <li class="active" data-menu="admin-business">업체관리</li>
+                        <li data-menu="admin-stats">통계관리</li>
+                        <li data-menu="admin-map">위치정보 및 지도</li>
+                        <li data-menu="admin-board">게시판관리</li>
+                    </ul>
+                    
+                    <!-- 상단 중메뉴 -->
+                    <div class="nav-sub">
+                        <div class="center-ct">
+                            <!-- 시스템관리 하위메뉴 -->
+                            <div class="n-sub-menu-area" data-menu="admin-system">
+                                <div class="n-sub-menu-txt">
+                                    <div class="big">시스템 관리</div>
+                                    <div class="small">QR코드와 ARS전화로<br>개인정보 노출 걱정 NO!</div>
+                                </div>
+
+                                <ul class="n-sub-menu-list">
+                                    <li>
+                                        <a href="system-admin-list.html">관리자 계정관리</a>
+                                    </li>
+                                    <li>
+                                        <a href="system-user-list.html">사용자 계정관리</a>
+                                    </li>
+                                    <li>
+                                        <a href="system-admin-log.html">관리자 로그관리</a>
+                                    </li>
+                                    <li>
+                                        <a href="system-user-log.html">사용자 로그관리</a>
+                                    </li>
+                                    <li>
+                                        <a href="system-auth-list.html">권한관리</a>
+                                    </li>
+                                    <li>
+                                        <a href="system-code-list.html">코드관리</a>
+                                    </li>
+                                    <li>
+                                        <a href="system-template-list.html">QR코드 템플릿관리</a>
+                                    </li>
+                                    <li>
+                                        <a href="system-agreement-list.html">약관관리</a>
+                                    </li>
+                                </ul>
+                            </div>
+
+                            <!-- 데이터관리 하위메뉴 -->
+                            <div class="n-sub-menu-area" data-menu="admin-data">
+                                <div class="n-sub-menu-txt">
+                                    <div class="big">데이터 관리</div>
+                                    <div class="small">QR코드와 ARS전화로<br>개인정보 노출 걱정 NO!</div>
+                                </div>
+
+                                <ul class="n-sub-menu-list">
+                                    <li>
+                                        <a href="data-place-list.html">공유장소관리</a>
+                                    </li>
+                                </ul>
+                            </div>
+
+                            <!-- 안심번호관리 링크 -->
+                            <div class="n-sub-menu-area" data-menu="admin-safenumber" data-link="safenumber-list.html">
+
+                            </div>
+
+                            <!-- 업체관리 링크 -->
+                            <div class="n-sub-menu-area" data-menu="admin-business" data-link="business-list.html">
+
+                            </div>
+
+                            <!-- 통계관리 링크 -->
+                            <div class="n-sub-menu-area" data-menu="admin-stats" data-link="stats-list.html">
+
+                            </div>
+
+                            <!-- 위치정보 및 지도 링크 -->
+                            <div class="n-sub-menu-area" data-menu="admin-map" data-link="map.html">
+
+                            </div>
+
+                            <!-- 게시판관리 하위메뉴 -->
+                            <div class="n-sub-menu-area" data-menu="admin-board">
+                                <div class="n-sub-menu-txt">
+                                    <div class="big">게시판 관리</div>
+                                    <div class="small">QR코드와 ARS전화로<br>개인정보 노출 걱정 NO!</div>
+                                </div>
+
+                                <ul class="n-sub-menu-list">
+                                    <li>
+                                        <a href="board-notice-list.html">공지사항</a>
+                                    </li>
+                                    <li>
+                                        <a href="board-qna-list.html">QNA</a>
+                                    </li>
+                                    <li>
+                                        <a href="board-reference-list.html">자료실</a>
+                                    </li>
+                                    <li>
+                                        <a href="board-faq-list.html">FAQ</a>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </nav>
+            </header>
+            
+			<!-- content -->
+            <div class="c-wrap">
+                <!-- c-page : 기본페이지 -->
+                <section class="c-page center-ct">
+                    <!-- aside -->
+                    <aside class="aside">
+                        <h1 class="not-view">aside</h1>
+                        
+                        <div class="a-menu-tit">업체관리</div>
+                    </aside>
+                    
+                    <!-- 페이지 내용 -->
+                    <article class="page-area">
+                        <div class="page-top-area">
+                            <div class="tit">업체 목록</div>
+                            <div class="cate">업체관리</div>
+                        </div>
+                        
+                        <div class="page-list-area">
+                            <form id="" name="" method="" action="">
+                                <div class="list-search-area">
+                                    <div class="search-table-area">
+                                        <table class="search-table">
+                                            <colgroup>
+                                                <col width="120">
+                                                <col width="*">
+                                                <col width="120">
+                                                <col width="*">
+                                            </colgroup>
+                                            <tbody>
+                                                <tr>
+                                                    <th>상태</th>
+                                                    <td>
+                                                        <select id="" name="">
+                                                            <option value="">전체</option>
+                                                            <option value="정상">정상</option>
+                                                            <option value="탈퇴">탈퇴</option>
+                                                        </select>
+                                                    </td>
+                                                    <th>검색</th>
+                                                    <td>
+                                                        <input type="text" id="" name="" placeholder="이메일,업체명을 입력하세요">
+                                                    </td>
+                                                </tr>
+                                            </tbody>
+                                        </table>
+                                    </div>
+                                    <div class="search-btn-area">
+                                        <button type="button" class="search-btn" onclick="">
+                                            <span>검색</span>
+                                        </button>
+                                    </div>
+                                </div>
+                            </form>
+                            
+                            <div class="list-main-area">
+                                <div class="list-top-area">
+                                    <div class="list-top-left">
+                                        <div class="cnt">총 5개</div>
+                                    </div>
+                                    <div class="list-top-right">
+                                        <button type="button" class="default-btn02 download-btn" onclick="">
+                                            <span>리포트 다운로드</span>
+                                        </button>
+                                    </div>
+                                </div>
+                                <div class="list-table-area">
+                                    <table class="list-table">
+                                        <colgroup>
+                                            <col width="60">
+                                            <col width="*">
+                                            <col width="14%">
+                                            <col width="14%">
+                                            <col width="14%">
+                                            <col width="10%">
+                                            <col width="10%">
+                                            <col width="110">
+                                        </colgroup>
+                                        <thead>
+                                            <tr>
+                                                <th>번호</th>
+                                                <th>이메일</th>
+                                                <th>업체명</th>
+                                                <th>대표자명</th>
+                                                <th>대표연락처</th>
+                                                <th>상태</th>
+                                                <th>등록차량</th>
+                                                <th>상세보기</th>
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                            <tr>
+                                                <td class="num">5</td>
+                                                <td class="highlight">company5@naver.com</td>
+                                                <td>렌트카업체5</td>
+                                                <td>홍길동</td>
+                                                <td>010-5555-5555</td>
+                                                <td>정상</td>
+                                                <td class="link">
+                                                    <a href="javascript:void(0);" onclick="openBusinessCarLayer(this);">0대</a>
+                                                </td>
+                                                <td>
+                                                    <button type="button" class="default-btn01 small-btn detail-btn" onclick="openBusinessDetailLayer(this);">
+                                                        <span>상세보기</span>
+                                                    </button>
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <td class="num">4</td>
+                                                <td class="highlight">company4@naver.com</td>
+                                                <td>렌트카업체4</td>
+                                                <td>김길동</td>
+                                                <td>010-4444-4444</td>
+                                                <td>정상</td>
+                                                <td class="link">
+                                                    <a href="javascript:void(0);" onclick="openBusinessCarLayer(this);">2대</a>
+                                                </td>
+                                                <td>
+                                                    <button type="button" class="default-btn01 small-btn detail-btn" onclick="openBusinessDetailLayer(this);">
+                                                        <span>상세보기</span>
+                                                    </button>
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <td class="num">3</td>
+                                                <td class="highlight">company3@naver.com</td>
+                                                <td>렌트카업체3</td>
+                                                <td>이길동</td>
+                                                <td>010-3333-3333</td>
+                                                <td>탈퇴</td>
+                                                <td class="link">
+                                                    <a href="javascript:void(0);" onclick="openBusinessCarLayer(this);">0대</a>
+                                                </td>
+                                                <td>
+                                                    <button type="button" class="default-btn01 small-btn detail-btn" onclick="openBusinessDetailLayer(this);">
+                                                        <span>상세보기</span>
+                                                    </button>
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <td class="num">2</td>
+                                                <td class="highlight">company2@naver.com</td>
+                                                <td>렌트카업체2</td>
+                                                <td>최길동</td>
+                                                <td>010-2222-2222</td>
+                                                <td>정상</td>
+                                                <td class="link">
+                                                    <a href="javascript:void(0);" onclick="openBusinessCarLayer(this);">1대</a>
+                                                </td>
+                                                <td>
+                                                    <button type="button" class="default-btn01 small-btn detail-btn" onclick="openBusinessDetailLayer(this);">
+                                                        <span>상세보기</span>
+                                                    </button>
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <td class="num">1</td>
+                                                <td class="highlight">company1@naver.com</td>
+                                                <td>렌트카업체1</td>
+                                                <td>황길동</td>
+                                                <td>010-1111-1111</td>
+                                                <td>정상</td>
+                                                <td class="link">
+                                                    <a href="javascript:void(0);" onclick="openBusinessCarLayer(this);">3대</a>
+                                                </td>
+                                                <td>
+                                                    <button type="button" class="default-btn01 small-btn detail-btn" onclick="openBusinessDetailLayer(this);">
+                                                        <span>상세보기</span>
+                                                    </button>
+                                                </td>
+                                            </tr>
+                                        </tbody>
+                                    </table>
+                                </div>
+                                <div class="list-paging-area">
+                                    <ul class="list-paging">
+                                        <li class="arrow first-arrow disabled">
+                                            <a href="#"></a>
+                                        </li>
+                                        <li class="arrow prev-arrow disabled">
+                                            <a href="#"></a>
+                                        </li>
+                                        <li class="on">
+                                            <a href="#">1</a>
+                                        </li>
+                                        <li>
+                                            <a href="#">2</a>
+                                        </li>
+                                        <li>
+                                            <a href="#">3</a>
+                                        </li>
+                                        <li>
+                                            <a href="#">4</a>
+                                        </li>
+                                        <li>
+                                            <a href="#">5</a>
+                                        </li>
+                                        <li class="arrow next-arrow">
+                                            <a href="#"></a>
+                                        </li>
+                                        <li class="arrow last-arrow disabled">
+                                            <a href="#"></a>
+                                        </li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                    </article>
+                </section>
+            </div>
+            
+            <!-- footer -->
+			<footer class="footer">
+				<h1 class="not-view">footer</h1>
+                
+                <div class="center-ct">
+                    <div class="f-info-area">
+                        <img src="../img/admin-footer-logo.png" alt="푸터로고" class="info-logo">
+                        <div class="info-txt">COPYRIGHT 2023 제주특별자치도<br>ALL RIGHTS RESERVED.</div>
+                    </div>
+                </div>
+			</footer>
+            
+            <!-- layer -->
+            <div class="l-wrap">
+                <!-- alert창 -->
+                <div class="l-area" id="alert-layer">
+                    <div class="l-box">
+                        <div class="l-con-area">
+                            <div class="l-con"></div>
+                        </div>
+                        <div class="l-btn-area">
+                            <button type="button" class="confirm-btn">
+                                <span>확 인</span>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+                <div class="l-mask"></div>
+                
+                <!-- confirm창 -->
+                <div class="l-area" id="confirm-layer">
+                    <div class="l-box">
+                        <div class="l-con-area">
+                            <div class="l-con"></div>
+                        </div>
+                        <div class="l-btn-area">
+                            <button type="button" class="close-btn" onclick="closeLayer(this);">
+                                <span>취 소</span>
+                            </button>
+                            <button type="button" class="confirm-btn">
+                                <span>확 인</span>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+                <div class="l-mask"></div>
+                
+                <!-- alarm창 -->
+                <div class="l-area" id="alarm-layer">
+                    <div class="l-box">
+                        <div class="l-con-area">
+                            <div class="l-con-tit-area">
+                                <button type="button" class="l-con-tit-btn" onclick="closeLayer(this);">
+                                    <span><img src="../img/close-icon.png" alt="레이어닫기"></span>
+                                </button>
+                            </div>
+                            <div class="l-con"></div>
+                        </div>
+                    </div>
+                </div>
+                <div class="l-mask"></div>
+                
+                <!-- 내정보 수정창 -->
+                <div class="l-area" id="myinfo-layer">
+                    <div class="l-box">
+                        <div class="l-tit-area">
+                            <div class="l-tit">내정보 수정</div>
+                            <button type="button" class="l-tit-btn" onclick="closeLayer(this);">
+                                <span><img src="../img/close-icon.png" alt="레이어닫기"></span>
+                            </button>
+                        </div>
+                        <div class="l-con-area">
+                            <div class="detail-table-area">
+                                <table class="detail-table">
+                                    <colgroup>
+                                        <col width="120">
+                                        <col width="*">
+                                    </colgroup>
+                                    <tbody>
+                                        <tr>
+                                            <th>아이디</th>
+                                            <td>
+                                                <input type="text" id="" name="" value="admin1" disabled>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <th>새 비밀번호</th>
+                                            <td>
+                                                <input type="password" id="" name="">
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <th>새 비밀번호 확인</th>
+                                            <td>
+                                                <input type="password" id="" name="">
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <th>이름</th>
+                                            <td>
+                                                <input type="text" id="" name="" value="황길동">
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <th>연락처</th>
+                                            <td>
+                                                <input type="tel" id="" name="" value="010-1111-1111">
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <th>이메일</th>
+                                            <td>
+                                                <input type="email" id="" name="" value="admin1@naver.com">
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <th>권한</th>
+                                            <td>
+                                                <select id="" name="">
+                                                    <option value="최고관리자" selected>최고관리자</option>
+                                                    <option value="일반관리자">일반관리자</option>
+                                                    <option value="기타관리자">기타관리자</option>
+                                                </select>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <th>등록일자</th>
+                                            <td>
+                                                <input type="text" id="" name="" value="2023-01-17 00:00:00" disabled>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <th>수정일자</th>
+                                            <td>
+                                                <input type="text" id="" name="" value="-" disabled>
+                                            </td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
+                        <div class="l-btn-area">
+                            <button type="button" class="default-btn01" onclick="">
+                                <span>수 정</span>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+                <div class="l-mask"></div>
+                
+                <!-- 업체 등록차량창 -->
+                <div class="l-area" id="business-car-layer">
+                    <div class="l-box">
+                        <div class="l-tit-area">
+                            <div class="l-tit">업체 등록차량</div>
+                            <button type="button" class="l-tit-btn" onclick="closeLayer(this);">
+                                <span><img src="../img/close-icon.png" alt="레이어닫기"></span>
+                            </button>
+                        </div>
+                        <div class="l-con-area">
+                            <form id="" name="" method="" action="">
+                                <div class="list-search-area">
+                                    <div class="search-table-area">
+                                        <table class="search-table">
+                                            <colgroup>
+                                                <col width="110">
+                                                <col width="*">
+                                                <col width="110">
+                                                <col width="*">
+                                            </colgroup>
+                                            <tbody>
+                                                <tr>
+                                                    <th>검색</th>
+                                                    <td colspan="3">
+                                                        <input type="text" id="" name="" placeholder="검색어를 입력하세요">
+                                                    </td>
+                                                </tr>
+                                            </tbody>
+                                        </table>
+                                    </div>
+                                    <div class="search-btn-area">
+                                        <button type="button" class="search-btn" onclick="">
+                                            <span>검색</span>
+                                        </button>
+                                    </div>
+                                </div>
+                            </form>
+                            
+                            <div class="list-table-area">
+                                <table class="list-table">
+                                    <colgroup>
+                                        <col width="50">
+                                        <col width="*">
+                                        <col width="*">
+                                        <col width="*">
+                                        <col width="*">
+                                        <col width="70">
+                                    </colgroup>
+                                    <thead>
+                                        <tr>
+                                            <th>번호</th>
+                                            <th>안심번호</th>
+                                            <th>차량번호</th>
+                                            <th>차종</th>
+                                            <th>제조사</th>
+                                            <th>QR코드</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr>
+                                            <td class="num">3</td>
+                                            <td>030003</td>
+                                            <td>33다3333</td>
+                                            <td>i30</td>
+                                            <td>현대</td>
+                                            <td>
+                                                <button type="button" class="default-btn01 small-btn" onclick="openQrcodeViewLayer(this);">
+                                                    <span>보 기</span>
+                                                </button>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td class="num">2</td>
+                                            <td>030002</td>
+                                            <td>22나2222</td>
+                                            <td>벨로스터</td>
+                                            <td>현대</td>
+                                            <td>
+                                                <button type="button" class="default-btn01 small-btn" onclick="openQrcodeViewLayer(this);">
+                                                    <span>보 기</span>
+                                                </button>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td class="num">1</td>
+                                            <td>030001</td>
+                                            <td>11가1111</td>
+                                            <td>아반떼</td>
+                                            <td>현대</td>
+                                            <td>
+                                                <button type="button" class="default-btn01 small-btn" onclick="openQrcodeViewLayer(this);">
+                                                    <span>보 기</span>
+                                                </button>
+                                            </td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                            <div class="list-paging-area">
+                                <ul class="list-paging">
+                                    <li class="arrow first-arrow disabled">
+                                        <a href="#"></a>
+                                    </li>
+                                    <li class="arrow prev-arrow disabled">
+                                        <a href="#"></a>
+                                    </li>
+                                    <li class="on">
+                                        <a href="#">1</a>
+                                    </li>
+                                    <li>
+                                        <a href="#">2</a>
+                                    </li>
+                                    <li>
+                                        <a href="#">3</a>
+                                    </li>
+                                    <li>
+                                        <a href="#">4</a>
+                                    </li>
+                                    <li>
+                                        <a href="#">5</a>
+                                    </li>
+                                    <li class="arrow next-arrow">
+                                        <a href="#"></a>
+                                    </li>
+                                    <li class="arrow last-arrow disabled">
+                                        <a href="#"></a>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="l-mask"></div>
+                
+                <!-- 업체 상세보기창 -->
+                <div class="l-area" id="business-detail-layer">
+                    <div class="l-box">
+                        <div class="l-tit-area">
+                            <div class="l-tit">업체 상세보기</div>
+                            <button type="button" class="l-tit-btn" onclick="closeLayer(this);">
+                                <span><img src="../img/close-icon.png" alt="레이어닫기"></span>
+                            </button>
+                        </div>
+                        <div class="l-con-area">
+                            <div class="detail-table-area">
+                                <table class="detail-table">
+                                    <colgroup>
+                                        <col width="120">
+                                        <col width="*">
+                                    </colgroup>
+                                    <tbody>
+                                        <tr>
+                                            <th>이메일</th>
+                                            <td>
+                                                <div class="c-inline-input">
+                                                    <input type="email" id="" name="" value="company1@naver.com" disabled>
+                                                    <button type="button" class="default-btn03 small-btn" onclick="">
+                                                        <span>비밀번호 초기화</span>
+                                                    </button>
+                                                </div>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <th>업체명</th>
+                                            <td>
+                                                <input type="text" id="" name="" value="렌트카업체1" disabled>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <th>대표자명</th>
+                                            <td>
+                                                <input type="text" id="" name="" value="황길동" disabled>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <th>대표연락처</th>
+                                            <td>
+                                                <input type="tel" id="" name="" value="010-1111-1111" disabled>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <th>사업자등록번호</th>
+                                            <td>
+                                                <input type="tel" id="" name="" value="000-00-00000" disabled>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <th>업태</th>
+                                            <td>
+                                                <input type="text" id="" name="" value="업태" disabled>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <th>종목</th>
+                                            <td>
+                                                <input type="text" id="" name="" value="종목" disabled>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <th>상태</th>
+                                            <td>
+                                                <input type="text" id="" name="" value="정상" disabled>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <th>가입일자</th>
+                                            <td>
+                                                <input type="text" id="" name="" value="2023-01-17 00:00:00" disabled>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <th>최종접속일자</th>
+                                            <td>
+                                                <input type="text" id="" name="" value="2023-01-17 00:00:00" disabled>
+                                            </td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                            <div class="detail-bottom-area">
+                                <div class="c-notice-txt">비밀번호 초기화시 비밀번호가 '<span class="c-bold">0000</span>' 으로 변경됩니다.</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="l-mask"></div>
+                
+                <!-- QR코드 보기창 -->
+                <div class="l-area" id="qrcode-view-layer">
+                    <div class="l-box">
+                        <div class="l-tit-area">
+                            <div class="l-tit">QR코드 보기</div>
+                            <button type="button" class="l-tit-btn" onclick="closeLayer(this);">
+                                <span><img src="../img/close-icon.png" alt="레이어닫기"></span>
+                            </button>
+                        </div>
+                        <div class="l-con-area">
+                            <div class="l-img-con">
+                                <img src="../img/sample-img.png" alt="QR코드 샘플이미지">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="l-mask"></div>
+            </div>
+		</div>
+	</body>
+</html>

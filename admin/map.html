@@ -48,7 +48,8 @@
 	</head>
 
 	<body>
-		<div class="wrap">
+        <!-- mapWrap : 지도페이지일 경우 추가 -->
+		<div class="wrap mapWrap">
             <!-- header -->
 		    <header class="header">
                 <h1 class="not-view">header</h1>
@@ -67,13 +68,6 @@
                             </button>
                         </div>
                     </div>
-                    
-                    <div class="h-con-area">
-                        <div class="con-txt">
-                            <div class="big">제주 주차<br>안심번호<br>서비스</div>
-                            <div class="medium"><span>QR코드</span>와 <span>ARS전화</span>로 <span>개인정보 노출 걱정 NO!</span></div>
-                        </div>
-                    </div>
                 </div>
                 
                 <!-- nav -->
@@ -88,7 +82,7 @@
                         <li data-menu="admin-safenumber">안심번호관리</li>
                         <li data-menu="admin-business">업체관리</li>
                         <li data-menu="admin-stats">통계관리</li>
-                        <li data-menu="admin-map">위치정보 및 지도</li>
+                        <li class="active" data-menu="admin-map">위치정보 및 지도</li>
                         <li data-menu="admin-board">게시판관리</li>
                     </ul>
                     
@@ -193,147 +187,232 @@
             
 			<!-- content -->
             <div class="c-wrap">
-                <!-- c-main : 메인페이지 -->
-                <section class="c-main center-ct">
-                    <!-- 메인 공지사항 -->
-                    <article class="main-notice-area">
-                        <div class="main-notice-top">
-                            <div class="tit">공지사항</div>
-                            <button type="button" class="main-notice-btn" onclick="location.href='board-notice-list.html';">
-                                <span>더보기</span>
-                            </button>
+                <!-- c-map : 지도페이지 -->
+                <section class="c-map">
+                    <!-- map-area : 지도 영역 -->
+                    <article class="map-area"></article>
+                    
+                    <!-- map-top-icon-area : 상단 바 영역 -->
+                    <article class="map-top-bar-area">
+                        <div class="center-ct">
+                            <div class="map-icon-area">
+                                <ul class="map-icon-list">
+                                    <li>
+                                        <a href="javascript:void(0);" class="map-icon01" title="전체화면" onclick="">전체화면</a>
+                                    </li>
+                                    <li>
+                                        <a href="javascript:void(0);" class="map-icon02" title="지도이동" onclick="">지도이동</a>
+                                    </li>
+                                    <li>
+                                        <a href="javascript:void(0);" class="map-icon03" title="지도출력" onclick="openMapLayer(this,'print');">지도출력</a>
+                                    </li>
+                                    <li>
+                                        <a href="javascript:void(0);" class="map-icon04" title="초기화" onclick="">초기화</a>
+                                    </li>
+                                    <li>
+                                        <a href="javascript:void(0);" class="map-icon05" title="거리재기" onclick="openMapLayer(this,'measure');">거리재기</a>
+                                    </li>
+                                    <li>
+                                        <a href="javascript:void(0);" class="map-icon06" title="도형그리기" onclick="openMapLayer(this,'figure');">도형그리기</a>
+                                    </li>
+                                    <li>
+                                        <a href="javascript:void(0);" class="map-icon07" title="이전" onclick="">이전</a>
+                                    </li>
+                                    <li>
+                                        <a href="javascript:void(0);" class="map-icon08" title="다음" onclick="">다음</a>
+                                    </li>
+                                    <li>
+                                        <a href="javascript:void(0);" class="map-icon09" title="보이기" onclick="">보이기</a>
+                                    </li>
+                                    <li>
+                                        <a href="javascript:void(0);" class="map-icon10" title="숨기기" onclick="">숨기기</a>
+                                    </li>
+                                    <li>
+                                        <a href="javascript:void(0);" class="map-icon11" title="좌표설정" onclick="openMapLayer(this,'coordinate');">좌표설정</a>
+                                    </li>
+                                </ul>
+                            </div>
+                            <div class="map-btn-area">
+                                <button type="button" class="map-background-btn" onclick="openMapLayer(this,'background');">
+                                    <span>배경지도</span>
+                                </button>
+                                <button type="button" class="map-loadview-btn" onclick="">
+                                    <span>로드뷰</span>
+                                </button>
+                            </div>
                         </div>
-                        
-                        <ul class="main-notice-list">
+                    </article>
+                    
+                    <!-- map-left-icon-area : 왼쪽 메뉴 영역 -->
+                    <article class="map-left-menu-area">
+                        <ul class="map-menu-list">
                             <li>
-                                <div class="tit">
-                                    <a href="board-notice-detail.html">[긴급] 공지사항입니다. 공지사항입니다. 공지사항입니다. 공지사항입니다. 공지사항입니다. 공지사항입니다. 공지사항입니다. 공지사항입니다. 공지사항입니다. 공지사항입니다.</a>
-                                </div>
-                                <div class="date">2023-01-18</div>
+                                <a href="javascript:void(0);" class="map-layer-menu" onclick="openMapLayer(this,'menu','layer');">
+                                    <div class="map-menu-img"></div>
+                                    <div class="map-menu-txt">레이어</div>
+                                </a>
                             </li>
                             <li>
-                                <div class="tit">
-                                    <a href="board-notice-detail.html">[긴급] 공지사항입니다. 공지사항입니다. 공지사항입니다. 공지사항입니다. 공지사항입니다. 공지사항입니다. 공지사항입니다. 공지사항입니다. 공지사항입니다. 공지사항입니다.</a>
-                                </div>
-                                <div class="date">2023-01-18</div>
+                                <a href="javascript:void(0);" class="map-convert-menu" onclick="openMapLayer(this,'menu','convert');">
+                                    <div class="map-menu-img"></div>
+                                    <div class="map-menu-txt">좌표변환</div>
+                                </a>
                             </li>
                             <li>
-                                <div class="tit">
-                                    <a href="board-notice-detail.html">[긴급] 공지사항입니다. 공지사항입니다. 공지사항입니다. 공지사항입니다. 공지사항입니다. 공지사항입니다. 공지사항입니다. 공지사항입니다. 공지사항입니다. 공지사항입니다.</a>
-                                </div>
-                                <div class="date">2023-01-18</div>
-                            </li>
-                            <li>
-                                <div class="tit">
-                                    <a href="board-notice-detail.html">[긴급] 공지사항입니다. 공지사항입니다. 공지사항입니다. 공지사항입니다. 공지사항입니다. 공지사항입니다. 공지사항입니다. 공지사항입니다. 공지사항입니다. 공지사항입니다.</a>
-                                </div>
-                                <div class="date">2023-01-18</div>
-                            </li>
-                            <li>
-                                <div class="tit">
-                                    <a href="board-notice-detail.html">[긴급] 공지사항입니다. 공지사항입니다. 공지사항입니다. 공지사항입니다. 공지사항입니다. 공지사항입니다. 공지사항입니다. 공지사항입니다. 공지사항입니다. 공지사항입니다.</a>
-                                </div>
-                                <div class="date">2023-01-18</div>
+                                <a href="javascript:void(0);" class="map-report-menu" onclick="openMapLayer(this,'menu','report');">
+                                    <div class="map-menu-img"></div>
+                                    <div class="map-menu-txt">리포트</div>
+                                </a>
                             </li>
                         </ul>
                     </article>
                     
-                    <!-- 메인 메뉴 -->
-                    <article class="main-menu-area">
-                        <ul class="main-menu-list">
-                            <li data-menu="admin-system">
-                                <div class="main-menu-tit">시스템관리</div>
-                                
-                                <ul class="main-sub-menu-list">
-                                    <li>
-                                        <a href="system-admin-list.html">관리자 계정관리</a>
-                                    </li>
-                                    <li>
-                                        <a href="system-user-list.html">사용자 계정관리</a>
-                                    </li>
-                                    <li>
-                                        <a href="system-admin-log.html">관리자 로그관리</a>
-                                    </li>
-                                    <li>
-                                        <a href="system-user-log.html">사용자 로그관리</a>
-                                    </li>
-                                    <li>
-                                        <a href="system-auth-list.html">권한관리</a>
-                                    </li>
-                                    <li>
-                                        <a href="system-code-list.html">코드관리</a>
-                                    </li>
-                                    <li>
-                                        <a href="system-template-list.html">QR코드 템플릿관리</a>
-                                    </li>
-                                    <li>
-                                        <a href="system-agreement-list.html">약관관리</a>
-                                    </li>
-                                </ul>
-                            </li>
-                            <li data-menu="admin-data">
-                                <div class="main-menu-tit">데이터관리</div>
-                                
-                                <ul class="main-sub-menu-list">
-                                    <li>
-                                        <a href="data-place-list.html">공유장소관리</a>
-                                    </li>
-                                </ul>
-                            </li>
-                            <li data-menu="admin-safenumber">
-                                <div class="main-menu-tit">
-                                    <a href="safenumber-list.html">안심번호관리</a>
+                    <!-- map-right-zoom-area : 오른쪽 지도 확대/축소 바 영역 -->
+                    <article class="map-right-zoom-area">
+                        <div class="map-zoom-area">
+                            <div class="map-zoom-in" onclick="setMapZoomIn(this);"></div>
+                            <div class="map-zoom-bar">
+                                <div class="map-zoom-range">
+                                    <input type="range" id="" name="" min="1" max="9" value="1">
                                 </div>
-                            </li>
-                            <li data-menu="admin-business">
-                                <div class="main-menu-tit">
-                                    <a href="business-list.html">업체관리</a>
+                            </div>
+                            <div class="map-zoom-out" onclick="setMapZoomOut(this);"></div>
+                        </div>
+                    </article>
+                    
+                    <!-- map-bottom-bar-area : 하단 바 영역 -->
+                    <article class="map-bottom-bar-area">
+                        <div class="center-ct">
+                            <ul class="map-bar-area">
+                                <li>
+                                    <div class="map-bar-tit">위치</div>
+                                    <div class="map-bar-con">
+                                        <select id="" name="">
+                                            <option value="">선택</option>
+                                            <option value="제주시">제주시</option>
+                                            <option value="서귀포시">서귀포시</option>
+                                        </select>
+                                        <select id="" name="">
+                                            <option value="">선택</option>
+                                            <option value="제주시 읍/면/동">제주시 읍/면/동</option>
+                                            <option value="서귀포시 읍/면/동">서귀포시 읍/면/동</option>
+                                        </select>
+                                        <button type="button" class="default-btn01 small-btn" onclick="">
+                                            <span>선택해제</span>
+                                        </button>
+                                    </div>
+                                </li>
+                                <li>
+                                    <div class="map-bar-tit">축척</div>
+                                    <div class="map-bar-con">
+                                        <input type="text" id="" name="" value="1:210416">
+                                    </div>
+                                </li>
+                                <li>
+                                    <div class="map-bar-tit">좌표</div>
+                                    <div class="map-bar-con">
+                                        <input type="number" id="" name="" value="33.4273066">
+                                        <input type="number" id="" name="" value="126.5758244">
+                                    </div>
+                                </li>
+                            </ul>
+                        </div>
+                    </article>
+                    
+                    <!-- map-layer-area : 지도 레이어 영역 -->
+                    <article class="map-layer-area">
+                        <!-- map-print-layer : 지도출력 레이어창 -->
+                        <div class="map-layer map-print-layer">
+                            <div class="map-layer-box">
+                                <div class="map-layer-tit-area">
+                                    <div class="map-layer-tit"></div>
+                                    <button type="button" class="map-layer-tit-btn" onclick="closeMapLayer(this);">
+                                        <span><img src="../img/close-icon.png" alt="레이어닫기"></span>
+                                    </button>
                                 </div>
-                            </li>
-                            <li data-menu="admin-stats">
-                                <div class="main-menu-tit">
-                                    <a href="stats-list.html">통계관리</a>
+                                <div class="map-layer-con-area">
+                                    
                                 </div>
-                            </li>
-                            <li data-menu="admin-map">
-                                <div class="main-menu-tit">
-                                    <a href="map.html">위치정보 및 지도</a>
+                            </div>
+                        </div>
+                        
+                        <!-- map-measure-layer : 거리재기 레이어창 -->
+                        <div class="map-layer map-measure-layer">
+                            <div class="map-layer-box">
+                                <div class="map-layer-tit-area">
+                                    <div class="map-layer-tit"></div>
+                                    <button type="button" class="map-layer-tit-btn" onclick="closeMapLayer(this);">
+                                        <span><img src="../img/close-icon.png" alt="레이어닫기"></span>
+                                    </button>
                                 </div>
-                            </li>
-                            <li data-menu="admin-board">
-                                <div class="main-menu-tit">게시판관리</div>
-                                
-                                <ul class="main-sub-menu-list">
-                                    <li>
-                                        <a href="board-notice-list.html">공지사항</a>
-                                    </li>
-                                    <li>
-                                        <a href="board-qna-list.html">QNA</a>
-                                    </li>
-                                    <li>
-                                        <a href="board-reference-list.html">자료실</a>
-                                    </li>
-                                    <li>
-                                        <a href="board-faq-list.html">FAQ</a>
-                                    </li>
-                                </ul>
-                            </li>
-                        </ul>
+                                <div class="map-layer-con-area">
+                                    
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <!-- map-figure-layer : 도형그리기 레이어창 -->
+                        <div class="map-layer map-figure-layer">
+                            <div class="map-layer-box">
+                                <div class="map-layer-tit-area">
+                                    <div class="map-layer-tit"></div>
+                                    <button type="button" class="map-layer-tit-btn" onclick="closeMapLayer(this);">
+                                        <span><img src="../img/close-icon.png" alt="레이어닫기"></span>
+                                    </button>
+                                </div>
+                                <div class="map-layer-con-area">
+                                    
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <!-- map-coordinate-layer : 좌표설정 레이어창 -->
+                        <div class="map-layer map-coordinate-layer">
+                            <div class="map-layer-box">
+                                <div class="map-layer-tit-area">
+                                    <div class="map-layer-tit"></div>
+                                    <button type="button" class="map-layer-tit-btn" onclick="closeMapLayer(this);">
+                                        <span><img src="../img/close-icon.png" alt="레이어닫기"></span>
+                                    </button>
+                                </div>
+                                <div class="map-layer-con-area">
+                                    
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <!-- map-background-layer : 배경지도 레이어창 -->
+                        <div class="map-layer map-background-layer">
+                            <div class="map-layer-box">
+                                <div class="map-layer-tit-area">
+                                    <div class="map-layer-tit"></div>
+                                    <button type="button" class="map-layer-tit-btn" onclick="closeMapLayer(this);">
+                                        <span><img src="../img/close-icon.png" alt="레이어닫기"></span>
+                                    </button>
+                                </div>
+                                <div class="map-layer-con-area">
+                                    
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <!-- map-menu-layer : 왼쪽 메뉴 레이어창 -->
+                        <div class="map-layer map-menu-layer">
+                            <div class="map-layer-box">
+                                <div class="map-layer-tit-area">
+                                    <div class="map-layer-tit"></div>
+                                    <button type="button" class="map-layer-tit-btn" onclick="closeMapLayer(this);">
+                                        <span><img src="../img/close-icon.png" alt="레이어닫기"></span>
+                                    </button>
+                                </div>
+                                <div class="map-layer-con-area">
+                                    
+                                </div>
+                            </div>
+                        </div>
                     </article>
                 </section>
             </div>
-            
-            <!-- footer -->
-			<footer class="footer">
-				<h1 class="not-view">footer</h1>
-                
-                <div class="center-ct">
-                    <div class="f-info-area">
-                        <img src="../img/admin-footer-logo.png" alt="푸터로고" class="info-logo">
-                        <div class="info-txt">COPYRIGHT 2023 제주특별자치도<br>ALL RIGHTS RESERVED.</div>
-                    </div>
-                </div>
-			</footer>
             
             <!-- layer -->
             <div class="l-wrap">
