@@ -30,7 +30,11 @@ $(function() {
     
     //리사이즈
     $(window).resize(function() {
-        
+        //20230303 수정부분 start
+        //모바일에서 100vh 오류 해결방법
+        var vh = window.innerHeight * 0.01;
+        document.documentElement.style.setProperty('--vh', `${vh}px`);
+        //20230303 수정부분 end
     });
     
     //스크롤시
@@ -44,6 +48,12 @@ $(function() {
             $("aside.aside").css("left", 0 - $(this).scrollLeft());
         }
     });
+    
+    //20230303 수정부분 start
+    //모바일에서 100vh 오류 해결방법
+    var vh = window.innerHeight * 0.01;
+    document.documentElement.style.setProperty('--vh', `${vh}px`);
+    //20230303 수정부분 end
     
     //숫자만 입력
     $("input[type='tel']").on("keyup", function(e) {

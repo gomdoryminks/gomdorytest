@@ -20,8 +20,18 @@ const chkNumberExp = RegExp(/^[0-9-]*$/);
 $(function() {
     //리사이즈
     $(window).resize(function() {
-        
+        //20230303 수정부분 start
+        //모바일에서 100vh 오류 해결방법
+        var vh = window.innerHeight * 0.01;
+        document.documentElement.style.setProperty('--vh', `${vh}px`);
+        //20230303 수정부분 end
     });
+    
+    //20230303 수정부분 start
+    //모바일에서 100vh 오류 해결방법
+    var vh = window.innerHeight * 0.01;
+    document.documentElement.style.setProperty('--vh', `${vh}px`);
+    //20230303 수정부분 end
     
     //20230213 수정부분 start
     //숫자만 입력
