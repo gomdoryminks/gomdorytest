@@ -27,6 +27,8 @@
         <link href="../css/jquery-datepicker.css" type="text/css" rel="stylesheet">
         <link href="../css/jquery-ui-timepicker-addon.css" type="text/css" rel="stylesheet">
         <link href="../css/yearpicker.css" type="text/css" rel="stylesheet">
+        <link href="../css/tui-color-picker.css" type="text/css" rel="stylesheet">
+        <link href="../css/tui-image-editor.css" type="text/css" rel="stylesheet">
 		<link href="../css/member-mobile.css" type="text/css" rel="stylesheet">
 		
 		<!--[if lt IE 9]>
@@ -53,6 +55,12 @@
         <script src="../js/datepicker-ko.js"></script>
         <script src="../js/chart.js"></script>
         <script src="../js/chartjs-adapter-date-fns.bundle.min.js"></script>
+        <script src="../js/tui-code-snippet.min.js"></script>
+        <script src="../js/tui-color-picker.js"></script>
+        <script src="../js/tui-image-editor.js"></script>
+        <script src="../js/black-theme.js"></script>
+        <script src="../js/white-theme.js"></script>
+        <script src="../js/qrcode.js"></script>
         <script src="../js/member-function.js"></script>
 	</head>
 
@@ -62,6 +70,12 @@
             <!-- header -->
 		    <header class="header">
                 <h1 class="not-view">header</h1>
+                
+                <div class="h-left-area">
+                    <button type="button" class="h-main-btn" onclick="location.href='index.html';">
+                        <span>메인</span>
+                    </button>
+                </div>
                 
                 <div class="h-center-area">
                     <div class="h-tit">제주 주차 안심번호</div>
@@ -76,7 +90,15 @@
                     <article class="page-area">
                         <div class="page-map-area">
                             <!-- map-area : 지도 영역 -->
-                            <div class="map-area"></div>
+                            <div class="map-area">
+                                <!-- map-position-btn : 지도를 내위치로 이동시키는 버튼 -->
+                                <button type="button" class="map-position-btn" onclick="">
+                                    <span>내위치</span>
+                                </button>
+                                
+                                <!-- map-marker-img : 자동차 마커이미지 (예시용), 개발시에는 제거해주세요 -->
+                                <img src="../img/map-marker-icon.png" alt="자동차 마커이미지" class="map-marker-img">
+                            </div>
                             
                             <div class="page-detail-area">
                                 <!-- valid-form-area : 입력폼 유효성을 체크할 경우 -->
@@ -134,10 +156,10 @@
                                         </ul>
                                     </div>
                                     <div class="page-form-btn-area">
-                                        <button type="button" class="default-btn01 big-btn" onclick="">
+                                        <button type="button" class="default-btn01 big-btn" onclick="openLayer('confirm','문자를 전송하시겠습니까?','');">
                                             <span>문자 전송</span>
                                         </button>
-                                        <button type="button" class="default-btn05 big-btn" onclick="">
+                                        <button type="button" class="default-btn05 big-btn" onclick="location.href='tel:1533-0355';">
                                             <span>ARS 연결</span>
                                         </button>
                                     </div>

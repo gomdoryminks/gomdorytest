@@ -9,11 +9,11 @@
 		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, user-scalable=no, viewport-fit=cover">
 		<meta name="format-detection" content="telephone=no, address=no, email=no">
         <!-- Chrome, Firefox, Opera -->
-        <meta name="theme-color" content="#ffa60f">
+        <meta name="theme-color" content="#ffffff">
         <!-- Windows Phone -->
-        <meta name="msapplication-navbutton-color" content="#ffa60f">
+        <meta name="msapplication-navbutton-color" content="#ffffff">
         <!-- iOS Safari -->
-        <meta name="apple-mobile-web-app-status-bar-style" content="#ffa60f">
+        <meta name="apple-mobile-web-app-status-bar-style" content="#ffffff">
         <meta name="apple-mobile-web-app-capable" content="yes">
 		<link rel="shortcut icon" href="../img/logo-favicon.ico">
 		<link rel="apple-touch-icon" href="../img/logo-favicon.ico">
@@ -66,57 +66,26 @@
 
 	<body>
         <!-- mobileWrap : 모바일일 경우 추가 -->
-		<div class="wrap mobileWrap">
-            <!-- header -->
-		    <header class="header">
-                <h1 class="not-view">header</h1>
-                
-                <div class="h-left-area">
-                    <button type="button" class="h-back-btn" onclick="location.href='login.html';">
-                        <span>뒤로</span>
-                    </button>
-                </div>
-                
-                <div class="h-center-area">
-                    <div class="h-tit">회원가입</div>
-                </div>
-            </header>
-            
+		<div class="wrap mobileWrap">            
 			<!-- content -->
-            <div class="c-wrap">
-                <!-- c-join : 회원가입페이지 -->
-                <section class="c-join">
-                    <!-- 회원가입 단계 -->
-                    <article class="join-step-area">
-                        <div class="join-step-tit">가입완료</div>
-                        <ul class="join-step-list">
-                            <li class="on">
-                                <div class="num">1</div>
-                            </li>
-                            <li class="on">
-                                <div class="num">2</div>
-                            </li>
-                            <li class="on">
-                                <div class="num">3</div>
-                            </li>
-                        </ul>
+            <!-- c-error-wrap : 에러페이지일 경우 추가 -->
+            <div class="c-wrap c-error-wrap">
+                <!-- c-error : 에러페이지 -->
+                <section class="c-error">
+                    <!-- 에러메시지 내용 -->
+                    <article class="error-area">
+                        <div class="error-txt-area">
+                            <div class="big">404</div>
+                            <div class="medium">페이지를 찾을 수 없습니다.</div>
+                            <div class="small">찾으려는 페이지의 주소가 잘못 입력되었거나,<br>주소의 변경 혹은 삭제로 인해 사용하실 수 없습니다.<br>입력하신 페이지의 주소가 정확한지 다시 한번 확인해주세요.</div>
+                        </div>
                     </article>
                     
-                    <!-- 회원가입 폼 -->
-                    <article class="join-form-area">
-                        <form id="" name="" method="" action="">
-                            <div class="join-form-box">
-                                <div class="join-complete-area">
-                                    <div class="join-complete-box"><span class="c-bold">회원가입</span>이<br>완료되었습니다!</div>
-                                    <div class="join-complete-txt">서비스를 이용하려면<br>로그인 해주시기 바랍니다.</div>
-                                </div>
-                            </div>
-                            <div class="join-form-btn-area">
-                                <button type="button" class="default-btn01 big-btn" onclick="location.href='login.html';">
-                                    <span>로그인 하기</span>
-                                </button>
-                            </div>
-                        </form>
+                    <!-- 에러메시지 버튼 -->
+                    <article class="error-btn-area">
+                        <button type="button" class="default-btn01 big-btn" onclick="location.href='index.html';">
+                            <span>메인으로</span>
+                        </button>
                     </article>
                 </section>
             </div>

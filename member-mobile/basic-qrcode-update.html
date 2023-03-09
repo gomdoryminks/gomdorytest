@@ -78,7 +78,7 @@
                 </div>
                 
                 <div class="h-center-area">
-                    <div class="h-tit">공지사항</div>
+                    <div class="h-tit">QR코드 정보 수정</div>
                 </div>
                 
                 <!-- 회원일 경우에만 노출 -->
@@ -149,93 +149,49 @@
                 <section class="c-page">
                     <!-- 페이지 내용 -->
                     <article class="page-area">
-                        <div class="page-list-area board-list-area">
-                            <form id="" name="" method="" action="">
-                                <div class="c-search-box">
-                                    <input type="text" id="" name="" class="c-search-input" placeholder="검색어를 입력하세요">
-                                    <input type="button" value="검색" class="c-search-btn">
+                        <div class="page-detail-area">
+                            <!-- valid-form-area : 입력폼 유효성을 체크할 경우 -->
+                            <form id="" name="" method="" action="" class="valid-form-area">
+                                <div class="page-form-box">
+                                    <div class="page-notice-txt">
+                                        <div class="txt-item">QR코드 수정시 이전에 작업한 내역들은 모두 <span class="c-bold">초기화</span>되고, 수정하던 중에 템플릿을 변경할 경우에도 모두 <span class="c-bold">초기화</span>됩니다.</div>
+                                        <div class="txt-item">만약 작업하시다가 QR코드를 삭제할 경우 이전 작업으로 돌아가시거나 <span class="c-bold">초기화</span> 후 다시 작업해주시기 바랍니다.</div>
+                                    </div>
+                                    
+                                    <ul class="valid-form-list">
+                                        <li>
+                                            <!-- ok : 입력값이 유효하거나 disabled일 경우 -->
+                                            <div class="valid-form-tit">
+                                                <label for="valid-form-item1">안심번호</label>
+                                            </div>
+                                            <!-- required : 필수값일 경우, data-event-flag : 버튼을 눌러서 유효성을 체크할 경우, data-old-val : 기존의 값으로 data-event-flag가 Y일 경우 사용됨, data-compare-id : 해당 id를 가진 항목과 값이 같은지 여부를 비교할 경우 -->
+                                            <div class="valid-form-con">
+                                                <input type="number" id="valid-form-item1" name="" value="110001" disabled>
+                                            </div>
+                                        </li>
+                                        <li>
+                                            <!-- ok : 입력값이 유효하거나 disabled일 경우 -->
+                                            <div class="valid-form-tit">
+                                                <label for="valid-form-item2">차량번호</label>
+                                            </div>
+                                            <!-- required : 필수값일 경우, data-event-flag : 버튼을 눌러서 유효성을 체크할 경우, data-old-val : 기존의 값으로 data-event-flag가 Y일 경우 사용됨, data-compare-id : 해당 id를 가진 항목과 값이 같은지 여부를 비교할 경우 -->
+                                            <div class="valid-form-con">
+                                                <input type="text" id="valid-form-item2" name="" value="11가1111" disabled>
+                                            </div>
+                                        </li>
+                                    </ul>
+                                    
+                                    <!-- tui-image-editor-area : QR코드 편집툴 -->
+                                    <div class="tui-image-editor-area">
+                                        <div id="tui-image-editor"></div>
+                                    </div>
+                                </div>
+                                <div class="page-form-btn-area">
+                                    <button type="button" class="default-btn01 big-btn" onclick="return chkFormValidResult(this,'basic-qrcode-list.html');">
+                                        <span>수 정</span>
+                                    </button>
                                 </div>
                             </form>
-                            
-                            <div class="list-top-area">
-                                <div class="list-top-right">
-                                    <div class="cnt">총 5개</div>
-                                </div>
-                            </div>
-                            <div class="list-table-area">
-                                <table class="list-table">
-                                    <colgroup>
-                                        <col width="45">
-                                        <col width="*">
-                                        <col width="90">
-                                    </colgroup>
-                                    <thead>
-                                        <tr>
-                                            <th>번호</th>
-                                            <th>제목</th>
-                                            <th>작성일자</th>
-                                        </tr>
-                                    </thead>
-                                    <tbody>
-                                        <tr data-link="board-notice-detail.html">
-                                            <td class="highlight"><span class="c-highlight">공지</span></td>
-                                            <td class="c-left highlight tit">긴급 공지사항입니다.</td>
-                                            <td>2023-01-18</td>
-                                        </tr>
-                                        <tr data-link="board-notice-detail.html">
-                                            <td class="highlight">4</td>
-                                            <td class="c-left highlight tit">일반 공지사항입니다.</td>
-                                            <td>2023-01-18</td>
-                                        </tr>
-                                        <tr data-link="board-notice-detail.html">
-                                            <td class="highlight">3</td>
-                                            <td class="c-left highlight tit">일반 공지사항입니다.</td>
-                                            <td>2023-01-18</td>
-                                        </tr>
-                                        <tr data-link="board-notice-detail.html">
-                                            <td class="highlight">2</td>
-                                            <td class="c-left highlight tit">일반 공지사항입니다.</td>
-                                            <td>2023-01-18</td>
-                                        </tr>
-                                        <tr data-link="board-notice-detail.html">
-                                            <td class="highlight">1</td>
-                                            <td class="c-left highlight tit">일반 공지사항입니다.</td>
-                                            <td>2023-01-18</td>
-                                        </tr>
-                                    </tbody>
-                                </table>
-                            </div>
-                            <div class="list-paging-area">
-                                <ul class="list-paging">
-                                    <li class="arrow first-arrow disabled">
-                                        <a href="#"></a>
-                                    </li>
-                                    <li class="arrow prev-arrow disabled">
-                                        <a href="#"></a>
-                                    </li>
-                                    <li class="on">
-                                        <a href="#">1</a>
-                                    </li>
-                                    <li>
-                                        <a href="#">2</a>
-                                    </li>
-                                    <li>
-                                        <a href="#">3</a>
-                                    </li>
-                                    <li>
-                                        <a href="#">4</a>
-                                    </li>
-                                    <li>
-                                        <a href="#">5</a>
-                                    </li>
-                                    <li class="arrow next-arrow">
-                                        <a href="#"></a>
-                                    </li>
-                                    <li class="arrow last-arrow disabled">
-                                        <a href="#"></a>
-                                    </li>
-                                </ul>
-                            </div>
                         </div>
                     </article>
                 </section>

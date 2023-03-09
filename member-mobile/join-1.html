@@ -27,6 +27,8 @@
         <link href="../css/jquery-datepicker.css" type="text/css" rel="stylesheet">
         <link href="../css/jquery-ui-timepicker-addon.css" type="text/css" rel="stylesheet">
         <link href="../css/yearpicker.css" type="text/css" rel="stylesheet">
+        <link href="../css/tui-color-picker.css" type="text/css" rel="stylesheet">
+        <link href="../css/tui-image-editor.css" type="text/css" rel="stylesheet">
 		<link href="../css/member-mobile.css" type="text/css" rel="stylesheet">
 		
 		<!--[if lt IE 9]>
@@ -53,6 +55,12 @@
         <script src="../js/datepicker-ko.js"></script>
         <script src="../js/chart.js"></script>
         <script src="../js/chartjs-adapter-date-fns.bundle.min.js"></script>
+        <script src="../js/tui-code-snippet.min.js"></script>
+        <script src="../js/tui-color-picker.js"></script>
+        <script src="../js/tui-image-editor.js"></script>
+        <script src="../js/black-theme.js"></script>
+        <script src="../js/white-theme.js"></script>
+        <script src="../js/qrcode.js"></script>
         <script src="../js/member-function.js"></script>
 	</head>
 
@@ -78,7 +86,7 @@
                     <!-- 로그인 폼 -->                    
                     <article class="login-form-area">
                         <div class="login-form-box">
-                            <button type="button" class="default-btn05 big-btn" onclick="location.href='common-join-2.html';">
+                            <button type="button" class="default-btn05 big-btn" onclick="openSnsJoinLayer(this);">
                                 <span>일반회원 회원가입</span>
                             </button>
                             <button type="button" class="default-btn05 big-btn" onclick="location.href='rentcar-join-2.html';">
@@ -146,6 +154,29 @@
                                 </button>
                             </div>
                             <div class="l-con"></div>
+                        </div>
+                    </div>
+                </div>
+                <div class="l-mask"></div>
+                
+                <!-- SNS 회원가입창 -->
+                <div class="l-area" id="sns-join-layer">
+                    <div class="l-box">
+                        <div class="l-tit-area">
+                            <div class="l-tit">SNS 회원가입</div>
+                            <button type="button" class="l-tit-btn" onclick="closeLayer(this);">
+                                <span><img src="../img/close-icon.png" alt="레이어닫기"></span>
+                            </button>
+                        </div>
+                        <div class="l-con-area">
+                            <div class="l-sns-area">
+                                <button type="button" class="sns-naver-btn" onclick="">
+                                    <span>네이버로 회원가입</span>
+                                </button>
+                                <button type="button" class="sns-kakao-btn" onclick="">
+                                    <span>카카오로 회원가입</span>
+                                </button>
+                            </div>
                         </div>
                     </div>
                 </div>

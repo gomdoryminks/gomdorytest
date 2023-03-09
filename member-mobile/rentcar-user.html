@@ -27,6 +27,8 @@
         <link href="../css/jquery-datepicker.css" type="text/css" rel="stylesheet">
         <link href="../css/jquery-ui-timepicker-addon.css" type="text/css" rel="stylesheet">
         <link href="../css/yearpicker.css" type="text/css" rel="stylesheet">
+        <link href="../css/tui-color-picker.css" type="text/css" rel="stylesheet">
+        <link href="../css/tui-image-editor.css" type="text/css" rel="stylesheet">
 		<link href="../css/member-mobile.css" type="text/css" rel="stylesheet">
 		
 		<!--[if lt IE 9]>
@@ -53,6 +55,12 @@
         <script src="../js/datepicker-ko.js"></script>
         <script src="../js/chart.js"></script>
         <script src="../js/chartjs-adapter-date-fns.bundle.min.js"></script>
+        <script src="../js/tui-code-snippet.min.js"></script>
+        <script src="../js/tui-color-picker.js"></script>
+        <script src="../js/tui-image-editor.js"></script>
+        <script src="../js/black-theme.js"></script>
+        <script src="../js/white-theme.js"></script>
+        <script src="../js/qrcode.js"></script>
         <script src="../js/member-function.js"></script>
 	</head>
 
@@ -62,6 +70,12 @@
             <!-- header -->
 		    <header class="header">
                 <h1 class="not-view">header</h1>
+                
+                <div class="h-left-area">
+                    <button type="button" class="h-main-btn" onclick="location.href='index.html';">
+                        <span>메인</span>
+                    </button>
+                </div>
                 
                 <div class="h-center-area">
                     <div class="h-tit">렌트카 사용자정보</div>
@@ -132,7 +146,7 @@
                                                 </button>
                                             </div>
                                             <div class="c-notice-txt">
-                                                <div class="txt-item">렌트기간은 정확히 설정해주시기 바랍니다.</div>
+                                                <div class="txt-item">연락처와 렌트기간을 정확히 설정해주시기 바랍니다.</div>
                                             </div>
                                         </li>
                                     </ul>
