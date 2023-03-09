@@ -19,6 +19,8 @@
         <link href="../css/jquery-datepicker.css" type="text/css" rel="stylesheet">
         <link href="../css/jquery-ui-timepicker-addon.css" type="text/css" rel="stylesheet">
         <link href="../css/yearpicker.css" type="text/css" rel="stylesheet">
+        <link href="../css/tui-color-picker.css" type="text/css" rel="stylesheet">
+        <link href="../css/tui-image-editor.css" type="text/css" rel="stylesheet">
 		<link href="../css/member-pc.css" type="text/css" rel="stylesheet">
 		
 		<!--[if lt IE 9]>
@@ -45,6 +47,12 @@
         <script src="../js/datepicker-ko.js"></script>
         <script src="../js/chart.js"></script>
         <script src="../js/chartjs-adapter-date-fns.bundle.min.js"></script>
+        <script src="../js/tui-code-snippet.min.js"></script>
+        <script src="../js/tui-color-picker.js"></script>
+        <script src="../js/tui-image-editor.js"></script>
+        <script src="../js/black-theme.js"></script>
+        <script src="../js/white-theme.js"></script>
+        <script src="../js/qrcode.js"></script>
         <script src="../js/member-function.js"></script>
 	</head>
 
@@ -128,7 +136,66 @@
                 
                 <!-- c-page : 기본페이지 -->
                 <section class="c-page center-ct2">
+                    <!-- 페이지 제목 -->
+                    <article class="page-tit-area">QR코드 수정</article>
                     
+                    <!-- 페이지 내용 -->
+                    <article class="page-area">
+                        <div class="page-detail-area">
+                            <div class="page-notice-txt">
+                                <div class="txt-item">QR코드 수정시 이전에 작업한 내역들은 모두 <span class="c-bold">초기화</span>되고, 수정하던 중에 템플릿을 변경할 경우에도 모두 <span class="c-bold">초기화</span>됩니다.</div>
+                                <div class="txt-item">만약 작업하시다가 QR코드를 삭제할 경우 이전 작업으로 돌아가시거나 <span class="c-bold">초기화</span> 후 다시 작업해주시기 바랍니다.</div>
+                            </div>
+                            
+                            <!-- valid-form-area : 입력폼 유효성을 체크할 경우 -->
+                            <form id="" name="" method="" action="" class="valid-form-area">
+                                <div class="detail-table-area">
+                                    <table class="detail-table">
+                                        <colgroup>
+                                            <col width="130">
+                                            <col width="*">
+                                        </colgroup>
+                                        <tbody>
+                                            <tr>
+                                                <!-- ok : 입력값이 유효하거나 disabled일 경우 -->
+                                                <th class="valid-form-tit">
+                                                    <label for="">안심번호</label>
+                                                </th>
+                                                <!-- required : 필수값일 경우, data-event-flag : 버튼을 눌러서 유효성을 체크할 경우, data-old-val : 기존의 값으로 data-event-flag가 Y일 경우 사용됨, data-compare-id : 해당 id를 가진 항목과 값이 같은지 여부를 비교할 경우 -->
+                                                <td class="valid-form-con">
+                                                    <input type="number" id="" name="" value="110001" disabled>
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <!-- ok : 입력값이 유효하거나 disabled일 경우 -->
+                                                <th class="valid-form-tit">
+                                                    <label for="">차량번호</label>
+                                                </th>
+                                                <!-- required : 필수값일 경우, data-event-flag : 버튼을 눌러서 유효성을 체크할 경우, data-old-val : 기존의 값으로 data-event-flag가 Y일 경우 사용됨, data-compare-id : 해당 id를 가진 항목과 값이 같은지 여부를 비교할 경우 -->
+                                                <td class="valid-form-con">
+                                                    <input type="text" id="" name="" value="11가1111" disabled>
+                                                </td>
+                                            </tr>
+                                        </tbody>
+                                    </table>
+                                </div>
+                                
+                                <!-- tui-image-editor-area : QR코드 편집툴 -->
+                                <div class="tui-image-editor-area">
+                                    <div id="tui-image-editor"></div>
+                                </div>
+                                
+                                <div class="detail-btn-area">
+                                    <button type="button" class="default-btn04 round-btn" onclick="location.href='basic-qrcode-list.html';">
+                                        <span>목 록</span>
+                                    </button>
+                                    <button type="button" class="default-btn01 round-btn" onclick="return chkFormValidResult(this,'basic-qrcode-list.html');">
+                                        <span>수 정</span>
+                                    </button>
+                                </div>
+                            </form>
+                        </div>
+                    </article>
                 </section>
             </div>
             
