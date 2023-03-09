@@ -662,7 +662,8 @@ footer.footer .f-info-area .info-txt {
     height: auto;
     background-color: #ffffff;
 }
-.wrap .c-wrap.c-login-wrap {
+.wrap .c-wrap.c-login-wrap,
+.wrap .c-wrap.c-error-wrap {
     background-color: #fff4ea;
 }
 .wrap b {
@@ -1772,6 +1773,111 @@ footer.footer .f-info-area .info-txt {
     font-size: 0.75rem;
     line-height: 1.42em;
     font-family: 'SpoqaHanSansNeo', sans-serif;
+}
+
+/************************************************
+
+					error
+
+*************************************************/
+.c-error {
+    width: 100%;
+    height: auto;
+    min-height: 100vh;
+    min-height: calc(var(--vh, 1vh) * 100);
+    display: -ms-flexbox;
+    display: flex;
+    -ms-flex-wrap: wrap;
+    flex-wrap: wrap;
+    -ms-flex-pack: center;
+    justify-content: center;
+    -ms-flex-align: center;
+    align-items: center;
+    align-content: center;
+    position: relative;
+    padding: 110px 30px 70px;
+}
+.c-error .error-area {
+    width: 580px;
+    height: auto;
+    position: relative;
+    margin-bottom: 40px;
+    padding: 80px 80px 48px;
+    background-color: #ffffff;
+    border: 1px solid #ded0c3;
+    -webkit-border-radius: 36px;
+    -moz-border-radius: 36px;
+    -ms-border-radius: 36px;
+	border-radius: 36px;
+}
+.c-error .error-area:before {
+    content: '';
+    width: 274px;
+    height: 297px;
+    display: block;
+    position: absolute;
+    top: -110px;
+    right: -30px;
+    background: transparent url('../img/admin-login-img.png') no-repeat center;
+    background-size: contain;
+}
+.c-error .error-area .error-txt-area .big {
+    margin-bottom: 14px;
+    color: #fd8f41;
+    font-size: 2.625rem;
+    line-height: 1.25em;
+    font-weight: 700;
+    letter-spacing: 1.26px;
+    font-family: 'poppins', sans-serif;
+    text-shadow: 4px 4px 0 #ffffff, 6px 6px 0 #1d1e24;
+}
+.c-error .error-area .error-txt-area .medium {
+    margin-bottom: 28px;
+    color: #1d1e24;
+    font-size: 1.5rem;
+    line-height: 1.25em;
+    font-weight: 700;
+    letter-spacing: -0.5px;
+    font-family: 'SpoqaHanSansNeo', sans-serif;
+    word-break: keep-all;
+}
+.c-error .error-area .error-txt-area .small {
+    margin-bottom: 42px;
+    color: #576283;
+    line-height: 1.5em;
+    font-weight: 500;
+    letter-spacing: -0.5px;
+    font-family: 'SpoqaHanSansNeo', sans-serif;
+    word-break: keep-all;
+}
+.c-error .error-area .error-btn-area .error-btn {
+    width: 100%;
+    height: 62px;
+    padding: 0;
+    background-color: #473a33;
+    border: 1px solid #473a33;
+    color: #ffffff;
+    font-size: 1.563rem;
+    line-height: 60px;
+    font-weight: 700;
+    font-family: 'SpoqaHanSansNeo', sans-serif;
+    text-align: center;
+    -webkit-border-radius: 4px;
+    -moz-border-radius: 4px;
+    -ms-border-radius: 4px;
+	border-radius: 4px;
+    -webkit-box-shadow: none;
+    -moz-box-shadow: none;
+    box-shadow: none;
+}
+.c-error .error-area .error-btn-area .error-btn:hover,
+.c-error .error-area .error-btn-area .error-btn:active {
+    background-color: #6c615c;
+    border-color: #6c615c;
+}
+.c-error .error-area .error-btn-area .error-btn:disabled {
+    background-color: #473a33;
+    border-color: #473a33;
 }
 
 /************************************************
@@ -3108,8 +3214,7 @@ footer.footer .f-info-area .info-txt {
 	border-radius: 999px;
 }
 .l-area .l-box .l-con-area .list-table-area::-webkit-scrollbar-track {
-    margin-top: -5px;
-    margin-bottom: -5px;
+    margin: -5px;
     background: #b8bbc6; /*스크롤바 뒷 배경 색상*/
     background-clip: padding-box;
     border: 5px solid transparent;

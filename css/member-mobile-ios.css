@@ -5,4 +5,146 @@
 					setting
 
 *************************************************/
+body {
+    padding: calc(constant(safe-area-inset-top) + 0px) calc(constant(safe-area-inset-right) + 0px) calc(constant(safe-area-inset-bottom) + 0px) calc(constant(safe-area-inset-left) + 0px);
+    padding: calc(env(safe-area-inset-top) + 0px) calc(env(safe-area-inset-right) + 0px) calc(env(safe-area-inset-bottom) + 0px) calc(env(safe-area-inset-left) + 0px);
+}
+
+/************************************************
+
+					header
+
+*************************************************/
+header.header {
+    top: calc(constant(safe-area-inset-top) + 0px);
+    top: calc(env(safe-area-inset-top) + 0px);
+}
+
+/************************************************
+
+					mobile
+
+*************************************************/
+.m-wrap .m-box {
+    top: calc(constant(safe-area-inset-top) + 0px);
+    top: calc(env(safe-area-inset-top) + 0px);
+}
+.m-wrap .m-box .m-menu-list {
+    height: calc(constant(safe-area-inset-bottom) + 100vh - 70px);
+    height: calc(env(safe-area-inset-bottom) + 100vh - 70px);
+}
+.m-wrap .m-mask {
+    top: calc(constant(safe-area-inset-top) + 0px);
+    top: calc(env(safe-area-inset-top) + 0px);
+}
+
+/************************************************
+
+					intro
+
+*************************************************/
+.c-intro {
+    height: calc(constant(safe-area-inset-bottom) + 100vh);
+    height: calc(env(safe-area-inset-bottom) + 100vh);
+}
+
+/************************************************
+
+					login
+
+*************************************************/
+.c-login {
+    min-height: calc(constant(safe-area-inset-bottom) + 100vh);
+    min-height: calc(env(safe-area-inset-bottom) + 100vh);
+}
+
+/************************************************
+
+					error
+
+*************************************************/
+.c-error {
+    min-height: calc(constant(safe-area-inset-bottom) + 100vh);
+    min-height: calc(env(safe-area-inset-bottom) + 100vh);
+}
+
+/************************************************
+
+					join
+
+*************************************************/
+.c-join .join-form-area {
+    height: calc(constant(safe-area-inset-bottom) + 100vh - 168px);
+    height: calc(env(safe-area-inset-bottom) + 100vh - 168px);
+}
+
+/************************************************
+
+					page
+
+*************************************************/
+.c-page .page-area .page-list-area {
+    height: calc(constant(safe-area-inset-bottom) + 100vh - 70px);
+    height: calc(env(safe-area-inset-bottom) + 100vh - 70px);
+}
+.c-page .page-area .board-list-area {
+    height: auto;
+}
+.c-page .page-area .page-detail-area {
+    height: calc(constant(safe-area-inset-bottom) + 100vh - 70px);
+    height: calc(env(safe-area-inset-bottom) + 100vh - 70px);
+}
+.c-page .page-area .page-map-area {
+    height: calc(constant(safe-area-inset-bottom) + 100vh - 70px);
+    height: calc(env(safe-area-inset-bottom) + 100vh - 70px);
+}
+.c-page .page-area .main-introduce-list {
+    height: calc(constant(safe-area-inset-bottom) + 100vh - 70px);
+    height: calc(env(safe-area-inset-bottom) + 100vh - 70px);
+}
+
+/************************************************
+
+					layer
+
+*************************************************/
+.l-area {
+    top: calc(constant(safe-area-inset-top) + 0px);
+    top: calc(env(safe-area-inset-top) + 0px);
+}
+.l-area + .l-mask {
+    top: calc(constant(safe-area-inset-top) + 0px);
+    top: calc(env(safe-area-inset-top) + 0px);
+}
+.l-area .l-box {
+    height: calc(constant(safe-area-inset-bottom) + 100vh);
+    height: calc(env(safe-area-inset-bottom) + 100vh);
+}
+.l-area#alert-layer .l-box .l-con-area,
+.l-area#confirm-layer .l-box .l-con-area {
+    max-height: calc(constant(safe-area-inset-bottom) + 100vh - 124px);
+    max-height: calc(env(safe-area-inset-bottom) + 100vh - 124px);
+}
+.l-area#alarm-layer .l-box .l-con-area {
+    max-height: calc(constant(safe-area-inset-bottom) + 100vh - 40px);
+    max-height: calc(env(safe-area-inset-bottom) + 100vh - 40px);
+}
+.l-area .l-box .l-con-area .l-con-tit-area + .l-con {
+    max-height: calc(constant(safe-area-inset-bottom) + 100vh - 110px);
+    max-height: calc(env(safe-area-inset-bottom) + 100vh - 110px);
+}
+
+/************************************************
+
+					datepicker
+
+*************************************************/
+.ui-widget.ui-widget-content {
+    top: calc(constant(safe-area-inset-top) + 50%) !important;
+    top: calc(env(safe-area-inset-top) + 50%) !important;
+}
+.ui-widget-mask {
+    top: calc(constant(safe-area-inset-top) + 0px);
+    top: calc(env(safe-area-inset-top) + 0px);
+}
 

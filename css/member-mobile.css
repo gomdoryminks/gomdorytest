@@ -275,6 +275,24 @@ header.header .h-left-area .h-back-btn {
     -moz-box-shadow: none;
     box-shadow: none;
 }
+header.header .h-left-area .h-main-btn {
+    width: 32px;
+    height: 32px;
+    display: block;
+    margin-top: -4px;
+    padding: 0;
+    background: transparent url('../img/help-icon2.png') no-repeat center;
+    background-size: contain;
+    border: none;
+    font-size: 0;
+    -webkit-border-radius: 0;
+    -moz-border-radius: 0;
+    -ms-border-radius: 0;
+    border-radius: 0;
+    -webkit-box-shadow: none;
+    -moz-box-shadow: none;
+    box-shadow: none;
+}
 header.header .h-center-area {
     width: 100%;
     height: 100%;
@@ -525,7 +543,8 @@ footer.footer .f-info-area .info-logo {
 .wrap .c-wrap.c-intro-wrap {
     background-color: #fff6e6;
 }
-.wrap .c-wrap.c-login-wrap {
+.wrap .c-wrap.c-login-wrap,
+.wrap .c-wrap.c-error-wrap {
     background-color: #ffffff;
 }
 .wrap b {
@@ -1930,6 +1949,99 @@ footer.footer .f-info-area .info-logo {
 
 /************************************************
 
+					error
+
+*************************************************/
+.c-error {
+    width: 100%;
+    height: auto;
+    min-height: 100vh;
+    min-height: calc(var(--vh, 1vh) * 100);
+    display: -ms-flexbox;
+    display: flex;
+    -ms-flex-wrap: wrap;
+    flex-wrap: wrap;
+    -ms-flex-pack: center;
+    justify-content: center;
+    -ms-flex-align: center;
+    align-items: center;
+    align-content: center;
+    position: relative;
+    padding: 40px 20px 30px;
+    overflow: hidden;
+}
+.c-error .error-area {
+    width: 100%;
+    height: auto;
+    position: relative;
+    margin-top: 198px;
+}
+.c-error .error-area:before {
+    content: '';
+    width: 230px;
+    height: 241px;
+    display: block;
+    position: absolute;
+    top: -198px;
+    right: calc(50% - 115px);
+    background: transparent url('../img/member-mobile-login-img.png') no-repeat center;
+    background-size: contain;
+}
+.c-error .error-area .error-txt-area {
+    width: 100%;
+    height: auto;
+    max-width: 340px;
+    position: relative;
+    margin: 0 auto 18px;
+    padding: 30px 10px;
+    background-color: #fff6e6;
+    border: 1px solid #f8e0b7;
+    text-align: center;
+    -webkit-border-radius: 36px;
+    -moz-border-radius: 36px;
+    -ms-border-radius: 36px;
+	border-radius: 36px;
+}
+.c-error .error-area .error-txt-area .big {
+    margin-bottom: 10px;
+    color: #ef8f1d;
+    font-size: 2.5rem;
+    line-height: 1.25em;
+    font-weight: 700;
+    letter-spacing: 1.26px;
+    font-family: 'poppins', sans-serif;
+    text-shadow: 4px 4px 0 #ffffff, 6px 6px 0 #1d1e24;
+}
+.c-error .error-area .error-txt-area .medium {
+    margin-bottom: 20px;
+    color: #23293f;
+    line-height: 1.25em;
+    font-weight: 700;
+    letter-spacing: -0.5px;
+    font-family: 'SpoqaHanSansNeo', sans-serif;
+    word-break: keep-all;
+}
+.c-error .error-area .error-txt-area .small {
+    color: #1d1e24;
+    font-size: 0.875rem;
+    line-height: 1.5em;
+    font-weight: 500;
+    letter-spacing: -0.5px;
+    font-family: 'SpoqaHanSansNeo', sans-serif;
+    word-break: keep-all;
+}
+.c-error .error-btn-area {
+    width: 100%;
+    height: auto;
+    max-width: 340px;
+}
+.c-error .error-btn-area .big-btn {
+    width: calc(100% - 20px);
+    margin: 0 10px 8px;
+}
+
+/************************************************
+
 					join
 
 *************************************************/
@@ -2242,8 +2354,7 @@ c-join .join-step-area .join-step-list>li:last-child:after {
 	border-radius: 999px;
 }
 .c-page .page-area .page-list-area .list-flex-area::-webkit-scrollbar-track {
-    margin-top: -5px;
-    margin-bottom: -5px;
+    margin: -5px;
     background: #b8bbc6; /*스크롤바 뒷 배경 색상*/
     background-clip: padding-box;
     border: 5px solid transparent;
@@ -2375,8 +2486,38 @@ c-join .join-step-area .join-step-list>li:last-child:after {
     height: 50%;
     -ms-flex: 1 1 auto;
     flex: 1 1 auto;
+    position: relative;
     background: transparent url('../img/member-mobile-map-img.png') no-repeat center;
     background-size: cover;
+}
+.c-page .page-area .page-map-area .map-area .map-position-btn {
+    width: 32px;
+    height: 32px;
+    display: block;
+    position: absolute;
+    top: 5px;
+    left: 5px;
+    z-index: 1;
+    padding: 0;
+    background: transparent url('../img/map-position-icon.png') no-repeat center;
+    background-size: contain;
+    border: none;
+    font-size: 0;
+    -webkit-border-radius: 0;
+    -moz-border-radius: 0;
+    -ms-border-radius: 0;
+	border-radius: 0;
+    -webkit-box-shadow: none;
+    -moz-box-shadow: none;
+    box-shadow: none;
+}
+.c-page .page-area .page-map-area .map-area .map-marker-img {
+    width: 32px;
+    height: 32px;
+    position: absolute;
+    top: calc(50% - 16px);
+    left: calc(50% - 16px);
+    cursor: pointer;
 }
 .c-page .page-area .page-map-area .page-detail-area {
     height: 50%;
@@ -2501,6 +2642,28 @@ c-join .join-step-area .join-step-list>li:last-child:after {
     width: 100%;
     /*height: 56.25vw;*/
     height: 55.05vw;
+}
+.c-page .page-area .page-notice-txt {
+    width: 100%;
+    height: auto;
+    padding: 24px 28px;
+    background-color: #f4f4f4;
+    border: 1px solid #cccccc;
+    text-align: center;
+    -webkit-border-radius: 36px;
+    -moz-border-radius: 36px;
+    -ms-border-radius: 36px;
+	border-radius: 36px;
+}
+.c-page .page-area .page-notice-txt .txt-item {
+    color: #1d1e24;
+    font-size: 1.063rem;
+    line-height: 1.48em;
+    font-weight: 400;
+    word-break: keep-all;
+}
+.c-page .page-area .page-notice-txt .txt-item + .txt-item {
+    margin-top: 10px;
 }
 .c-page .page-area .member-leave-txt {
     width: 100%;
@@ -2988,6 +3151,60 @@ c-join .join-step-area .join-step-list>li:last-child:after {
     line-height: 1.49em;
     text-align: left;
 }
+.l-area .l-box .l-con-area .l-sns-area>button {
+    width: 100%;
+    margin-bottom: 10px;
+    padding: 0 0 0 46px;
+    position: relative;
+    background-color: #ffffff;
+    overflow: hidden;
+    -webkit-box-shadow: none;
+    -moz-box-shadow: none;
+    box-shadow: none;
+}
+.l-area .l-box .l-con-area .l-sns-area .sns-naver-btn {
+    border: 1px solid #56c13d;
+}
+.l-area .l-box .l-con-area .l-sns-area .sns-kakao-btn {
+    border: 1px solid #fee743;
+}
+.l-area .l-box .l-con-area .l-sns-area>button:before {
+    content: '';
+    width: 46px;
+    height: 46px;
+    display: block;
+    position: absolute;
+    top: -1px;
+    left: 0;
+    -webkit-border-radius: 50%;
+    -moz-border-radius: 50%;
+    -ms-border-radius: 50%;
+	border-radius: 50%;
+}
+.l-area .l-box .l-con-area .l-sns-area .sns-naver-btn:before {
+    background: #56c13d url('../img/naver-icon.png') no-repeat center;
+    background-size: 20px auto;
+}
+.l-area .l-box .l-con-area .l-sns-area .sns-kakao-btn:before {
+    background: #fee743 url('../img/kakao-icon.png') no-repeat center;
+    background-size: 20px auto;
+}
+.l-area .l-box .l-con-area .l-sns-area .sns-naver-btn:hover,
+.l-area .l-box .l-con-area .l-sns-area .sns-naver-btn:active {
+    border-color: #4dad37;
+}
+.l-area .l-box .l-con-area .l-sns-area .sns-kakao-btn:hover,
+.l-area .l-box .l-con-area .l-sns-area .sns-kakao-btn:active {
+    border-color: #e4cf3c;
+}
+.l-area .l-box .l-con-area .l-sns-area .sns-naver-btn:hover:before,
+.l-area .l-box .l-con-area .l-sns-area .sns-naver-btn:active:before {
+    background-color: #4dad37;
+}
+.l-area .l-box .l-con-area .l-sns-area .sns-kakao-btn:hover:before,
+.l-area .l-box .l-con-area .l-sns-area .sns-kakao-btn:active:before {
+    background-color: #e4cf3c;
+}
 .l-area .l-box .l-btn-area {
     width: 100%;
     height: auto;
@@ -3368,5 +3585,408 @@ c-join .join-step-area .join-step-list>li:last-child:after {
 .yearpicker-container .yearpicker-year .yearpicker-items.selected {
     background-color: #473a33;
     color: #ffffff;
+}
+
+/************************************************
+
+					tuiImageEditor
+
+*************************************************/
+.tui-image-editor-area {
+    width: 100%;
+    height: auto;
+    overflow: auto;
+    margin: -24px 0 30px;
+}
+.tui-image-editor-area::-webkit-scrollbar {
+    width: 16px; /* 스크롤바의 너비 */
+}
+.tui-image-editor-area::-webkit-scrollbar-thumb {
+    height: 10%; /* 스크롤바의 길이 */
+    background: #151515; /* 스크롤바의 색상 */
+    background-clip: padding-box;
+    border: 5px solid transparent;
+    -webkit-border-radius: 999px;
+    -moz-border-radius: 999px;
+    -ms-border-radius: 999px;
+	border-radius: 999px;
+}
+.tui-image-editor-area::-webkit-scrollbar-track {
+    margin: -5px;
+    background: #8a8a8a; /*스크롤바 뒷 배경 색상*/
+    background-clip: padding-box;
+    border: 5px solid transparent;
+    -webkit-border-radius: 999px;
+    -moz-border-radius: 999px;
+    -ms-border-radius: 999px;
+	border-radius: 999px;
+}
+.tui-image-editor-container.right {
+    min-width: 543px;
+    min-height: 437px;
+    border: 1px solid #c1c1c1;
+    border-right: none;
+    -webkit-border-radius: 36px;
+    -moz-border-radius: 36px;
+    -ms-border-radius: 36px;
+	border-radius: 36px;
+}
+.tui-image-editor-container.bottom {
+    min-width: auto;
+    min-height: 501px;
+    border: 1px solid #c1c1c1;
+    border-bottom: none;
+    -webkit-border-radius: 36px;
+    -moz-border-radius: 36px;
+    -ms-border-radius: 36px;
+	border-radius: 36px;
+}
+.tui-image-editor-container .svg_ic-menu,
+.tui-image-editor-container .svg_ic-submenu {
+    display: inline-block;
+}
+.tui-image-editor-container .tui-image-editor-help-menu use.hover.use-default {
+    fill: #151515;
+    stroke: #151515;
+}
+.tui-image-editor-container .tui-image-editor-help-menu.left {
+    width: auto;
+    height: 40px;
+    top: 8px;
+    left: 8px;
+    -webkit-transform: translateY(0);
+	-moz-transform: translateY(0);
+	-ms-transform: translateY(0);
+	transform: translateY(0);
+}
+.tui-image-editor-container .tui-image-editor-help-menu.top {
+    width: auto;
+    height: 40px;
+    top: 8px;
+    left: 50%;
+    -webkit-transform: translate(-50%,0);
+	-moz-transform: translate(-50%,0);
+	-ms-transform: translate(-50%,0);
+	transform: translate(-50%,0);
+}
+.tui-image-editor-container .tui-image-editor-help-menu.left>li:nth-child(-n + 5),
+.tui-image-editor-container .tui-image-editor-help-menu.left>li:nth-child(8),
+.tui-image-editor-container .tui-image-editor-help-menu.left>li:nth-child(11),
+.tui-image-editor-container .tui-image-editor-help-menu.top>li:nth-child(-n + 5),
+.tui-image-editor-container .tui-image-editor-help-menu.top>li:nth-child(8),
+.tui-image-editor-container .tui-image-editor-help-menu.top>li:nth-child(11) {
+    display: none;
+}
+.tui-image-editor-container .tui-image-editor-help-menu.left .tui-image-editor-icpartition,
+.tui-image-editor-container .tui-image-editor-help-menu.top .tui-image-editor-icpartition {
+    width: 1px;
+    height: 18px;
+    display: inline-block;
+    position: static;
+    background-color: #444444;
+}
+.tui-image-editor-container .tui-image-editor-help-menu.left > .tui-image-editor-item[tooltip-content]:before,
+.tui-image-editor-container .tui-image-editor-help-menu.top > .tui-image-editor-item[tooltip-content]:before {
+    display: none;
+    left: 11px;
+    top: 29px;
+    border: none;
+    border-bottom: 7px solid #2f2f2f;
+    border-left: 7px solid transparent;
+    border-right: 7px solid transparent;
+}
+.tui-image-editor-container .tui-image-editor-help-menu.left > .tui-image-editor-item[tooltip-content]:after,
+.tui-image-editor-container .tui-image-editor-help-menu.top > .tui-image-editor-item[tooltip-content]:after {
+    display: none;
+    top: 36px;
+    left: -3px;
+}
+.tui-image-editor-container .tui-image-editor-help-menu.top .tui-image-editor-item {
+    margin: 4px auto;
+}
+.tui-image-editor-container .tui-image-editor-help-menu.left .tie-panel-history,
+.tui-image-editor-container .tui-image-editor-help-menu.top .tie-panel-history {
+    height: auto;
+    top: 36px;
+    left: 0;
+    border: 1px solid #eeeeee;
+    -webkit-transform: translateX(0);
+	-moz-transform: translateX(0);
+	-ms-transform: translateX(0);
+	transform: translateX(0);
+}
+.tui-image-editor-container .tui-image-editor-help-menu.left .opened .tie-panel-history:before {
+    top: -16px;
+    left: 9px;
+    border-right: 8px solid transparent;
+    border-left: 8px solid transparent;
+    border-bottom: 8px solid #eeeeee;
+}
+.tui-image-editor-container .tui-image-editor-help-menu.top .opened .tie-panel-history:before {
+    top: -8px;
+    left: 9px;
+    border-right: 8px solid transparent;
+    border-left: 8px solid transparent;
+    border-bottom: 8px solid #eeeeee;
+}
+.tui-image-editor-container .tui-image-editor-help-menu.left .tie-panel-history .history-list,
+.tui-image-editor-container .tui-image-editor-help-menu.top .tie-panel-history .history-list {
+    height: 237px;
+    overflow-y: scroll;
+    -ms-overflow-style: none; /* IE and Edge */
+    scrollbar-width: none; /* Firefox */
+}
+.tui-image-editor-container .tui-image-editor-help-menu.left .tie-panel-history .history-list::-webkit-scrollbar,
+.tui-image-editor-container .tui-image-editor-help-menu.top .tie-panel-history .history-list::-webkit-scrollbar {
+    display: none; /* Chrome, Safari, Opera */
+}
+.tui-image-editor-container .tui-image-editor-header-buttons {
+    display: none;
+}
+.tui-image-editor-container.right .tui-image-editor-main-container {
+    border-top: none !important;
+    border-bottom: none !important;
+    border-left: none !important;
+}
+.tui-image-editor-container.bottom .tui-image-editor-main-container {
+    border-top: none !important;
+    border-left: none !important;
+    border-right: none !important;
+}
+.tui-image-editor-container.right .tui-image-editor-main,
+.tui-image-editor-container.bottom .tui-image-editor-main {
+    top: 0;
+}
+.tui-image-editor-container.right .tui-image-editor-menu > .tui-image-editor-item[tooltip-content]:before {
+    display: none;
+    top: 9px;
+    left: -6px;
+}
+.tui-image-editor-container.bottom .tui-image-editor-menu > .tui-image-editor-item[tooltip-content]:before {
+    display: none;
+    top: -6px;
+    left: 11px;
+}
+.tui-image-editor-container.right .tui-image-editor-menu > .tui-image-editor-item[tooltip-content]:after {
+    display: none;
+    top: 3px;
+    right: 40px;
+}
+.tui-image-editor-container.bottom .tui-image-editor-menu > .tui-image-editor-item[tooltip-content]:after {
+    display: none;
+    top: -35px;
+    left: -2px;
+}
+.tui-image-editor-container.right .tui-image-editor-range-wrap.tui-image-editor-newline label.range,
+.tui-image-editor-container.bottom .tui-image-editor-range-wrap.tui-image-editor-newline label.range {
+    width: auto;
+    display: inline-block;
+    margin-right: 4px;
+    color: #333333;
+}
+.tui-image-editor-container.right .tui-image-editor-range,
+.tui-image-editor-container.bottom .tui-image-editor-range {
+    width: 96px;
+    display: none;
+}
+.tui-image-editor-container .tui-image-editor-checkbox input[type="checkbox"] {
+    position: static;
+}
+.tui-image-editor-container .tui-image-editor-checkbox input[type="checkbox"] + span {
+    padding-top: 3px;
+}
+.tui-image-editor-container .tui-image-editor-selectlist-wrap select {
+    background: none;
+    font-size: 12px;
+}
+.tui-image-editor-container .tui-image-editor-selectlist-wrap .tui-image-editor-selectlist {
+    height: 104px;
+    overflow-y: auto;
+    -ms-overflow-style: none; /* IE and Edge */
+    scrollbar-width: none; /* Firefox */
+}
+.tui-image-editor-container .tui-image-editor-selectlist-wrap .tui-image-editor-selectlist::-webkit-scrollbar {
+    display: none; /* Chrome, Safari, Opera */
+}
+.tui-image-editor-container .tui-image-editor-selectlist-wrap .tui-image-editor-selectlist li {
+    margin-top: 0 !important;
+}
+.tui-image-editor-container .color-picker-control {
+    width: 194px;
+    border: 1px solid #eeeeee;
+    -webkit-box-shadow: none;
+    -moz-box-shadow: none;
+    box-shadow: none;
+}
+.tui-image-editor-container .color-picker-control .triangle {
+    left: 87px;
+    border-top: 8px solid #eeeeee;
+}
+.tui-image-editor-container.bottom .color-picker-control .triangle {
+    bottom: 57px;
+    left: 193px;
+    border-top: 7px solid transparent;
+    border-left: 8px solid #eeeeee;
+    border-bottom: 7px solid transparent;
+}
+.tui-image-editor-container .tui-colorpicker-palette-hex {
+    height: auto;
+    margin-top: 1px;
+    padding: 0;
+    vertical-align: top;
+    letter-spacing: 0;
+    font-family: 'Noto Sans',sans-serif !important;
+}
+.tui-image-editor-container .tui-image-editor-main.tui-image-editor-menu-crop .tui-image-editor-submenu, 
+.tui-image-editor-container .tui-image-editor-main.tui-image-editor-menu-resize .tui-image-editor-submenu, 
+.tui-image-editor-container .tui-image-editor-main.tui-image-editor-menu-flip .tui-image-editor-submenu, 
+.tui-image-editor-container .tui-image-editor-main.tui-image-editor-menu-rotate .tui-image-editor-submenu, 
+.tui-image-editor-container .tui-image-editor-main.tui-image-editor-menu-shape .tui-image-editor-submenu, 
+.tui-image-editor-container .tui-image-editor-main.tui-image-editor-menu-text .tui-image-editor-submenu, 
+.tui-image-editor-container .tui-image-editor-main.tui-image-editor-menu-mask .tui-image-editor-submenu, 
+.tui-image-editor-container .tui-image-editor-main.tui-image-editor-menu-icon .tui-image-editor-submenu, 
+.tui-image-editor-container .tui-image-editor-main.tui-image-editor-menu-draw .tui-image-editor-submenu, 
+.tui-image-editor-container .tui-image-editor-main.tui-image-editor-menu-filter .tui-image-editor-submenu, 
+.tui-image-editor-container .tui-image-editor-main.tui-image-editor-menu-zoom .tui-image-editor-submenu {
+    display: -ms-flexbox;
+    display: flex;
+    -ms-flex-pack: center;
+    justify-content: center;
+    -ms-flex-align: center;
+    align-items: center;
+}
+.tui-image-editor-container .tui-image-editor-main .tui-image-editor-menu-crop, 
+.tui-image-editor-container .tui-image-editor-main .tui-image-editor-menu-resize, 
+.tui-image-editor-container .tui-image-editor-main .tui-image-editor-menu-flip, 
+.tui-image-editor-container .tui-image-editor-main .tui-image-editor-menu-rotate, 
+.tui-image-editor-container .tui-image-editor-main .tui-image-editor-menu-shape, 
+.tui-image-editor-container .tui-image-editor-main .tui-image-editor-menu-text, 
+.tui-image-editor-container .tui-image-editor-main .tui-image-editor-menu-mask, 
+.tui-image-editor-container .tui-image-editor-main .tui-image-editor-menu-icon, 
+.tui-image-editor-container .tui-image-editor-main .tui-image-editor-menu-draw, 
+.tui-image-editor-container .tui-image-editor-main .tui-image-editor-menu-filter, 
+.tui-image-editor-container .tui-image-editor-main .tui-image-editor-menu-zoom {
+    width: 100%;
+    max-height: 100%;
+    overflow-y: auto;
+    -ms-overflow-style: none; /* IE and Edge */
+    scrollbar-width: none; /* Firefox */
+    
+}
+.tui-image-editor-container.right .tui-image-editor-main .tui-image-editor-menu-crop, 
+.tui-image-editor-container.right .tui-image-editor-main .tui-image-editor-menu-resize, 
+.tui-image-editor-container.right .tui-image-editor-main .tui-image-editor-menu-flip, 
+.tui-image-editor-container.right .tui-image-editor-main .tui-image-editor-menu-rotate,  
+.tui-image-editor-container.right .tui-image-editor-main .tui-image-editor-menu-text,  
+.tui-image-editor-container.right .tui-image-editor-main .tui-image-editor-menu-icon, 
+.tui-image-editor-container.right .tui-image-editor-main .tui-image-editor-menu-filter, 
+.tui-image-editor-container.right .tui-image-editor-main .tui-image-editor-menu-zoom {
+    padding: 20px 10px;
+}
+.tui-image-editor-container.right .tui-image-editor-main .tui-image-editor-menu-shape,
+.tui-image-editor-container.right .tui-image-editor-main .tui-image-editor-menu-draw {
+    padding: 45px 10px;
+}
+.tui-image-editor-container.right .tui-image-editor-main .tui-image-editor-menu-mask {
+    padding: 50px 10px 0;
+}
+.tui-image-editor-container.bottom .tui-image-editor-main .tui-image-editor-menu-crop, 
+.tui-image-editor-container.bottom .tui-image-editor-main .tui-image-editor-menu-resize, 
+.tui-image-editor-container.bottom .tui-image-editor-main .tui-image-editor-menu-flip, 
+.tui-image-editor-container.bottom .tui-image-editor-main .tui-image-editor-menu-rotate, 
+.tui-image-editor-container.bottom .tui-image-editor-main .tui-image-editor-menu-shape, 
+.tui-image-editor-container.bottom .tui-image-editor-main .tui-image-editor-menu-text, 
+.tui-image-editor-container.bottom .tui-image-editor-main .tui-image-editor-menu-icon, 
+.tui-image-editor-container.bottom .tui-image-editor-main .tui-image-editor-menu-draw, 
+.tui-image-editor-container.bottom .tui-image-editor-main .tui-image-editor-menu-filter, 
+.tui-image-editor-container.bottom .tui-image-editor-main .tui-image-editor-menu-zoom {
+    padding: 35px 10px;
+}
+.tui-image-editor-container.bottom .tui-image-editor-main .tui-image-editor-menu-mask {
+    padding: 45px 10px 25px;
+}
+.tui-image-editor-container .tui-image-editor-main .tui-image-editor-menu-crop::-webkit-scrollbar, 
+.tui-image-editor-container .tui-image-editor-main .tui-image-editor-menu-resize::-webkit-scrollbar, 
+.tui-image-editor-container .tui-image-editor-main .tui-image-editor-menu-flip::-webkit-scrollbar, 
+.tui-image-editor-container .tui-image-editor-main .tui-image-editor-menu-rotate::-webkit-scrollbar, 
+.tui-image-editor-container .tui-image-editor-main .tui-image-editor-menu-shape::-webkit-scrollbar, 
+.tui-image-editor-container .tui-image-editor-main .tui-image-editor-menu-text::-webkit-scrollbar, 
+.tui-image-editor-container .tui-image-editor-main .tui-image-editor-menu-mask::-webkit-scrollbar, 
+.tui-image-editor-container .tui-image-editor-main .tui-image-editor-menu-icon::-webkit-scrollbar, 
+.tui-image-editor-container .tui-image-editor-main .tui-image-editor-menu-draw::-webkit-scrollbar, 
+.tui-image-editor-container .tui-image-editor-main .tui-image-editor-menu-filter::-webkit-scrollbar, 
+.tui-image-editor-container .tui-image-editor-main .tui-image-editor-menu-zoom::-webkit-scrollbar {
+    display: none; /* Chrome, Safari, Opera */
+}
+.tui-image-editor-container.right .tui-image-editor-submenu .tui-image-editor-submenu-item .tie-crop-preset-button .tui-image-editor-button,
+.tui-image-editor-container.right .tui-image-editor-submenu .tui-image-editor-submenu-item .tie-icon-add-button .tui-image-editor-button {
+    margin-bottom: 10px;
+}
+.tui-image-editor-container .tui-image-editor-main .tui-image-editor-menu-mask .qrcode-template-list {
+    width: 100%;
+    height: auto;
+    display: -ms-flexbox;
+    display: flex;
+    -ms-flex-wrap: wrap;
+    flex-wrap: wrap;
+}
+.tui-image-editor-container.bottom .tui-image-editor-main .tui-image-editor-menu-mask .qrcode-template-list {
+    -ms-flex-wrap: nowrap;
+    flex-wrap: nowrap;
+}
+.tui-image-editor-container .tui-image-editor-main .tui-image-editor-menu-mask .qrcode-template-list>li {
+    width: calc(33.3% - 4px);
+    margin: 2px 2px 30px;
+    padding: 8px;
+    background-color: #ffffff;
+    border: 1px solid #e5e5e5;
+    color: #444444;
+    font-size: 11px;
+    line-height: 1.2em;
+    font-weight: bold;
+    letter-spacing: -0.7px;
+    font-family: 'Noto Sans', sans-serif;
+    cursor: pointer;
+    -webkit-border-radius: 6px;
+    -moz-border-radius: 6px;
+    -ms-border-radius: 6px;
+	border-radius: 6px;
+}
+.tui-image-editor-container.bottom .tui-image-editor-main .tui-image-editor-menu-mask .qrcode-template-list>li {
+    width: 86px;
+    display: inline-block;
+    vertical-align: top;
+    margin: 2px;
+}
+.tui-image-editor-container .tui-image-editor-main .tui-image-editor-menu-mask .qrcode-template-list>li:hover {
+    background-color: #f9f9f9;
+}
+.tui-image-editor-container .tui-image-editor-main .tui-image-editor-menu-mask .qrcode-template-list>li.on {
+    background-color: #edf4fd;
+}
+.tui-image-editor-container .tui-image-editor-main .tui-image-editor-menu-mask .qrcode-template-list>li .qrcode-template-img {
+    max-width: 40px;
+    max-height: 40px;
+    margin-top: -30px;
+}
+.tui-image-editor-container .tui-image-editor-main .tui-image-editor-menu-mask .qrcode-template-list>li .qrcode-template-txt {
+    display: -webkit-box;
+    margin-top: 4px;
+    text-align: center;
+    word-break: break-all;
+    white-space: normal;
+    text-overflow: ellipsis;
+    overflow: hidden;
+    -webkit-box-orient: vertical;
+    -webkit-line-clamp: 3;
+}
+.tui-image-editor-container .tui-image-editor-wrap {
+    top: 56px !important;
+}
+.tui-image-editor-container.bottom .tui-image-editor {
+    top: 0 !important;
+}
+.tui-image-editor-container .tui-image-editor .qrcode-area {
+    display: none;
 }
 
