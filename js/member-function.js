@@ -1,3 +1,8 @@
+//20230303 수정부분 start
+let imageEditor;
+let qrcode;
+//20230303 수정부분 end
+
 //정규식 체크
 const chkIdExp = RegExp(/^[A-Za-z0-9_\-]{6,12}$/);
 const chkpwExp = RegExp(/^[A-Za-z0-9_\-]{8,20}$/);
@@ -156,6 +161,50 @@ $(function() {
             $(liObj).find(".list-faq-answer").stop(true,true).slideDown(200);
         }
     });
+    
+    //20230303 수정부분 start
+    //이미지 편집기 실행
+    if ($("#tui-image-editor").length > 0) {
+        imageEditor = new tui.ImageEditor('#tui-image-editor', {
+            includeUI: {
+                loadImage: {
+                    path: '../img/template-img.png',
+                    name: 'TemplateImage'
+                },
+                theme: whiteTheme, // or blackTheme
+                menu: [/*'crop', 'flip', 'rotate', */'draw', 'shape', 'icon', 'text', 'mask'/*, 'filter'*/],
+                //initMenu: 'filter',
+                /*uiSize: {
+                    width: '1000px',
+                    height: '700px'
+                },*/
+                menuBarPosition: 'bottom'
+            },
+            cssMaxWidth: 189, //5cm
+            cssMaxHeight: 341, //9cm
+            selectionStyle: {
+                cornerStyle: 'circle',
+                cornerSize: 10,
+                cornerColor: '#000000',
+                borderColor: '#000000',
+                rotatingPointOffset: 50
+            },
+            usageStatistics: false
+        });
+        
+        setTimeout(() => {
+            //QR코드 템플릿 목록 설정
+            setQrcodeSetting();
+            
+            //QR코드 생성
+            setQrcodeInit();
+        }, 100);
+
+        window.onresize = function() {
+            imageEditor.ui.resizeEditor();
+        }
+    }
+    //20230303 수정부분 end
     
     //로딩시 입력폼 유효성 체크하기
     $(".valid-form-area .valid-form-tit label").each(function() {
@@ -317,6 +366,15 @@ $(function() {
     $(".year-input").each(function() {
         $(this).yearpicker();
     });
+    
+    //20230303 수정부분 start
+    //맵에서 자동차마커 이동가능하게 설정 (예시용), 개발시에는 제거해주세요
+    $(".c-page .map-area .map-marker-img").each(function() {
+        $(this).draggable({
+            containment: ".map-area"
+        });
+    });
+    //20230303 수정부분 end
 });
 
 //선택한 파일 삭제
@@ -376,6 +434,206 @@ function setTabItem(obj) {
     $(".c-tab-item[data-tab-type='" + dateTabType + "']").removeClass("on");
     $(".c-tab-item[data-tab-type='" + dateTabType + "'][data-tab-name='" + dateTabName + "']").addClass("on");
 }
+
+//20230303 수정부분 start
+//QR코드 생성
+function setQrcodeInit() {
+    var qrcodeUrl = "https://davidshimjs.github.io/qrcodejs/";
+    
+    if ($(".tui-image-editor .qrcode-area").length == 0) {
+        $(".tui-image-editor").append("<div class='qrcode-area'></div>");
+        $(".tui-image-editor .qrcode-area").append("<div id='qrcode'></div>");
+    }
+    
+    if (qrcode != undefined) {
+        qrcode.clear();
+    }
+    
+    $(".tui-image-editor .qrcode-area #qrcode").empty();
+    
+    //QR코드 외에 요소 생성 (순차적으로 적용해야 요소가 생성됨)
+    imageEditor.addShape('rect', {
+        fill: 'transparent',
+        stroke: '#a2a2a2',
+        strokeWidth: 3,
+        width: 169,
+        height: 207,
+        rx: 6,
+        ry: 6,
+        left: 95,
+        top: 114,
+        isRegular: true
+    });
+
+    setTimeout(() => {
+        imageEditor.addShape('rect', {
+            fill: 'transparent',
+            stroke: '#181818',
+            strokeWidth: 3,
+            width: 109,
+            height: 109,
+            rx: 6,
+            ry: 6,
+            left: 95,
+            top: 124,
+            isRegular: true
+        });
+
+        setTimeout(() => {
+            imageEditor.addImageObject('../img/logo-img.png').then(objectProps => {
+                imageEditor.setObjectPosition(objectProps.id, {
+                    x: 60,
+                    y: 15,
+                    originX: 'left',
+                    originY: 'top'
+                });
+            });
+
+            setTimeout(() => {
+                imageEditor.addText('주차안심번호', {
+                    styles: {
+                        fill: '#0073bd',
+                        fontSize: 15,
+                        fontWeight: 'bold',
+                        fontFamily: 'GmarketSans'
+                    },
+                    position: {
+                        x: 18,
+                        y: 45
+                    },
+                    autofocus: false
+                });
+
+                setTimeout(() => {
+                    imageEditor.addText('110001', {
+                        styles: {
+                            fill: '#181818',
+                            fontSize: 16,
+                            fontWeight: 'bold',
+                            fontFamily: 'GmarketSans'
+                        },
+                        position: {
+                            x: 110,
+                            y: 45
+                        },
+                        autofocus: false
+                    });
+
+                    setTimeout(() => {
+                        imageEditor.addText('ARS 1533-0355', {
+                            styles: {
+                                fill: '#555555',
+                                fontSize: 15,
+                                fontWeight: 'bold',
+                                fontFamily: 'GmarketSans'
+                            },
+                            position: {
+                                x: 30,
+                                y: 185
+                            },
+                            autofocus: false
+                        });
+                        
+                        //QR코드 생성
+                        if (qrcodeUrl != undefined && qrcodeUrl != "") {
+                            qrcode = new QRCode(document.getElementById("qrcode"), {
+                                text: qrcodeUrl,
+                                width: 84,
+                                height: 84,
+                                colorDark: "#000000",
+                                colorLight: "#ffffff",
+                                correctLevel: QRCode.CorrectLevel.H
+                            });
+
+                            if (imageEditor != undefined) {
+                                setTimeout(() => {
+                                    imageEditor.addQrcodeObject($("#qrcode>img").attr("src")).then(objectProps => {
+                                        imageEditor.setObjectPosition(objectProps.id, {
+                                            x: 53,
+                                            y: 81,
+                                            originX: 'left',
+                                            originY: 'top'
+                                        });
+                                    });
+                                }, 100);
+                            }
+                        }
+                    }, 100);
+                }, 100);
+            }, 100);
+        }, 100);
+    }, 100); 
+}
+
+//QR코드 템플릿 목록 설정
+function setQrcodeSetting() {
+    var templateHtml = "";
+    
+    if ($("#tui-image-editor").length > 0) {        
+        templateHtml += "<ul class='qrcode-template-list swiper-wrapper'>";
+        templateHtml += "    <li class='swiper-slide on' onclick='setQrcodeTemplate(this);'>";
+        templateHtml += "        <img src='../img/template-img.png' alt='QR코드 템플릿 디자인1' class='qrcode-template-img'>";
+        templateHtml += "        <div class='qrcode-template-txt'>QR코드 템플릿 디자인1</div>";
+        templateHtml += "    </li>";
+        templateHtml += "    <li class='swiper-slide' onclick='setQrcodeTemplate(this);'>";
+        templateHtml += "        <img src='../img/template-img2.png' alt='QR코드 템플릿 디자인2' class='qrcode-template-img'>";
+        templateHtml += "        <div class='qrcode-template-txt'>QR코드 템플릿 디자인2</div>";
+        templateHtml += "    </li>";
+        templateHtml += "    <li class='swiper-slide' onclick='setQrcodeTemplate(this);'>";
+        templateHtml += "        <img src='../img/template-img3.png' alt='QR코드 템플릿 디자인3' class='qrcode-template-img'>";
+        templateHtml += "        <div class='qrcode-template-txt'>QR코드 템플릿 디자인3</div>";
+        templateHtml += "    </li>";
+        templateHtml += "    <li class='swiper-slide' onclick='setQrcodeTemplate(this);'>";
+        templateHtml += "        <img src='../img/template-img4.png' alt='QR코드 템플릿 디자인4' class='qrcode-template-img'>";
+        templateHtml += "        <div class='qrcode-template-txt'>QR코드 템플릿 디자인4</div>";
+        templateHtml += "    </li>";
+        templateHtml += "    <li class='swiper-slide' onclick='setQrcodeTemplate(this);'>";
+        templateHtml += "        <img src='../img/template-img5.png' alt='QR코드 템플릿 디자인5' class='qrcode-template-img'>";
+        templateHtml += "        <div class='qrcode-template-txt'>QR코드 템플릿 디자인5</div>";
+        templateHtml += "    </li>";
+        templateHtml += "    <li class='swiper-slide' onclick='setQrcodeTemplate(this);'>";
+        templateHtml += "        <img src='../img/template-img6.png' alt='QR코드 템플릿 디자인6' class='qrcode-template-img'>";
+        templateHtml += "        <div class='qrcode-template-txt'>QR코드 템플릿 디자인6</div>";
+        templateHtml += "    </li>";
+        templateHtml += "    <li class='swiper-slide' onclick='setQrcodeTemplate(this);'>";
+        templateHtml += "        <img src='../img/template-img7.png' alt='QR코드 템플릿 디자인7' class='qrcode-template-img'>";
+        templateHtml += "        <div class='qrcode-template-txt'>QR코드 템플릿 디자인7</div>";
+        templateHtml += "    </li>";
+        templateHtml += "    <li class='swiper-slide' onclick='setQrcodeTemplate(this);'>";
+        templateHtml += "        <img src='../img/template-img8.png' alt='QR코드 템플릿 디자인8' class='qrcode-template-img'>";
+        templateHtml += "        <div class='qrcode-template-txt'>QR코드 템플릿 디자인8</div>";
+        templateHtml += "    </li>";
+        templateHtml += "</ul>";
+        
+        $("#tui-image-editor .tui-image-editor-main .tui-image-editor-submenu .tui-image-editor-menu-mask").html(templateHtml);
+    }
+    
+    //swiper 슬라이드 (QR코드 템플릿 목록)
+    if ($("#tui-image-editor.bottom .tui-image-editor-menu-mask").length > 0) {
+        var mainProgramSwiper = new Swiper('.tui-image-editor-menu-mask', {
+            observer: true,
+            observeParents: true,
+            slidesPerView: 'auto',
+            mousewheelControl: true,
+            watchOverflow: true
+        });
+    }
+}
+
+//QR코드 템플릿 설정
+function setQrcodeTemplate(obj) {
+    var imageSrc = $(obj).find(".qrcode-template-img").attr("src");
+    
+    if (imageEditor != undefined && imageSrc != undefined) {
+        $(obj).siblings("li").removeClass("on");
+        $(obj).addClass("on");
+        
+        imageEditor.loadImageFromURL(imageSrc, 'TemplateImage').then(result => {
+            setQrcodeInit();
+        });
+    }
+}
+//20230303 수정부분 end
 
 //입력폼 유효성 체크하기
 function chkFormValid(obj) {
@@ -731,6 +989,22 @@ function openPhoneAgreementLayer(obj) {
     });
 }
 //20230223 수정부분 end
+
+//20230309 수정부분 start
+//SNS 회원가입창 열기
+function openSnsJoinLayer(obj) {
+    $("#sns-join-layer").addClass("on");
+    $("#sns-join-layer").stop(true,true).slideDown(300);
+    
+    var scrollTop = parseInt($(document).scrollTop());
+
+    $("body").css("top", -scrollTop + "px");
+
+    $("body").addClass("scroll-disable").on('scroll touchmove', function(event) {
+        event.preventDefault();
+    });
+}
+//20230309 수정부분 end
 
 //레이어창 닫기
 function closeLayer(obj) {
