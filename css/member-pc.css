@@ -3403,7 +3403,7 @@ footer.footer .f-info-area .info-txt {
 }
 .tui-image-editor-container .tui-colorpicker-palette-hex {
     height: auto;
-    margin-top: 1px;
+    margin-top: 2px;
     padding: 0;
     vertical-align: top;
     letter-spacing: 0;
