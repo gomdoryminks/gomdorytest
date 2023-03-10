@@ -3170,7 +3170,7 @@ c-join .join-step-area .join-step-list>li:last-child:after {
 }
 .l-area .l-box .l-con-area .l-sns-area>button:before {
     content: '';
-    width: 46px;
+    width: 50px;
     height: 46px;
     display: block;
     position: absolute;
