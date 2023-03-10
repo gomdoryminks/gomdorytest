@@ -3175,11 +3175,12 @@ c-join .join-step-area .join-step-list>li:last-child:after {
     display: block;
     position: absolute;
     top: -1px;
-    left: 0;
-    -webkit-border-radius: 50%;
-    -moz-border-radius: 50%;
-    -ms-border-radius: 50%;
-	border-radius: 50%;
+    left: -1px;
+    z-index: 1;
+    -webkit-border-radius: 999px;
+    -moz-border-radius: 999px;
+    -ms-border-radius: 999px;
+	border-radius: 999px;
 }
 .l-area .l-box .l-con-area .l-sns-area .sns-naver-btn:before {
     background: #56c13d url('../img/naver-icon.png') no-repeat center;
